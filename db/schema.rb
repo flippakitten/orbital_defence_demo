@@ -16,6 +16,21 @@ ActiveRecord::Schema.define(version: 2018_11_05_193425) do
   enable_extension "plpgsql"
 
   create_table "fires", force: :cascade do |t|
+    t.decimal "latitude", precision: 10, scale: 6
+    t.decimal "longitude", precision: 10, scale: 6
+    t.float "brightness"
+    t.float "bright_t31"
+    t.float "bright_ti5"
+    t.float "bright_ti4"
+    t.float "scan"
+    t.float "track"
+    t.float "frp"
+    t.string "scan_type"
+    t.string "satellite"
+    t.string "confidence"
+    t.string "version"
+    t.string "day_night"
+    t.datetime "detected_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
