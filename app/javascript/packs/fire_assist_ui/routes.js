@@ -4,14 +4,14 @@ import {
   Route,
 } from 'react-router-dom'
 
-import LandingPage from './components/landingPage';
+import Container from './components/Container'
 
 const App = (props) => (
   <Router>
   <div>
-  <Route exact path='/' component={LandingPage} />
-</div>
-</Router>
+      <Route exact path='/' component={Container} />
+    </div>
+  </Router>
 
 )
 

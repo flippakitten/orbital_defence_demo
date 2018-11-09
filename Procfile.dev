@@ -1,2 +1,2 @@
 web: bundle exec rails s
-webpacker: ./bin/webpack-dev-server
+webpacker: GAPI=your_api_key ./bin/webpack-dev-server
