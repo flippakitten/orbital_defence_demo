@@ -26,6 +26,8 @@ ActiveRecord::Schema.define(version: 2018_11_05_193425) do
     t.float "track"
     t.float "frp"
     t.string "scan_type"
+    t.string "identifier"
+    t.string "lat_long"
     t.string "satellite"
     t.string "confidence"
     t.string "version"
@@ -33,6 +35,9 @@ ActiveRecord::Schema.define(version: 2018_11_05_193425) do
     t.datetime "detected_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["detected_at"], name: "index_fires_on_detected_at"
+    t.index ["identifier"], name: "index_fires_on_identifier"
+    t.index ["lat_long"], name: "index_fires_on_lat_long"
   end
 
 end

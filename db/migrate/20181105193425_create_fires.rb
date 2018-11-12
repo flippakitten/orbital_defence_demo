@@ -11,11 +11,13 @@ class CreateFires < ActiveRecord::Migration[5.2]
       t.float   :track
       t.float   :frp
       t.string  :scan_type
+      t.string  :identifier, index: true, uniqueness: true
+      t.string  :lat_long, index: true, uniqueness: false
       t.string  :satellite
       t.string  :confidence
       t.string  :version
       t.string  :day_night
-      t.timestamp :detected_at
+      t.timestamp :detected_at, index: true, uniqueness: false
       t.timestamps
     end
   end
