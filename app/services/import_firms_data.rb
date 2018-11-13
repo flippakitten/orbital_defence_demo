@@ -20,7 +20,7 @@ class ImportFirmsData
     def parse_and_create(csv_text:, scan_type:)
       csv = CSV.parse(csv_text, :headers => true, :encoding => 'ISO-8859-1')
       csv.each do |row|
-        acq_time = "#{row['acq_time'][0..1]}:#{row['acq_time'][2..3]}"
+        acq_time = row['acq_time'].include?(':') ? row['acq_time'] : "#{row['acq_time'][0..1]}:#{row['acq_time'][2..3]}"
         lat_long = "#{row['latitude']},#{row['longitude']}"
         detected_at = "#{row['acq_date']} #{acq_time}"
 
@@ -28,8 +28,8 @@ class ImportFirmsData
         fire.identifier =  Digest::SHA2.hexdigest "#{lat_long}#{detected_at}"
         fire.lat_long   =  lat_long
         fire.scan_type  = scan_type.downcase
-        fire.latitude   = row['latitude']
-        fire.longitude  = row['longitude']
+        fire.latitude   = row['latitude'].to_f
+        fire.longitude  = row['longitude'].to_f
         fire.brightness = row['brightness']
         fire.bright_t31 = row['bright_t31']
         fire.bright_ti5 = row['bright_ti5']

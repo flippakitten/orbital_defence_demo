@@ -1,13 +1,24 @@
 import React, {Component} from 'react';
+import axios from 'axios'
 import {Map, InfoWindow, Marker, GoogleApiWrapper} from 'google-maps-react';
 import {withRouter, Switch, Link, Redirect, Route} from 'react-router-dom';
 
 export class Container extends React.Component {
   state = {
+    fires: [],
     activeMarker: {},
     selectedPlace: {},
     showingInfoWindow: false
   };
+
+  componentDidMount() {
+    axios.get('http://localhost:5000/fires/?latitude=-33.946609&longitude=22.732593&distance=100')
+      .then(response => {
+        const fires = response.data;
+        console.log(response.data);
+        this.setState({ fires });
+      })
+  }
 
   onMarkerClick = (props, marker) =>
     this.setState({
@@ -48,17 +59,32 @@ export class Container extends React.Component {
           zoom={12}
           onClick={this.onMapClicked}
         >
-
           <Marker onClick={this.onMarkerClick}
-                name={'Current location'}
+                  name={'Current location'}
           />
+
+          { this.state.fires.map(fire =>
+            <Marker onClick={this.onMarkerClick}
+                    icon={{
+                      url: "https://cdn3.iconfinder.com/data/icons/mapicons/icons/fire.png"
+                    }}
+                    name={fire.scan_type}
+                    position={{lat: fire.latitude, lng: fire.longitude}}
+                    detectedAt={fire.detected_at}
+                    confidence={fire.confidence}
+            />
+          )}
 
           <InfoWindow
             marker={this.state.activeMarker}
             onClose={this.onInfoWindowClose}
             visible={this.state.showingInfoWindow}>
             <div>
-              <h1>{this.state.selectedPlace.name}</h1>
+              <b>Fire</b>
+              <hr />
+              Type: {this.state.selectedPlace.name}<br />
+              Date: {this.state.selectedPlace.detectedAt}<br />
+              Confidence: {this.state.selectedPlace.confidence}
             </div>
           </InfoWindow>
         </Map>

@@ -1,8 +1,8 @@
 class CreateFires < ActiveRecord::Migration[5.2]
   def change
     create_table :fires do |t|
-      t.decimal :latitude, precision: 10, scale: 6
-      t.decimal :longitude, precision: 10, scale: 6
+      t.float :latitude, precision: 10, scale: 6
+      t.float :longitude, precision: 10, scale: 6
       t.float   :brightness
       t.float   :bright_t31
       t.float   :bright_ti5
@@ -10,6 +10,7 @@ class CreateFires < ActiveRecord::Migration[5.2]
       t.float   :scan
       t.float   :track
       t.float   :frp
+      t.integer :distance
       t.string  :scan_type
       t.string  :identifier, index: true, uniqueness: true
       t.string  :lat_long, index: true, uniqueness: false

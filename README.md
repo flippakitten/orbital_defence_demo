@@ -20,3 +20,14 @@ EDITOR="vim" rails credentials:edit
 # Update database credentials
 foreman start -f Profile.env.dev
 ```
+
+Then Run a rails console to import the data
+```ruby
+ImportFirmsData.import
+
+fire = Fire.first
+
+Fire.within(5, origin: [fire.latitude, fire.longitude])
+Fire.within(5, origin: [-33.946609, 22.732593])
+
+```
