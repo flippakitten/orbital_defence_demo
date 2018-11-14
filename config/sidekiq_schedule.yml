@@ -1,0 +1,21 @@
+default: &default
+  import_weather:
+    class: WeatherImportWorker
+    cron: "0 * * * *"
+    queue: low
+    description: Import Weather Data
+
+  import_ires:
+    class: FirmsImportWorker
+    cron: "0 * * * *"
+    queue: low
+    description: Import Fire Data
+
+test:
+
+development:
+  <<: *default
+
+production:
+  <<: *default
+

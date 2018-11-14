@@ -20,13 +20,20 @@ Bundler.require(*Rails.groups)
 module FireAssist
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
+    config.autoload_paths << Rails.root.join('app', 'models', 'routing')
     config.load_defaults 5.2
+
+
+    # rubocop:disable Security/YAMLLoad
+    REDIS_CONFIG = YAML.load(ERB.new(File.read(Rails.root.join('config', 'redis.yml'))).result)
+    # rubocop:enable Security/YAMLLoad
+    config.cache_store = :redis_store, REDIS_CONFIG[Rails.env].merge(expires_in: 10.minutes)
+
 
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration can go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded after loading
     # the framework and any gems in your application.
-
     # Don't generate system test files.
     config.generators.system_tests = nil
   end
