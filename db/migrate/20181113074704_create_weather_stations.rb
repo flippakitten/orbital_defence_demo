@@ -4,7 +4,7 @@ class CreateWeatherStations < ActiveRecord::Migration[5.2]
       t.string :name
       t.float :latitude
       t.float :longitude
-      t.integer :identifier, index: true, uniqueness: true
+      t.string :identifier, index: true, uniqueness: true
 
       t.timestamps
     end
