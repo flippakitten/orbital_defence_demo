@@ -56,7 +56,7 @@ export class Container extends React.Component {
             lat: -33.937334,
             lng: 22.707702
           }}
-          zoom={12}
+          zoom={10}
           onClick={this.onMapClicked}
         >
           <Marker onClick={this.onMarkerClick}
@@ -64,7 +64,7 @@ export class Container extends React.Component {
           />
 
           { this.state.fires.map(fire =>
-            <Marker onClick={this.onMarkerClick}
+            <Marker key={fire.id} onClick={this.onMarkerClick}
                     icon={{
                       url: "https://cdn3.iconfinder.com/data/icons/mapicons/icons/fire.png"
                     }}
