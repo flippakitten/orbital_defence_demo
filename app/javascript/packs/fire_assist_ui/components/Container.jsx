@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import axios from 'axios'
-import {Map, InfoWindow, Marker, GoogleApiWrapper} from 'google-maps-react';
+import {Map, InfoWindow, Marker, GoogleApiWrapper, Polyline} from 'google-maps-react';
 import {withRouter, Switch, Link, Redirect, Route} from 'react-router-dom';
 
 export class Container extends React.Component {
@@ -63,15 +63,35 @@ export class Container extends React.Component {
                   name={'Current location'}
           />
 
-          { this.state.fires.map(fire =>
-            <Marker key={fire.id} onClick={this.onMarkerClick}
+          { this.state.fires.map(result =>
+            <Marker key={result.fire.id} onClick={this.onMarkerClick}
                     icon={{
                       url: "https://cdn3.iconfinder.com/data/icons/mapicons/icons/fire.png"
                     }}
-                    name={fire.scan_type}
-                    position={{lat: fire.latitude, lng: fire.longitude}}
-                    detectedAt={fire.detected_at}
-                    confidence={fire.confidence}
+                    name={result.fire.scan_type}
+                    position={{lat: result.fire.latitude, lng: result.fire.longitude}}
+                    detectedAt={result.fire.detected_at}
+                    confidence={result.fire.confidence}
+                    weatherStation={result.weather.identifier}
+                    weatherTemp={result.weather.temprature}
+                    windSpeed={result.weather.wind_speed}
+                    windDirection={result.weather.wind_direction}
+                    humidity={result.weather.humidity}
+            />
+          )}
+          { this.state.fires.map(result =>
+            <Polyline key={result.fire.id}
+              path={[
+                {lat: result.fire.latitude, lng: result.fire.longitude},
+                {lat: result.wind_arrow.lat, lng: result.wind_arrow.lng}
+              ]}
+              icons={[{
+                icon: { path: google.maps.SymbolPath.FORWARD_CLOSED_ARROW },
+                offset: '100%'
+              }]}
+              strokeColor="#0000FF"
+              strokeOpacity={0.8}
+              strokeWeight={2}
             />
           )}
 
@@ -80,11 +100,17 @@ export class Container extends React.Component {
             onClose={this.onInfoWindowClose}
             visible={this.state.showingInfoWindow}>
             <div>
-              <b>Fire</b>
-              <hr />
+              <b>Fire</b><br/>
               Type: {this.state.selectedPlace.name}<br />
               Date: {this.state.selectedPlace.detectedAt}<br />
               Confidence: {this.state.selectedPlace.confidence}
+              <hr />
+              <b>Weather</b><br/>
+              {this.state.selectedPlace.weatherStation}<br />
+              Temp: {this.state.selectedPlace.weatherTemp} C <br />
+              Wind Speed: {this.state.selectedPlace.windSpeed} km/h<br />
+              Wind Direction: {this.state.selectedPlace.windDirection}<br />
+              Humidity: {this.state.selectedPlace.humidity}
             </div>
           </InfoWindow>
         </Map>

@@ -21,7 +21,6 @@ class ImportOpenweatherData
       weather_station.save
       create_reading_by_coordinates(weather_station, result) unless WeatherReading.find_by(identifier: "#{result['name']}:#{result['dt']}")
     end
-
   end
 
   def create_reading_by_coordinates(weather_station, result)
@@ -31,7 +30,7 @@ class ImportOpenweatherData
     reading.pressure = result['main']['pressure']
     reading.ground_level = result['main']['grnd_level']
     reading.humidity =  result['main']['humidity']
-    reading.wind_speed = result['wind']['speed']
+    reading.wind_speed = ( result['wind']['speed'] * 3.6)
     reading.wind_direction = result['wind']['deg']
     reading.rain = result['rain']['3h'] unless result['rain'].nil?
     reading.cloud = result['clouds']['today'] unless result['clouds']['today'].nil?

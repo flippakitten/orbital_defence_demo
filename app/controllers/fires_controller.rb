@@ -5,7 +5,19 @@ class FiresController < ApplicationController
 
     # fires = Fire.in_bounds([sw_point, ne_point]).all
     fires = Fire.in_bounds([sw_bound_point, ne_bound_point]).where(detected_at: 24.hours.ago..Time.now)
-    render json: fires.to_json, status: :ok
+    fires_with_weather = []
+    fires.each do |fire|
+      weather = fire.detected_at_weather
+      endpoint = fire.endpoint(weather.wind_direction, 2)
+
+      fires_with_weather << {
+        fire: fire,
+        weather: weather,
+        wind_arrow: { lat: endpoint.lat, lng: endpoint.lng }
+      }
+    end
+
+    render json: fires_with_weather.to_json, status: :ok
   end
 
   private
