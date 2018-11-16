@@ -15,6 +15,7 @@ gem 'geokit-rails', '~> 2.3', '>= 2.3.1'
 gem 'sidekiq', '~>5.2.3'
 gem 'redis', '~> 4.0'
 gem 'sidekiq-scheduler', '~> 3.0.0'
+gem 'rack', '>= 2.0.6'
 # Use Redis adapter to run Action Cable in production
 
 # Use ActiveModel has_secure_password
