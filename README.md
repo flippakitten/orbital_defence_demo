@@ -1,24 +1,35 @@
-# README
+Currently this project is restricted to a portion of Garden Route, South Africa.
+The basic concept working is [Sidekiq-scheduler](https://github.com/moove-it/sidekiq-scheduler) will fetch the FIRMS data from Nasa and weather data from OpenWeatherMap and persist it in the database. The React UI will then fetch the data and display it on the map.
 
-Getting Started:
-Grab a Google Maps API key  
-Grab a openweathermap API key  
+## Getting Started:
+### External API's
+Grab a Google Maps API key [here](https://developers.google.com/maps/documentation/javascript/get-api-key)  
+Grab a OpenWeatherMap API key [here](https://openweathermap.org/appid)  
 Grab a Nasa EarthData Api Key [here](https://nrt4.modaps.eosdis.nasa.gov/help/downloads#appkeys)
 
-## Installation:
-Install Rails.
-Fork Project in Github
-Clone locally
+### Installation:
+Install Postgres  
+Install Redis  
+Install Ruby/Rails  
+Install Node and NPM  
+Fork and clone the project from Github
 
 ```bash
 bundle install
 yarn
+
 cp database.yml.example database.yml
+# edit your PG database credentials
+
 cp Profile.dev Procfile.env.dev
+# add your Google api key to GAPI
+
 EDITOR="vim" rails credentials:edit
 # Add your Nasa Earth Data API key
 # Update database credentials
+
 foreman start -f Profile.env.dev
+
 ```
 
 Then Run a rails console to import the data
