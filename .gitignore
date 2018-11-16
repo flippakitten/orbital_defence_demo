@@ -33,3 +33,4 @@ yarn-debug.log*
 .idea
 Procfile.env.dev
 /external_data
+config/database.yml
