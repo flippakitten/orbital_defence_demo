@@ -16,7 +16,7 @@ gem 'sidekiq', '~>5.2.3'
 gem 'sidekiq-scheduler', '~> 3.0.0'
 gem 'rack', '>= 2.0.6'
 # Use Redis adapter to run Action Cable in production
-gem 'redis-rails'
+gem 'redis-rails', '>= 5.0.2'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
