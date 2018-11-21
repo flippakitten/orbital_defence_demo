@@ -15,17 +15,17 @@
 # gem 'pg'
 #
 default: &default
-  adapter: postgresql
-  encoding: unicode
+  adapter: cockroachdb
+  user: root
   # For details on connection pooling, see Rails configuration guide
   # http://guides.rubyonrails.org/configuring.html#database-pooling
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
 
 development:
   <<: *default
-  database: fire_assist_development
-  user: <%= Rails.application.credentials[:postgres][:user] %>
-  password: <%= Rails.application.credentials[:postgres][:password] %>
+  port: 26257
+  host: localhost
+  database: orbital_defence_development
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
@@ -58,10 +58,13 @@ development:
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
 test:
-  <<: *default
-  database: fire_assist_test
-  user: <%= Rails.application.credentials[:postgres][:user] %>
-  password: <%= Rails.application.credentials[:postgres][:password] %>
+  adapter: postgresql
+  encoding: utf-8
+  user: <%= Rails.application.credentials[:test][:postgres][:user] %>
+  password: <%= Rails.application.credentials[:test][:postgres][:password] %>
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  host: localhost
+  database: orbital_defence_test
 
 # As with config/secrets.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -84,6 +87,6 @@ test:
 #
 production:
   <<: *default
-  database: fire_assist_production
-  username: fire_assist
-  password: <%= ENV['FIRE_ASSIST_DATABASE_PASSWORD'] %>
+  database: orbital_defence_production
+  user: <%= Rails.application.credentials[:production][:cockroach][:username] %>
+  password: <%= Rails.application.credentials[:production][:cockroach][:password] %>

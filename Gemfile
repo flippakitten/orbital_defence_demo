@@ -4,19 +4,19 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '2.5.1'
 
 gem 'rails', '~> 5.2.1'
-gem 'pg', '>= 0.18', '< 2.0'
 gem 'puma', '~> 3.11'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'webpacker'
 gem 'jbuilder', '~> 2.5'
 gem 'faraday', '~> 0.15.3'
-gem 'geokit-rails', '~> 2.3', '>= 2.3.1'
+gem 'geokit-rails', git: 'https://github.com/flippakitten/geokit-rails.git', branch: 'add_cockroachdb_connection'
 gem 'sidekiq', '~>5.2.3'
-gem 'redis', '~> 4.0'
+# gem 'redis', '~> 4.0'
 gem 'sidekiq-scheduler', '~> 3.0.0'
 gem 'rack', '>= 2.0.6'
 # Use Redis adapter to run Action Cable in production
+gem 'redis-rails'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
@@ -29,6 +29,11 @@ gem 'rack', '>= 2.0.6'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
+gem 'pg', '>= 0.18', '< 2.0'
+
+group :production, :development do
+  gem 'activerecord-cockroachdb-adapter', '~> 0.2.3'
+end
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

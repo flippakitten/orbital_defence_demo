@@ -12,10 +12,7 @@
 
 ActiveRecord::Schema.define(version: 2018_11_14_095318) do
 
-  # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
-
-  create_table "fires", force: :cascade do |t|
+  create_table "fires", id: :bigint, default: -> { "unique_rowid()" }, force: :cascade do |t|
     t.float "latitude"
     t.float "longitude"
     t.float "brightness"
@@ -25,35 +22,35 @@ ActiveRecord::Schema.define(version: 2018_11_14_095318) do
     t.float "scan"
     t.float "track"
     t.float "frp"
-    t.integer "distance"
-    t.string "scan_type"
-    t.string "identifier"
-    t.string "lat_long"
-    t.string "satellite"
-    t.string "confidence"
-    t.string "version"
-    t.string "day_night"
+    t.bigint "distance"
+    t.text "scan_type"
+    t.text "identifier"
+    t.text "lat_long"
+    t.text "satellite"
+    t.text "confidence"
+    t.text "version"
+    t.text "day_night"
     t.datetime "detected_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "weather_reading_id"
+    t.bigint "weather_reading_id"
     t.index ["detected_at"], name: "index_fires_on_detected_at"
     t.index ["identifier"], name: "index_fires_on_identifier"
     t.index ["lat_long"], name: "index_fires_on_lat_long"
   end
 
-  create_table "weather_readings", force: :cascade do |t|
+  create_table "weather_readings", id: :bigint, default: -> { "unique_rowid()" }, force: :cascade do |t|
     t.bigint "weather_station_id"
-    t.string "identifier"
+    t.text "identifier"
     t.float "temprature"
     t.float "pressure"
     t.float "ground_level"
-    t.integer "humidity"
+    t.bigint "humidity"
     t.float "wind_speed"
     t.float "wind_direction"
     t.float "rain"
-    t.integer "cloud"
-    t.string "description"
+    t.bigint "cloud"
+    t.text "description"
     t.datetime "reading_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -61,11 +58,11 @@ ActiveRecord::Schema.define(version: 2018_11_14_095318) do
     t.index ["weather_station_id"], name: "index_weather_readings_on_weather_station_id"
   end
 
-  create_table "weather_stations", force: :cascade do |t|
-    t.string "name"
+  create_table "weather_stations", id: :bigint, default: -> { "unique_rowid()" }, force: :cascade do |t|
+    t.text "name"
     t.float "latitude"
     t.float "longitude"
-    t.string "identifier"
+    t.text "identifier"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["identifier"], name: "index_weather_stations_on_identifier"
