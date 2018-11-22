@@ -1,3 +1,5 @@
+[![CircleCI](https://circleci.com/gh/flippakitten/orbital_defence/tree/master.svg?style=svg)](https://circleci.com/gh/flippakitten/orbital_defence/tree/master)
+
 Currently this project is restricted to a portion of Garden Route, South Africa.
 The basic concept working is [Sidekiq-scheduler](https://github.com/moove-it/sidekiq-scheduler) will fetch the FIRMS data from Nasa and weather data from OpenWeatherMap and persist it in the database. The React UI will then fetch the data and display it on the map.
 
