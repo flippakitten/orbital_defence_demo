@@ -5,9 +5,9 @@ ruby '2.5.1'
 
 gem 'rails', '~> 5.2.1'
 gem 'puma', '~> 3.11'
-gem 'sass-rails', '~> 5.0'
+gem 'sass-rails', '~> 5.0', '>= 5.0.7'
 gem 'uglifier', '>= 1.3.0'
-gem 'webpacker'
+gem 'webpacker', '>= 3.5.5'
 gem 'jbuilder', '~> 2.5'
 gem 'faraday', '~> 0.15.3'
 gem 'geokit-rails', git: 'https://github.com/flippakitten/geokit-rails.git', branch: 'add_cockroachdb_connection'
@@ -42,7 +42,7 @@ end
 
 group :development do
   # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
-  gem 'web-console', '>= 3.3.0'
+  gem 'web-console', '>= 3.7.0'
   gem 'listen', '>= 3.0.5', '< 3.2'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
@@ -51,8 +51,8 @@ end
 
 group :test do
   gem 'rspec_junit_formatter'
-  gem 'factory_bot_rails'
-  gem 'rspec-rails'
+  gem 'factory_bot_rails', '>= 4.11.1'
+  gem 'rspec-rails', '>= 3.8.1'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
