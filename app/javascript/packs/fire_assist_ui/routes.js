@@ -4,7 +4,7 @@ import {
   Route,
 } from 'react-router-dom'
 
-import Container from './components/Container'
+import Container from './components/Container.js'
 
 const App = (props) => (
   <Router>
