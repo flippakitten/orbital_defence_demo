@@ -13,7 +13,8 @@ Grab a OpenWeatherMap API key [here](https://openweathermap.org/appid)
 Grab a Nasa EarthData Api Key [here](https://nrt4.modaps.eosdis.nasa.gov/help/downloads#appkeys)
 
 ### Installation:
-Install Postgres  
+Install Postgres
+Install Cockroachdb
 Install Redis  
 Install Ruby/Rails  
 Install Node and NPM  
@@ -24,12 +25,17 @@ bundle install
 yarn
 
 cp database.yml.example database.yml
-# edit your PG database credentials
+# edit your database credentials
 
 cp Profile.dev Procfile.env.dev
 # add your Google api key to GAPI
 
+# If you have cloned this repository, you'll need to delete and recreate the encrypted credentials file.
+# you can check what keys and passwords are needed in credentials.yml.example
+
+rm config/credentials.yml.enc
 EDITOR="vim" rails credentials:edit
+
 # Add your Nasa Earth Data API key
 # Update database credentials
 
