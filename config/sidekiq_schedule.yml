@@ -1,7 +1,7 @@
 default: &default
   import_weather:
     class: WeatherImportWorker
-    cron: "0 * * * *"
+    every: "2h"
     queue: low
     description: Import Weather Data
 

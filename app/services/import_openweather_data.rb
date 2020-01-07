@@ -10,16 +10,25 @@ class ImportOpenweatherData
   ]
 
   def import
-    results = fetch_weather_data
+    Fire.where(detected_at: (Time.now - 24.hours)..Time.now).each do |fire|
+      result = fetch_data("/data/2.5/weather?lat=#{fire.latitude}&lon=#{fire.longitude}")
 
-    results.each do |result|
-      weather_station = WeatherStation.find_or_create("#{result['name']}:ZA")
-      weather_station.name = result['name']
-      weather_station.latitude = result['coord']['lat']
-      weather_station.longitude = result['coord']['lon']
+      next unless result
 
-      weather_station.save
-      create_reading_by_coordinates(weather_station, result) unless WeatherReading.find_by(identifier: "#{result['name']}:#{result['dt']}")
+      weather_station = WeatherStation.find_or_create("#{result['name']}:AUS")
+
+      unless weather_station.persisted?
+        weather_station.name = result['name']
+        weather_station.latitude = result['coord']['lat']
+        weather_station.longitude = result['coord']['lon']
+
+        weather_station.save
+      end
+
+      unless WeatherReading.find_by(identifier: "#{result['name']}:#{result['dt']}")
+        create_reading_by_coordinates(weather_station, result)
+      end
+      sleep 1
     end
   end
 
@@ -37,13 +46,14 @@ class ImportOpenweatherData
     reading.description = result['weather'].first['description']
     reading.reading_at = Time.at(result['dt']).to_datetime
 
-    puts reading.save!
+    reading.save!
   end
 
   private
 
   def fetch_weather_data
-    STATION_COORDS.map { |coord| fetch_data("/data/2.5/weather?lat=#{coord[:lat]}&lon=#{coord[:lon]}") }
+    Fire.find_each.map { |fire| fetch_data("/data/2.5/weather?lat=#{fire.latitude}&lon=#{fire.longitude}") }
+    #STATION_COORDS.map { |coord| fetch_data("/data/2.5/weather?lat=#{coord[:lat]}&lon=#{coord[:lon]}") }
   end
 
   def fetch_data(url)

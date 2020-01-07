@@ -1,8 +1,10 @@
 class ImportFirmsData
   require 'csv'
   FIRMS_DATA_URLS = {
-    modis: '/api/v2/content/archives/FIRMS/c6/Southern_Africa/MODIS_C6_Southern_Africa_MCD14DL_NRT_',
-    viirs: '/api/v2/content/archives/FIRMS/viirs/Southern_Africa/VIIRS_I_Southern_Africa_VNP14IMGTDL_NRT_'
+    modis: '/api/v2/content/archives/FIRMS/c6/Australia_NewZealand/MODIS_C6_Australia_NewZealand_MCD14DL_NRT_',
+    virrs: '/api/v2/content/archives/FIRMS/viirs/Australia_NewZealand/VIIRS_I_Australia_NewZealand_VNP14IMGTDL_NRT_'
+    #modis: '/api/v2/content/archives/FIRMS/c6/Southern_Africa/MODIS_C6_Southern_Africa_MCD14DL_NRT_',
+    #viirs: '/api/v2/content/archives/FIRMS/viirs/Southern_Africa/VIIRS_I_Southern_Africa_VNP14IMGTDL_NRT_'
   }
   class << self
     def import
@@ -73,6 +75,7 @@ class ImportFirmsData
     private
 
     def fetch_data(key, url, j_date)
+      puts "#{url}#{j_date}.txt"
       response = data_client.get do |req|
         req.url "#{url}#{j_date}.txt"
         req.headers['Authorization'] = "Bearer #{Rails.application.credentials[:nasa_api][:key]}"
@@ -82,7 +85,7 @@ class ImportFirmsData
     end
 
     def julian_date
-      @julian_date ||= "#{Date.today.year}#{Date.today.yday}".to_i
+      @julian_date ||= "#{Date.today.year}00#{Date.today.yday}".to_i
     end
 
     def closest_weather_reading(fire)
