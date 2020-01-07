@@ -12,7 +12,7 @@ export class Container extends React.Component {
   };
 
   componentDidMount() {
-    axios.get('http://localhost:5000/fires/?latitude=-33.946609&longitude=22.732593&distance=100')
+    axios.get('http://localhost:5000/fires/?latitude=-40.739103&longitude=154.476714&distance=1000')
       .then(response => {
         const fires = response.data;
         console.log(response.data);
@@ -53,10 +53,10 @@ export class Container extends React.Component {
           google={this.props.google}
           mapType={'terrain'}
           initialCenter={{
-            lat: -33.937334,
-            lng: 22.707702
+            lat: -25.263290,
+            lng: 134.337539
           }}
-          zoom={10}
+          zoom={5}
           onClick={this.onMapClicked}
         >
           <Marker onClick={this.onMarkerClick}
@@ -89,12 +89,27 @@ export class Container extends React.Component {
                 icon: { path: google.maps.SymbolPath.FORWARD_CLOSED_ARROW },
                 offset: '100%'
               }]}
-              strokeColor="#0000FF"
+              strokeColor="#6975ff"
               strokeOpacity={0.8}
               strokeWeight={2}
             />
           )}
 
+            { this.state.fires.map(result =>
+                <Polyline key={result.fire.id}
+                          path={[
+                              {lat: result.fire.latitude, lng: result.fire.longitude},
+                              {lat: result.detected_wind_arrow.lat, lng: result.detected_wind_arrow.lng}
+                          ]}
+                          icons={[{
+                              icon: { path: google.maps.SymbolPath.FORWARD_CLOSED_ARROW },
+                              offset: '100%'
+                          }]}
+                          strokeColor="#999999"
+                          strokeOpacity={0.8}
+                          strokeWeight={2}
+                />
+            )}
           <InfoWindow
             marker={this.state.activeMarker}
             onClose={this.onInfoWindowClose}

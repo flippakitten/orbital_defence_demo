@@ -4,7 +4,7 @@ class WeatherStation < ApplicationRecord
                    :lat_column_name => :latitude,
                    :lng_column_name => :longitude
 
-  has_many :weather_readings
+  has_many :weather_readings, dependent: :destroy
 
   validates :identifier, uniqueness: true
 
