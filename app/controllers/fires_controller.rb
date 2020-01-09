@@ -1,9 +1,16 @@
 class FiresController < ApplicationController
+
   def index
-    # fires = Fire.within(fire_params[:distance], origin: [fire_params[:latitude], fire_params[:longitude]])
+    cached_fires = Rails.cache.read('fires')
 
+    fires_with_weather = cached_fires ? cached_fires : populate_fires
 
-    # fires = Fire.in_bounds([sw_point, ne_point]).all
+    render json: fires_with_weather, status: :ok
+  end
+
+  private
+
+  def populate_fires
     fires = Fire.in_bounds([sw_bound_point, ne_bound_point]).where(detected_at: 24.hours.ago..Time.now)
     fires_with_weather = []
     fires.each do |fire|
@@ -14,20 +21,20 @@ class FiresController < ApplicationController
       endpoint = fire.endpoint(current_weather.wind_direction, 2)
 
       fires_with_weather << {
-        fire: fire,
-        weather: current_weather,
-        detected_wind_arrow: { lat: detected_at_weather_endpoint.lat, lng: detected_at_weather_endpoint.lng },
-        wind_arrow: { lat: endpoint.lat, lng: endpoint.lng }
+          fire: fire,
+          weather: current_weather,
+          detected_wind_arrow: { lat: detected_at_weather_endpoint.lat, lng: detected_at_weather_endpoint.lng },
+          wind_arrow: { lat: endpoint.lat, lng: endpoint.lng }
       }
     end
 
-    render json: fires_with_weather.to_json, status: :ok
+    fires_json = fires_with_weather.to_json
+    Rails.cache.write('fires', fires_json)
+    fires_json
   end
 
-  private
-
   def fire_params
-    params.permit(:latitude, :longitude, :distance, :sw_bound_point, :ne_bound_point)
+    params.permit(:latitude, :longitude, :distance, :sw_bound_point, :ne_bound_point, :bust_cache)
   end
 
   def sw_bound_point
