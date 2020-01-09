@@ -10,8 +10,9 @@ jobs:
        - image: circleci/ruby:2.6.5-node-browsers
          environment:
            RAILS_ENV: test
-#           PGHOST: 127.0.0.1
-#           PGUSER: auth_secure
+           DB_USER: ${DB_USER}
+           DB_PASSWORD: ${DB_PASSWORD}
+           DB_HOST: ${DB_HOST}
 
       # Specify service dependencies here if necessary
       # CircleCI maintains a library of pre-built images
