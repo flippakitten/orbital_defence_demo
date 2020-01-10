@@ -36,7 +36,7 @@ class ImportFirmsData
 
         next if Fire.find_by(identifier: fire_identifier).present?
 
-        Fire.create(
+        fire = Fire.create(
           identifier: fire_identifier,
           lat_long:   lat_long,
           scan_type:  scan_type.downcase,
@@ -54,8 +54,9 @@ class ImportFirmsData
           version:    row['version'],
           day_night:  row['day_night'],
           detected_at: detected_at.to_datetime,
-          weather_reading_id: closest_weather_reading(fire).id
         )
+
+        fire.update_attribute(:weather_reading_id, closest_weather_reading(fire).id)
       end
     end
 

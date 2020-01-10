@@ -9,7 +9,7 @@ class WeatherReading < ApplicationRecord
 
   class << self
     def find_or_create_by_reading(reading_json, weather_station_id)
-      identifier = "#{reading_json['name']}:#{reading['dt']}"
+      identifier = "#{reading_json['name']}:#{reading_json['dt']}"
       weather_reading = WeatherReading.find_by(identifier: identifier)
 
       return weather_reading if weather_reading.present?
