@@ -34,3 +34,8 @@ yarn-debug.log*
 Procfile.env.dev
 /external_data
 config/database.yml
+
+# Cockroach DB folders
+/node1
+/node2
+/node3

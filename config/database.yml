@@ -11,13 +11,16 @@ development:
 
 test:
   <<: *default
-  port: 26257
-  host: localhost
   database: orbital_defence_test
+  port: 26257
+  user: <%= ENV['DB_USER'] %>
+  password: <%= ENV['DB_PASSWORD'] %>
+  host: <%= ENV['DB_HOST'] %>
 
 production:
   <<: *default
+  port: 26257
   database: orbital_defence_production
-  user: ENV['DB_USER']
-  password: ENV['DB_PASSWORD']
-  host: 206.189.130.62
+  user: <%= ENV['DB_USER'] %>
+  password: <%= ENV['DB_PASSWORD'] %>
+  host: <%= ENV['DB_HOST'] %>

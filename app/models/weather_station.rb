@@ -9,12 +9,18 @@ class WeatherStation < ApplicationRecord
   validates :identifier, uniqueness: true
 
   class << self
-    def find_or_create(identifier)
-      station = WeatherStation.find_by(identifier: identifier)
+    def find_or_create(reading_json)
+      identifier = "#{reading_json['name']}:AUS"
+      weather_station = WeatherStation.find_by(identifier: identifier)
 
-      return station if station.present?
+      return weather_station if weather_station.present?
 
-      WeatherStation.new(identifier: identifier)
+      WeatherStation.create(
+          identifier: identifier,
+          name: reading_json['name'],
+          latitude: reading_json['coord']['lat'],
+          longitude: reading_json['coord']['lon']
+      )
     end
   end
 end
