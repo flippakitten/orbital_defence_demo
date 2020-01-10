@@ -1,5 +1,5 @@
 development: &development
-  :host: <%= ENV['REDIS_HOST'] || 'localhost' %>
+  :host: <%= ENV['REDIS_URL'] || 'localhost' %>
   :port: <%= ENV['REDIS_PORT'] || 6379 %>
   :db: 12
   :reconnect_attempts: 3
