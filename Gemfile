@@ -30,10 +30,7 @@ gem 'redis-rails', '>= 5.0.2'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'pg', '>= 0.18', '< 2.0'
-
-group :production, :development do
-  gem 'activerecord-cockroachdb-adapter', '~> 0.2.3'
-end
+gem 'activerecord-cockroachdb-adapter', '~> 0.2.3'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
