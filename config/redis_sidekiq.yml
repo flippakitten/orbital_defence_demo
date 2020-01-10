@@ -4,7 +4,7 @@ default: &default
 
 development:
   <<: *default
-  :host: <%= ENV['REDIS_URL'] || 'localhost:6379' %>
+  :host: <%= ENV['REDIS_HOST'] || 'localhost' %>
   :port: <%= ENV['REDIS_PORT'] || 6379 %>
   :db: 12
 
@@ -18,4 +18,7 @@ test:
 production:
   <<: *default
   :url: <%= ENV['REDIS_URL'] || 'localhost:6379' %>
-
+  :host: <%= ENV['REDIS_HOST']%>
+  :port: <%= ENV['REDIS_PORT']%>
+  :password: <%= ENV['REDIS_PASSWORD']%>
+  :db: 0
