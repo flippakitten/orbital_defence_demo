@@ -1,12 +1,18 @@
-development: &development
-  :host: <%= ENV['REDIS_URL'] || 'localhost' %>
-  :port: <%= ENV['REDIS_PORT'] || 6379 %>
-  :db: 12
+default: &default
   :reconnect_attempts: 3
   :timeout: 2
 
+development:
+  <<: *default
+  :host: <%= ENV['REDIS_URL'] || 'localhost' %>
+  :port: <%= ENV['REDIS_PORT'] || 6379 %>
+  :db: 12
+
 test:
-  <<: *development
+  <<: *default
+  :db: 12
 
 production:
-  <<: *development
+  <<: *default
+  :url: <%= ENV['REDIS_URL'] || 'localhost:6379' %>
+
