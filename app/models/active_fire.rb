@@ -4,15 +4,18 @@ class ActiveFire < ApplicationRecord
     fires_with_weather = []
     fires.each do |fire|
       detected_at_weather = fire.detected_at_weather
-      detected_at_weather_endpoint = fire.endpoint(detected_at_weather.wind_direction, 2)
+      if detected_at_weather.present?
+        detected_at_weather_endpoint = fire.endpoint(detected_at_weather.wind_direction, 2)
 
-      current_weather = detected_at_weather.weather_station.weather_readings.last
-      endpoint = fire.endpoint(current_weather.wind_direction, 2)
+        current_weather = detected_at_weather.weather_station.weather_readings.last
+        endpoint = fire.endpoint(current_weather.wind_direction, 2)
+      end
 
       fires_with_weather << {
           fire: fire,
       }.tap do |params|
-        return unless current_weather
+        return if current_weather.blank?
+
         params[:weather] = current_weather
         params[:detected_wind_arrow] = { lat: detected_at_weather_endpoint.lat, lng: detected_at_weather_endpoint.lng }
         params[:wind_arrow] = { lat: endpoint.lat, lng: endpoint.lng }
