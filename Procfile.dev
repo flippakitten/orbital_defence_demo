@@ -1,3 +1,2 @@
 sidekiq: bundle exec sidekiq
 web: bundle exec rails s -p 5000
-webpacker: GAPI=your_api_key ./bin/webpack-dev-server

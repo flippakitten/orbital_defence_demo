@@ -5,9 +5,6 @@ ruby '2.6.5'
 
 gem 'rails', '~> 5.2.3'
 gem 'puma', '~> 4.3', '>= 4.3.1'
-gem 'sass-rails', '~> 5.1', '>= 5.1.0'
-gem 'uglifier', '>= 1.3.0'
-gem 'webpacker', '>= 4.0.7'
 gem 'jbuilder', '~> 2.5'
 gem 'faraday', '~> 0.15.3'
 gem 'geokit-rails', git: 'https://github.com/flippakitten/geokit-rails.git', branch: 'add_cockroachdb_connection'
@@ -39,7 +36,6 @@ end
 
 group :development do
   # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
-  gem 'web-console', '>= 3.7.0'
   gem 'listen', '>= 3.0.5', '< 3.2'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'

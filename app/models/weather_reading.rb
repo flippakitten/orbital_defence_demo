@@ -1,5 +1,5 @@
 class WeatherReading < ApplicationRecord
-  API_THROTTLE_TIME = 1
+  API_THROTTLE_TIME = 0.02
   belongs_to :weather_station
 
   validates :identifier, uniqueness: true
