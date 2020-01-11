@@ -4,22 +4,24 @@ class ActiveFire < ApplicationRecord
     fires_with_weather = []
     fires.each do |fire|
       detected_at_weather = fire.detected_at_weather
-      if detected_at_weather.present?
-        detected_at_weather_endpoint = fire.endpoint(detected_at_weather.wind_direction, 2)
 
-        current_weather = detected_at_weather.weather_station.weather_readings.last
-        endpoint = fire.endpoint(current_weather.wind_direction, 2)
+      if detected_at_weather.blank?
+        weather_station, weather_reading = ImportOpenweatherData.new(fire).fetch_reading_and_create_station_data
+        fire.update_attribute(weather_reading_id: weather_reading.id)
+        detected_at_weather = weather_reading
       end
+
+      detected_at_weather_endpoint = fire.endpoint(detected_at_weather.wind_direction, 2)
+
+      current_weather = detected_at_weather.weather_station.weather_readings.last
+      endpoint = fire.endpoint(current_weather.wind_direction, 2)
 
       fires_with_weather << {
           fire: fire,
-      }.tap do |params|
-        return if current_weather.blank?
-
-        params[:weather] = current_weather
-        params[:detected_wind_arrow] = { lat: detected_at_weather_endpoint.lat, lng: detected_at_weather_endpoint.lng }
-        params[:wind_arrow] = { lat: endpoint.lat, lng: endpoint.lng }
-      end
+          weather: current_weather,
+          detected_wind_arrow: { lat: detected_at_weather_endpoint.lat, lng: detected_at_weather_endpoint.lng },
+          wind_arrow: { lat: endpoint.lat, lng: endpoint.lng }
+      }
     end
 
     ActiveFire.create(json: fires_with_weather.to_json, country: 'AUS')
