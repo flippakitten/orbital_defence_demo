@@ -11,10 +11,12 @@ class ActiveFire < ApplicationRecord
 
       fires_with_weather << {
           fire: fire,
-          weather: current_weather,
-          detected_wind_arrow: { lat: detected_at_weather_endpoint.lat, lng: detected_at_weather_endpoint.lng },
-          wind_arrow: { lat: endpoint.lat, lng: endpoint.lng }
-      }
+      }.tap do |params|
+        return unless current_weather
+        params[:weather] = current_weather
+        params[:detected_wind_arrow] = { lat: detected_at_weather_endpoint.lat, lng: detected_at_weather_endpoint.lng }
+        params[:wind_arrow] = { lat: endpoint.lat, lng: endpoint.lng }
+      end
     end
 
     ActiveFire.create(json: fires_with_weather.to_json, country: 'AUS')
