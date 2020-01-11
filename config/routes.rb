@@ -9,5 +9,9 @@ Rails.application.routes.draw do
 
   root to: "pages#root"
 
-  resources :fires, only: :index
+  namespace :api do
+    namespace :v1 do
+      resources :fires, only: :index
+    end
+  end
 end

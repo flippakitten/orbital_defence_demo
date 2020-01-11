@@ -1,4 +1,4 @@
-class FiresController < ApplicationController
+class Api::V1::FiresController < ApplicationController
 
   def index
     cached_fires = Rails.cache.read('fires')
