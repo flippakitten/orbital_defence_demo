@@ -26,7 +26,7 @@
 
     function initMap() {
         const fetch_markers = (googleMaps, map) => {
-            axios.get('<%= Rails.env.production? ? 'https://orbital-defence.herokuapp.com' : 'http://localhost:5000'%>/api/v1/fires/?latitude=-40.739103&longitude=154.476714&distance=1000')
+            axios.get('<%= Rails.env.production? ? 'https://api.orbitaldefence.tech/' : 'http://localhost:5000'%>/api/v1/fires/?latitude=-40.739103&longitude=154.476714&distance=1000')
                 .then(response => {
                     const fires = response.data;
                     console.log(response.data);
