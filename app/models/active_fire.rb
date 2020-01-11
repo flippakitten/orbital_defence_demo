@@ -7,7 +7,7 @@ class ActiveFire < ApplicationRecord
 
       if detected_at_weather.blank?
         weather_station, weather_reading = ImportOpenweatherData.new(fire).fetch_reading_and_create_station_data
-        fire.update_attribute(weather_reading_id, weather_reading.id)
+        fire.update_attribute(:weather_reading_id, weather_reading.id)
         detected_at_weather = weather_reading
       end
 
