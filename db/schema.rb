@@ -10,7 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_14_095318) do
+ActiveRecord::Schema.define(version: 2020_01_11_095208) do
+
+  create_table "active_fires", id: :bigint, default: -> { "unique_rowid()" }, force: :cascade do |t|
+    t.text "json"
+    t.string "country"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "fires", id: :bigint, default: -> { "unique_rowid()" }, force: :cascade do |t|
     t.float "latitude"
