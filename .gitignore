@@ -39,3 +39,5 @@ config/database.yml
 /node1
 /node2
 /node3
+/certs
+/my-safe-directory
