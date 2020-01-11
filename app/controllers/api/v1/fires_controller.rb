@@ -1,11 +1,7 @@
 class Api::V1::FiresController < ApplicationController
 
   def index
-    cached_fires = Rails.cache.read('fires')
-
-    fires_with_weather = cached_fires ? cached_fires : populate_fires
-
-    render json: fires_with_weather, status: :ok
+    render json: populate_fires, status: :ok
   end
 
   private
@@ -29,7 +25,6 @@ class Api::V1::FiresController < ApplicationController
     end
 
     fires_json = fires_with_weather.to_json
-    Rails.cache.write('fires', fires_json)
     fires_json
   end
 
