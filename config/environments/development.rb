@@ -49,6 +49,7 @@ Rails.application.configure do
   # This option may cause significant delays in view rendering with a large
   # number of complex assets.
   config.assets.enabled = false
+  config.assets.compile = false
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
