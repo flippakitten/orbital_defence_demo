@@ -3,7 +3,7 @@
 <head>
   <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
   <meta charset="utf-8">
-  <title>Marker Clustering</title>
+  <title>Orbital Defence</title>
   <style>
     /* Always set the map height explicitly to define the size of the div
      * element that contains the map. */
@@ -61,6 +61,37 @@
                         marker.addListener('click', function() {
                             infowindow.open(map, marker);
                         });
+
+                        poly2 = new google.maps.Polyline({
+                            path: [
+                                    {lat: fire.fire.latitude, lng: fire.fire.longitude},
+                                    {lat: fire.wind_arrow.lat, lng: fire.wind_arrow.lng}
+                            ],
+                            icons: [{
+                                    icon: { path: google.maps.SymbolPath.FORWARD_CLOSED_ARROW },
+                                    offset: '100%'
+                                }],
+                                strokeColor: '#6975ff',
+                                strokeOpacity: 0.8,
+                                strokeWeight: 2
+                        });
+                        poly2.setMap(map);
+
+                        poly3 = new google.maps.Polyline({
+                            path: [
+                                {lat: fire.fire.latitude, lng: fire.fire.longitude},
+                                {lat: fire.detected_wind_arrow.lat, lng: fire.detected_wind_arrow.lng}
+                            ],
+                            icons: [{
+                                icon: { path: google.maps.SymbolPath.FORWARD_CLOSED_ARROW },
+                                offset: '100%'
+                            }],
+                            strokeColor: '#999999',
+                            strokeOpacity: 0.8,
+                            strokeWeight: 2
+                        });
+                        poly3.setMap(map);
+
                         return marker;
                     });
 
