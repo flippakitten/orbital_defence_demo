@@ -22,97 +22,122 @@
 <div id="map"></div>
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 <script>
+  const detectedAtWindArrow = (fire) => {
+      return new google.maps.Polyline({
+          path: [
+              {lat: fire.fire.latitude, lng: fire.fire.longitude},
+              {lat: fire.detected_wind_arrow.lat, lng: fire.detected_wind_arrow.lng}
+          ],
+          icons: [{
+              icon: { path: google.maps.SymbolPath.FORWARD_CLOSED_ARROW },
+              offset: '100%'
+          }],
+          strokeColor: '#999999',
+          strokeOpacity: 0.8,
+          strokeWeight: 2
+      });
+  };
+
+  const currentWindDirection = (fire) => {
+      return new google.maps.Polyline({
+          path: [
+              {lat: fire.fire.latitude, lng: fire.fire.longitude},
+              {lat: fire.wind_arrow.lat, lng: fire.wind_arrow.lng}
+          ],
+          icons: [{
+              icon: { path: google.maps.SymbolPath.FORWARD_CLOSED_ARROW },
+              offset: '100%'
+          }],
+          strokeColor: '#6975ff',
+          strokeOpacity: 0.8,
+          strokeWeight: 2
+      });
+  };
+
+  async function firesData() {
+      const response = await axios.get('<%= Rails.env.production? ? 'https://api.orbitaldefence.tech/' : 'http://localhost:5000'%>/api/v1/fires/?latitude=-40.739103&longitude=154.476714&distance=1000')
+      const data = await response.data;
+      return data;
+  };
+
+  const marker = (fire, map, googleMaps) => {
+          const location = { lat: fire.fire.latitude, lng: fire.fire.longitude};
+
+          const infowindow = new googleMaps.InfoWindow({
+              content: infoContent(fire)
+          });
+
+          const marker = new googleMaps.Marker({
+              position: location,
+              icon: { url: "https://cdn3.iconfinder.com/data/icons/mapicons/icons/fire.png" }
+          });
+
+          marker.addListener('click', function() {
+              infowindow.open(map, marker);
+              detectedAtWindArrow(fire).setMap(map);
+              currentWindDirection(fire).setMap(map);
+          });
+
+          // google.maps.event.addDomListener(map, 'bounds_changed', function() {
+          //     var bounds =  map.getBounds();
+          //     var ne = bounds.getNorthEast();
+          //     var sw = bounds.getSouthWest();
+          //     var zoom  = map.getZoom();
+          //
+          //     var swLatLng = `${sw.lat()}, ${sw.lng()}`;
+          //     var neLatLng = `${ne.lat()}, ${ne.lng()}`;
+          //
+          //     if (zoom === 8) currentWindDirection().setMap(map);
+          //     console.log('zoom', zoom);
+          //     console.log('swLatLng: ', swLatLng);
+          //     console.log('neLatLng: ', neLatLng);
+          //
+          // });
 
 
-    function initMap() {
-        const fetch_markers = (googleMaps, map) => {
-            axios.get('<%= Rails.env.production? ? 'https://api.orbitaldefence.tech/' : 'http://localhost:5000'%>/api/v1/fires/?latitude=-40.739103&longitude=154.476714&distance=1000')
-                .then(response => {
-                    const fires = response.data;
-                    console.log(response.data);
-                    markers = fires.map(function(fire, i) {
-                        const location = { lat: fire.fire.latitude, lng: fire.fire.longitude};
 
-                        const infoContent = `
-                        <div>
-                          <b>Fire</b><br/>
-                          Type: ${fire.fire.scan_type}<br />
-                          Date: ${fire.fire.detected_at}<br />
-                          Confidence: ${fire.fire.confidence}
-                          <hr />
-                          <b>Weather</b><br/>
-                          ${fire.weather.identifier}<br />
-                          Temp: ${fire.weather.temprature} C <br />
-                          Wind Speed: ${fire.weather.wind_speed} km/h<br />
-                          Wind Direction: ${fire.weather.wind_direction}<br />
-                          Humidity: ${fire.weather.humidity}
-                        </div>
-                        `;
+          return marker;
+  };
 
-                        const infowindow = new googleMaps.InfoWindow({
-                            content: infoContent
-                        });
+  const populateMarkers = (map, googleMaps) => {
+      firesData().then( fires => {
+          const markers = fires.map(function(fire, i) {
+              return marker(fire, map, googleMaps);
+          });
 
-                        const marker = new googleMaps.Marker({
-                            position: location,
-                            icon: { url: "https://cdn3.iconfinder.com/data/icons/mapicons/icons/fire.png" }
-                        });
+          return new MarkerClusterer(map, markers,
+              {imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'}
+          );
+        }
+      );
+  };
 
-                        marker.addListener('click', function() {
-                            infowindow.open(map, marker);
-                            detectedAtWindArrow = new google.maps.Polyline({
-                                path: [
-                                    {lat: fire.fire.latitude, lng: fire.fire.longitude},
-                                    {lat: fire.detected_wind_arrow.lat, lng: fire.detected_wind_arrow.lng}
-                                ],
-                                icons: [{
-                                    icon: { path: google.maps.SymbolPath.FORWARD_CLOSED_ARROW },
-                                    offset: '100%'
-                                }],
-                                strokeColor: '#999999',
-                                strokeOpacity: 0.8,
-                                strokeWeight: 2
-                            });
-                            detectedAtWindArrow.setMap(map);
-                        });
+  const infoContent = (fire) => {
+      return `
+        <div>
+          <b>Fire</b><br/>
+          Type: ${fire.fire.scan_type}<br />
+          Date: ${fire.fire.detected_at}<br />
+          Confidence: ${fire.fire.confidence}
+          <hr />
+          <b>Weather</b><br/>
+          ${fire.weather.identifier}<br />
+          Temp: ${fire.weather.temprature} C <br />
+          Wind Speed: ${fire.weather.wind_speed} km/h<br />
+          Wind Direction: ${fire.weather.wind_direction}<br />
+          Humidity: ${fire.weather.humidity}
+        </div>
+      `;
+  };
 
-                        currentWindDirection = new google.maps.Polyline({
-                            path: [
-                                    {lat: fire.fire.latitude, lng: fire.fire.longitude},
-                                    {lat: fire.wind_arrow.lat, lng: fire.wind_arrow.lng}
-                            ],
-                            icons: [{
-                                    icon: { path: google.maps.SymbolPath.FORWARD_CLOSED_ARROW },
-                                    offset: '100%'
-                                }],
-                                strokeColor: '#6975ff',
-                                strokeOpacity: 0.8,
-                                strokeWeight: 2
-                        });
-                        currentWindDirection.setMap(map);
+  function initMap() {
+      var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 5,
+          center: {lat: -25.263290, lng: 134.337539}
+      });
 
-                        return marker;
-                    });
-
-                    return new MarkerClusterer(map, markers,
-                        {imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'});
-                })
-        };
-        var map = new google.maps.Map(document.getElementById('map'), {
-            zoom: 5,
-            center: {lat: -25.263290, lng: 134.337539}
-        });
-
-        // Create an array of alphabetical characters used to label the markers.
-        var labels = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-
-        var markerCluster = fetch_markers(google.maps, map);
-
-
-        // Add a marker clusterer to manage the markers.
-        // var markerCluster = new MarkerClusterer(map, markers,
-        //     {imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'});
-    }
+      populateMarkers(map, google.maps);
+  }
 </script>
 <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js">
 </script>
