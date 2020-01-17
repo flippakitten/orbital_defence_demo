@@ -11,7 +11,12 @@ Rails.application.routes.draw do
 
   namespace :api do
     namespace :v1 do
-      resources :fires, only: :index
+      resources :fires, only: :index do
+        collection do
+          get '/windIndicators', to: 'fires#fires_current_wind_direction_indicator'
+        end
+      end
+      resources :weather_readings, only: :show
     end
   end
 end
