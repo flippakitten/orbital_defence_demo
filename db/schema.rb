@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_11_095208) do
+ActiveRecord::Schema.define(version: 2020_01_16_191324) do
 
   create_table "active_fires", id: :bigint, default: -> { "unique_rowid()" }, force: :cascade do |t|
     t.text "json"
@@ -41,9 +41,13 @@ ActiveRecord::Schema.define(version: 2020_01_11_095208) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "weather_reading_id"
+    t.bigint "weather_station_id"
     t.index ["detected_at"], name: "index_fires_on_detected_at"
     t.index ["identifier"], name: "index_fires_on_identifier"
     t.index ["lat_long"], name: "index_fires_on_lat_long"
+    t.index ["latitude"], name: "index_fires_on_latitude"
+    t.index ["longitude"], name: "index_fires_on_longitude"
+    t.index ["weather_station_id"], name: "index_fires_on_weather_station_id"
   end
 
   create_table "weather_readings", id: :bigint, default: -> { "unique_rowid()" }, force: :cascade do |t|

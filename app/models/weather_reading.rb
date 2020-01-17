@@ -1,6 +1,7 @@
 class WeatherReading < ApplicationRecord
   API_THROTTLE_TIME = 0.02
   belongs_to :weather_station
+  has_many :fires, through: :weather_station
 
   validates :identifier, uniqueness: true
   validates :temprature, presence: true
