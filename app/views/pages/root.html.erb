@@ -230,13 +230,13 @@
       var showWindControl = new ShowWindControl(showWindControlDiv, map);
 
       showWindControl.index = 1;
-      map.controls[google.maps.ControlPosition.RIGHT_CENTER].push(showWindControlDiv);
+      map.controls[google.maps.ControlPosition.LEFT_BOTTOM].push(showWindControlDiv);
 
       var hideWindControlDiv = document.createElement('div');
       var hideWindControl = new HideWindControl(hideWindControlDiv, map);
 
       hideWindControl.index = 2;
-      map.controls[google.maps.ControlPosition.RIGHT_CENTER].push(hideWindControlDiv);
+      map.controls[google.maps.ControlPosition.LEFT_BOTTOM].push(hideWindControlDiv);
     }
 
     function initMap() {
