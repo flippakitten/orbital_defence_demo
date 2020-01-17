@@ -4,7 +4,6 @@ class WeatherImportWorker
   def perform
     Fire.where(detected_at: (Time.now - 24.hours)..Time.now).each do |fire|
       ImportOpenweatherData.new(fire).fetch_reading_and_create_station_data
-      sleep WeatherReading::API_THROTTLE_TIME
     end
   end
 end

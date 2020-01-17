@@ -56,7 +56,10 @@ class ImportFirmsData
           detected_at: detected_at.to_datetime,
         )
 
-        fire.update_attribute(:weather_reading_id, closest_weather_reading(fire).id)
+        station, reading = fetch_weather_data(fire)
+        fire.update_attributes(weather_reading_id: reading.id)
+        fire.weather_station = station
+        fire.save!
       end
     end
 
@@ -75,11 +78,6 @@ class ImportFirmsData
       @julian_date ||= "#{Date.today.year}#{"%.3d" % Date.today.yday}".to_i
     end
 
-    def closest_weather_reading(fire)
-      station, reading = fetch_weather_data(fire)
-      reading
-    end
-
     def fetch_weather_data(fire)
       station = WeatherStation.within(10, origin: [fire.latitude, fire.longitude]).first
 
@@ -88,8 +86,6 @@ class ImportFirmsData
 
         return station, latest_reading if latest_reading&.reading_at.between?(fire.detected_at - 30.minutes, fire.detected_at + 30.minutes)
       end
-
-      sleep WeatherReading::API_THROTTLE_TIME
 
       ImportOpenweatherData.new(fire).fetch_reading_and_create_station_data
     end

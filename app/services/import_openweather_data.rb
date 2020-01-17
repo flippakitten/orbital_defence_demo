@@ -23,6 +23,8 @@ class ImportOpenweatherData
       req.url "/data/2.5/weather?lat=#{fire.latitude}&lon=#{fire.longitude}&appid=#{open_weather_key}"
     end
 
+    sleep WeatherReading::API_THROTTLE_TIME
+
     JSON.parse(response.body) if response.success?
   end
 
