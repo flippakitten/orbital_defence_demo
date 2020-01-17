@@ -139,7 +139,7 @@
   };
 
   const openInfoWindow = (marker, fire) =>{
-      fetchWeatherReading(fire.weather_reading_id).then(reading => {
+      fetchWeatherReading(fire.weather_station_id).then(reading => {
           const infowindow = new googleMaps.InfoWindow({
               content: infoContent(fire, reading)
           });

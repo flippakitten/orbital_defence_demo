@@ -1,7 +1,7 @@
 class Api::V1::WeatherReadingsController < ApplicationController
 
   def show
-    reading = WeatherReading.find(params['id'].to_i)
+    reading = WeatherStation.find(params['id'].to_i).weather_readings.last
     render json: reading.to_json, status: :ok
   end
 
