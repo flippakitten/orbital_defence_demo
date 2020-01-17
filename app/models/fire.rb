@@ -6,6 +6,9 @@ class Fire < ApplicationRecord
                    :lng_column_name => :longitude
 
   validates :identifier, uniqueness: true
+  belongs_to :weather_station
+  has_many :weather_readings, through: :weather_station
+
 
   def detected_at_weather
     WeatherReading.find_by(id: weather_reading_id)

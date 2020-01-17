@@ -5,6 +5,7 @@ class WeatherStation < ApplicationRecord
                    :lng_column_name => :longitude
 
   has_many :weather_readings, dependent: :destroy
+  has_many :fires
 
   validates :identifier, uniqueness: true
 
@@ -23,4 +24,8 @@ class WeatherStation < ApplicationRecord
       )
     end
   end
+end
+
+Fire.find_each do |fire|
+
 end

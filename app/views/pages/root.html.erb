@@ -22,7 +22,11 @@
 <div id="map"></div>
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 <script>
-  const detectedAtWindArrow = (fire) => {
+    var map;
+    var googleMaps;
+    var activeWindArrows = [];
+
+    const detectedAtWindArrow = (fire) => {
       return new google.maps.Polyline({
           path: [
               {lat: fire.fire.latitude, lng: fire.fire.longitude},
@@ -38,105 +42,212 @@
       });
   };
 
-  const currentWindDirection = (fire) => {
-      return new google.maps.Polyline({
+  const currentWindDirection = (windArrow, googleMaps) => {
+      return new googleMaps.Polyline({
           path: [
-              {lat: fire.fire.latitude, lng: fire.fire.longitude},
-              {lat: fire.wind_arrow.lat, lng: fire.wind_arrow.lng}
+              { lat: windArrow.fire.lat, lng: windArrow.fire.lng },
+              { lat: windArrow.wind.lat, lng: windArrow.wind.lng  }
           ],
           icons: [{
-              icon: { path: google.maps.SymbolPath.FORWARD_CLOSED_ARROW },
+              icon: { path: googleMaps.SymbolPath.FORWARD_CLOSED_ARROW },
               offset: '100%'
           }],
           strokeColor: '#6975ff',
           strokeOpacity: 0.8,
-          strokeWeight: 2
+          strokeWeight: 3
       });
   };
 
-  async function firesData() {
-      const response = await axios.get('<%= Rails.env.production? ? 'https://api.orbitaldefence.tech/' : 'http://localhost:5000'%>/api/v1/fires/?latitude=-40.739103&longitude=154.476714&distance=1000')
+  async function fetchWeatherReading(readingId) {
+      const response = await axios.get(`<%= Rails.env.production? ? 'https://api.orbitaldefence.tech/' : 'http://localhost:5000'%>/api/v1/weather_readings/${readingId}`);
       const data = await response.data;
       return data;
   };
 
-  const marker = (fire, map, googleMaps) => {
-          const location = { lat: fire.fire.latitude, lng: fire.fire.longitude};
+  async function firesData() {
+      const response = await axios.get('<%= Rails.env.production? ? 'https://api.orbitaldefence.tech/' : 'http://localhost:5000'%>/api/v1/fires/?sw_bound_point=-39.840939,112.913654&ne_bound_point=-11.332735,154.103939');
+      const data = await response.data;
+      return data;
 
-          const infowindow = new googleMaps.InfoWindow({
-              content: infoContent(fire)
-          });
-
-          const marker = new googleMaps.Marker({
-              position: location,
-              icon: { url: "https://cdn3.iconfinder.com/data/icons/mapicons/icons/fire.png" }
-          });
-
-          marker.addListener('click', function() {
-              infowindow.open(map, marker);
-              detectedAtWindArrow(fire).setMap(map);
-              currentWindDirection(fire).setMap(map);
-          });
-
-          // google.maps.event.addDomListener(map, 'bounds_changed', function() {
-          //     var bounds =  map.getBounds();
-          //     var ne = bounds.getNorthEast();
-          //     var sw = bounds.getSouthWest();
-          //     var zoom  = map.getZoom();
-          //
-          //     var swLatLng = `${sw.lat()}, ${sw.lng()}`;
-          //     var neLatLng = `${ne.lat()}, ${ne.lng()}`;
-          //
-          //     if (zoom === 8) currentWindDirection().setMap(map);
-          //     console.log('zoom', zoom);
-          //     console.log('swLatLng: ', swLatLng);
-          //     console.log('neLatLng: ', neLatLng);
-          //
-          // });
-
-
-
-          return marker;
   };
 
-  const populateMarkers = (map, googleMaps) => {
-      firesData().then( fires => {
-          const markers = fires.map(function(fire, i) {
-              return marker(fire, map, googleMaps);
-          });
+  async function firesWindDataInBound(swLatLng, neLatLng) {
+      const response = await axios.get(`<%= Rails.env.production? ? 'https://api.orbitaldefence.tech/' : 'http://localhost:5000'%>/api/v1/fires/windIndicators/?sw_bound_point=${swLatLng}&ne_bound_point=${neLatLng}`);
+      const data = await response.data;
+      return data;
 
-          return new MarkerClusterer(map, markers,
-              {imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'}
-          );
-        }
-      );
   };
 
-  const infoContent = (fire) => {
-      return `
-        <div>
-          <b>Fire</b><br/>
-          Type: ${fire.fire.scan_type}<br />
-          Date: ${fire.fire.detected_at}<br />
-          Confidence: ${fire.fire.confidence}
-          <hr />
-          <b>Weather</b><br/>
-          ${fire.weather.identifier}<br />
-          Temp: ${fire.weather.temprature} C <br />
-          Wind Speed: ${fire.weather.wind_speed} km/h<br />
-          Wind Direction: ${fire.weather.wind_direction}<br />
-          Humidity: ${fire.weather.humidity}
-        </div>
-      `;
+  const marker = (fire) => {
+    const location = { lat: fire.latitude, lng: fire.longitude};
+    // const currentWindDirectionArrow = currentWindDirection(fire);
+    // const detectedAtWindDirectionArrow = detectedAtWindArrow(fire);
+
+    const marker = new googleMaps.Marker({
+        position: location,
+        icon: { url: "https://cdn3.iconfinder.com/data/icons/mapicons/icons/fire.png" }
+    });
+
+    googleMaps.event.addDomListener(marker, "click", function() {
+        openInfoWindow(marker, fire);
+    });
+
+    return marker;
   };
 
-  function initMap() {
-      var map = new google.maps.Map(document.getElementById('map'), {
-          zoom: 5,
-          center: {lat: -25.263290, lng: 134.337539}
+  const populateMarkers = () => {
+    firesData().then( fires => {
+      let markers = [];
+
+      fires.map(function(fire, i) {
+          markers.push(marker(fire));
       });
 
-      populateMarkers(map, google.maps);
+      new MarkerClusterer(map, markers,
+          {
+            imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m',
+            minimumClusterSize: 20
+          }
+      );
+    });
+  };
+
+  const showWindArrows = () => {
+      var bounds =  map.getBounds();
+      var ne = bounds.getNorthEast();
+      var sw = bounds.getSouthWest();
+
+      var swLatLng = `${sw.lat()},${sw.lng()}`;
+      var neLatLng = `${ne.lat()},${ne.lng()}`;
+
+      firesWindDataInBound(swLatLng, neLatLng).then(windArrows => {
+          activeWindArrows = windArrows.map(function(windArrow) {
+              return currentWindDirection(windArrow, googleMaps);
+          });
+
+          activeWindArrows.forEach( arrow => arrow.setMap(map));
+      })
+  };
+
+  const hideWindArrows = () => {
+    if (activeWindArrows.length > 0) {
+      activeWindArrows.forEach((arrow) => {
+          arrow.setMap(null)
+      });
+      activeWindArrows = [];
+    }
+  };
+
+  const openInfoWindow = (marker, fire) =>{
+      fetchWeatherReading(fire.weather_reading_id).then(reading => {
+          const infowindow = new googleMaps.InfoWindow({
+              content: infoContent(fire, reading)
+          });
+
+          infowindow.open(map, marker);
+      });
+  };
+
+  const infoContent = (fire, reading) => {
+    return `
+      <div>
+        <b>Fire</b><br/>
+        Type: ${fire.scan_type}<br />
+        Date: ${fire.detected_at}<br />
+        Confidence: ${fire.confidence}
+        <hr />
+        <b>Weather</b><br/>
+        ${reading.identifier}<br />
+        Temp: ${reading.temprature} C <br />
+        Wind Speed: ${reading.wind_speed} km/h<br />
+        Wind Direction: ${reading.wind_direction}<br />
+        Humidity: ${reading.humidity}
+      </div>
+    `;
+  };
+
+  function ShowWindControl(controlDiv) {
+
+      // Set CSS for the control border.
+      var controlUI = document.createElement('div');
+      controlUI.style.backgroundColor = '#6975ff';
+      controlUI.style.border = '2px solid #6975ff';
+      controlUI.style.borderRadius = '3px';
+      controlUI.style.boxShadow = '0 2px 6px rgba(0,0,0,.3)';
+      controlUI.style.cursor = 'pointer';
+      controlUI.style.marginBottom = '22px';
+      controlUI.style.textAlign = 'center';
+      controlUI.title = 'Show Current Wind Direction';
+      controlDiv.appendChild(controlUI);
+
+      // Set CSS for the control interior.
+      var controlText = document.createElement('div');
+      controlText.style.color = 'rgb(255,255,255)';
+      controlText.style.fontFamily = 'Roboto,Arial,sans-serif';
+      controlText.style.fontSize = '16px';
+      controlText.style.lineHeight = '38px';
+      controlText.style.paddingLeft = '5px';
+      controlText.style.paddingRight = '5px';
+      controlText.innerHTML = 'Show Current Wind Direction';
+      controlUI.appendChild(controlText);
+
+      controlUI.addEventListener('click', function() {
+          showWindArrows();
+      });
+
+  }
+
+    function HideWindControl(controlDiv) {
+        var controlUI = document.createElement('div');
+        controlUI.style.backgroundColor = '#fff';
+        controlUI.style.border = '2px solid #fff';
+        controlUI.style.borderRadius = '3px';
+        controlUI.style.boxShadow = '0 2px 6px rgba(0,0,0,.3)';
+        controlUI.style.cursor = 'pointer';
+        controlUI.style.marginBottom = '22px';
+        controlUI.style.textAlign = 'center';
+        controlUI.title = 'Hide Current Wind Direction';
+        controlDiv.appendChild(controlUI);
+
+        var controlText = document.createElement('div');
+        controlText.style.color = 'rgb(25,25,25)';
+        controlText.style.fontFamily = 'Roboto,Arial,sans-serif';
+        controlText.style.fontSize = '16px';
+        controlText.style.lineHeight = '38px';
+        controlText.style.paddingLeft = '5px';
+        controlText.style.paddingRight = '5px';
+        controlText.innerHTML = 'Hide Current Wind Direction';
+        controlUI.appendChild(controlText);
+
+        controlUI.addEventListener('click', function() {
+            hideWindArrows();
+        });
+
+    }
+
+    function windControls() {
+      var showWindControlDiv = document.createElement('div');
+      var showWindControl = new ShowWindControl(showWindControlDiv, map);
+
+      showWindControl.index = 1;
+      map.controls[google.maps.ControlPosition.RIGHT_CENTER].push(showWindControlDiv);
+
+      var hideWindControlDiv = document.createElement('div');
+      var hideWindControl = new HideWindControl(hideWindControlDiv, map);
+
+      hideWindControl.index = 2;
+      map.controls[google.maps.ControlPosition.RIGHT_CENTER].push(hideWindControlDiv);
+    }
+
+    function initMap() {
+      googleMaps = google.maps;
+      map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 5,
+          center: { lat: -25.263290, lng: 134.337539 }
+      });
+
+      populateMarkers();
+      windControls()
   }
 </script>
 <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js">
