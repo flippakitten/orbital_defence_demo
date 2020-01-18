@@ -121,11 +121,13 @@
       var neLatLng = `${ne.lat()},${ne.lng()}`;
 
       firesWindDataInBound(swLatLng, neLatLng).then(windArrows => {
-          activeWindArrows = windArrows.map(function(windArrow) {
-              return currentWindDirection(windArrow, googleMaps);
+          windArrows.forEach(function(windArrow) {
+              var arrowObject = currentWindDirection(windArrow, googleMaps);
+              arrowObject.setMap(map);
+              activeWindArrows.push(arrowObject);
           });
 
-          activeWindArrows.forEach( arrow => arrow.setMap(map));
+          // activeWindArrows.forEach( arrow => arrow.setMap(map));
       })
   };
 
