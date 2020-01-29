@@ -1,0 +1,4766 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://nrt4.modaps.eosdis.nasa.gov/api/v2/content/archives/FIRMS/c6/Australia_NewZealand/MODIS_C6_Australia_NewZealand_MCD14DL_NRT_2020022.txt
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.15.4
+      Authorization:
+      - Bearer 6EBE7332-DEDC-11E8-A43D-E989E0321698
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - openresty
+      date:
+      - Wed, 22 Jan 2020 08:04:38 GMT
+      content-type:
+      - text/plain;charset=UTF-8
+      content-length:
+      - '8544'
+      connection:
+      - close
+      last-modified:
+      - Wed, 22 Jan 2020 08:02:34 GMT
+      accept-ranges:
+      - bytes
+      access-control-allow-credentials:
+      - 'true'
+      etag:
+      - '"b3843be5838e634302cbb346952957db"'
+      content-disposition:
+      - attachment; filename=MODIS_C6_Australia_NewZealand_MCD14DL_NRT_2020022.txt
+      x-frame-options:
+      - SAMEORIGIN
+      strict-transport-security:
+      - max-age=31536000; includeSubDomains
+    body:
+      encoding: UTF-8
+      string: |
+        latitude,longitude,brightness,scan,track,acq_date,acq_time,satellite,confidence,version,bright_t31,frp,daynight
+        -12.875,142.334,309.8,1.5,1.2,2020-01-22,01:05,T,17,6.0NRT,284.4,9.2,D
+        -12.878,142.327,310.4,1.5,1.2,2020-01-22,01:05,T,44,6.0NRT,283.9,11.4,D
+        -18.866,139.325,335.1,1.2,1.1,2020-01-22,01:10,T,78,6.0NRT,292.8,33.8,D
+    http_version: 
+  recorded_at: Wed, 22 Jan 2020 08:04:38 GMT
+- request:
+    method: get
+    uri: http://api.openweathermap.org/data/2.5/weather?appid=f0c6910d83bee3ef361afdba870cca37&lat=-12.875&lon=142.334
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.15.4
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - openresty
+      date:
+      - Wed, 22 Jan 2020 08:04:38 GMT
+      content-type:
+      - application/json; charset=utf-8
+      content-length:
+      - '482'
+      connection:
+      - close
+      x-cache-key:
+      - "/data/2.5/weather?lat=-12.88&lon=142.33"
+      access-control-allow-origin:
+      - "*"
+      access-control-allow-credentials:
+      - 'true'
+      access-control-allow-methods:
+      - GET, POST
+    body:
+      encoding: UTF-8
+      string: '{"coord":{"lon":142.33,"lat":-12.88},"weather":[{"id":520,"main":"Rain","description":"light
+        intensity shower rain","icon":"09d"}],"base":"stations","main":{"temp":300.15,"feels_like":302.78,"temp_min":300.15,"temp_max":300.15,"pressure":1008,"humidity":78},"visibility":10000,"wind":{"speed":3.6,"deg":270},"clouds":{"all":40},"dt":1579680278,"sys":{"type":1,"id":9509,"country":"AU","sunrise":1579637951,"sunset":1579683865},"timezone":36000,"id":2144209,"name":"Weipa","cod":200}'
+    http_version: 
+  recorded_at: Wed, 22 Jan 2020 08:04:38 GMT
+- request:
+    method: get
+    uri: http://api.openweathermap.org/data/2.5/weather?appid=f0c6910d83bee3ef361afdba870cca37&lat=-12.878&lon=142.327
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.15.4
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - openresty
+      date:
+      - Wed, 22 Jan 2020 08:04:38 GMT
+      content-type:
+      - application/json; charset=utf-8
+      content-length:
+      - '482'
+      connection:
+      - close
+      x-cache-key:
+      - "/data/2.5/weather?lat=-12.88&lon=142.33"
+      access-control-allow-origin:
+      - "*"
+      access-control-allow-credentials:
+      - 'true'
+      access-control-allow-methods:
+      - GET, POST
+    body:
+      encoding: UTF-8
+      string: '{"coord":{"lon":142.33,"lat":-12.88},"weather":[{"id":520,"main":"Rain","description":"light
+        intensity shower rain","icon":"09d"}],"base":"stations","main":{"temp":300.15,"feels_like":302.78,"temp_min":300.15,"temp_max":300.15,"pressure":1008,"humidity":78},"visibility":10000,"wind":{"speed":3.6,"deg":270},"clouds":{"all":40},"dt":1579680278,"sys":{"type":1,"id":9509,"country":"AU","sunrise":1579637951,"sunset":1579683865},"timezone":36000,"id":2144209,"name":"Weipa","cod":200}'
+    http_version: 
+  recorded_at: Wed, 22 Jan 2020 08:04:38 GMT
+- request:
+    method: get
+    uri: http://api.openweathermap.org/data/2.5/weather?appid=f0c6910d83bee3ef361afdba870cca37&lat=-18.866&lon=139.325
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.15.4
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - openresty
+      date:
+      - Wed, 22 Jan 2020 08:04:38 GMT
+      content-type:
+      - application/json; charset=utf-8
+      content-length:
+      - '478'
+      connection:
+      - close
+      x-cache-key:
+      - "/data/2.5/weather?lat=-18.87&lon=139.32"
+      access-control-allow-origin:
+      - "*"
+      access-control-allow-credentials:
+      - 'true'
+      access-control-allow-methods:
+      - GET, POST
+    body:
+      encoding: UTF-8
+      string: '{"coord":{"lon":139.32,"lat":-18.87},"weather":[{"id":500,"main":"Rain","description":"light
+        rain","icon":"10d"}],"base":"model","main":{"temp":301.13,"feels_like":301.06,"temp_min":301.13,"temp_max":301.13,"pressure":1005,"humidity":72,"sea_level":1005,"grnd_level":992},"wind":{"speed":7.16,"deg":322},"rain":{"3h":0.25},"clouds":{"all":87},"dt":1579680278,"sys":{"country":"AU","sunrise":1579638100,"sunset":1579685160},"timezone":36000,"id":7839566,"name":"Burke","cod":200}'
+    http_version: 
+  recorded_at: Wed, 22 Jan 2020 08:04:38 GMT
+- request:
+    method: get
+    uri: http://api.openweathermap.org/data/2.5/weather?appid=f0c6910d83bee3ef361afdba870cca37&lat=-19.358&lon=144.618
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.15.4
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - openresty
+      date:
+      - Wed, 22 Jan 2020 08:04:38 GMT
+      content-type:
+      - application/json; charset=utf-8
+      content-length:
+      - '483'
+      connection:
+      - close
+      x-cache-key:
+      - "/data/2.5/weather?lat=-19.36&lon=144.62"
+      access-control-allow-origin:
+      - "*"
+      access-control-allow-credentials:
+      - 'true'
+      access-control-allow-methods:
+      - GET, POST
+    body:
+      encoding: UTF-8
+      string: '{"coord":{"lon":144.62,"lat":-19.36},"weather":[{"id":500,"main":"Rain","description":"light
+        rain","icon":"10d"}],"base":"model","main":{"temp":297.72,"feels_like":300.17,"temp_min":297.72,"temp_max":297.72,"pressure":1008,"humidity":76,"sea_level":1008,"grnd_level":929},"wind":{"speed":1.82,"deg":123},"rain":{"3h":2.81},"clouds":{"all":99},"dt":1579680279,"sys":{"country":"AU","sunrise":1579636779,"sunset":1579683937},"timezone":36000,"id":2152274,"name":"Queensland","cod":200}'
+    http_version: 
+  recorded_at: Wed, 22 Jan 2020 08:04:39 GMT
+- request:
+    method: get
+    uri: http://api.openweathermap.org/data/2.5/weather?appid=f0c6910d83bee3ef361afdba870cca37&lat=-21.867&lon=115.72
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.15.4
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - openresty
+      date:
+      - Wed, 22 Jan 2020 08:04:39 GMT
+      content-type:
+      - application/json; charset=utf-8
+      content-length:
+      - '459'
+      connection:
+      - close
+      x-cache-key:
+      - "/data/2.5/weather?lat=-21.87&lon=115.72"
+      access-control-allow-origin:
+      - "*"
+      access-control-allow-credentials:
+      - 'true'
+      access-control-allow-methods:
+      - GET, POST
+    body:
+      encoding: UTF-8
+      string: '{"coord":{"lon":115.72,"lat":-21.87},"weather":[{"id":800,"main":"Clear","description":"clear
+        sky","icon":"01d"}],"base":"model","main":{"temp":314.16,"feels_like":309.64,"temp_min":314.16,"temp_max":314.16,"pressure":1005,"humidity":11,"sea_level":1005,"grnd_level":996},"wind":{"speed":4.76,"deg":250},"clouds":{"all":0},"dt":1579680279,"sys":{"country":"AU","sunrise":1579643463,"sunset":1579691128},"timezone":28800,"id":2064155,"name":"Onslow","cod":200}'
+    http_version: 
+  recorded_at: Wed, 22 Jan 2020 08:04:39 GMT
+- request:
+    method: get
+    uri: http://api.openweathermap.org/data/2.5/weather?appid=f0c6910d83bee3ef361afdba870cca37&lat=-21.894&lon=118.222
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.15.4
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - openresty
+      date:
+      - Wed, 22 Jan 2020 08:04:39 GMT
+      content-type:
+      - application/json; charset=utf-8
+      content-length:
+      - '462'
+      connection:
+      - close
+      x-cache-key:
+      - "/data/2.5/weather?lat=-21.89&lon=118.22"
+      access-control-allow-origin:
+      - "*"
+      access-control-allow-credentials:
+      - 'true'
+      access-control-allow-methods:
+      - GET, POST
+    body:
+      encoding: UTF-8
+      string: '{"coord":{"lon":118.22,"lat":-21.89},"weather":[{"id":800,"main":"Clear","description":"clear
+        sky","icon":"01d"}],"base":"model","main":{"temp":312.08,"feels_like":307.23,"temp_min":312.08,"temp_max":312.08,"pressure":1004,"humidity":16,"sea_level":1004,"grnd_level":954},"wind":{"speed":6.44,"deg":321},"clouds":{"all":0},"dt":1579680279,"sys":{"country":"AU","sunrise":1579642860,"sunset":1579690530},"timezone":28800,"id":6354929,"name":"Tom
+        Price","cod":200}'
+    http_version: 
+  recorded_at: Wed, 22 Jan 2020 08:04:39 GMT
+- request:
+    method: get
+    uri: http://api.openweathermap.org/data/2.5/weather?appid=f0c6910d83bee3ef361afdba870cca37&lat=-21.857&lon=115.722
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.15.4
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - openresty
+      date:
+      - Wed, 22 Jan 2020 08:04:39 GMT
+      content-type:
+      - application/json; charset=utf-8
+      content-length:
+      - '459'
+      connection:
+      - close
+      x-cache-key:
+      - "/data/2.5/weather?lat=-21.86&lon=115.72"
+      access-control-allow-origin:
+      - "*"
+      access-control-allow-credentials:
+      - 'true'
+      access-control-allow-methods:
+      - GET, POST
+    body:
+      encoding: UTF-8
+      string: '{"coord":{"lon":115.72,"lat":-21.86},"weather":[{"id":800,"main":"Clear","description":"clear
+        sky","icon":"01d"}],"base":"model","main":{"temp":314.16,"feels_like":309.64,"temp_min":314.16,"temp_max":314.16,"pressure":1005,"humidity":11,"sea_level":1005,"grnd_level":996},"wind":{"speed":4.76,"deg":250},"clouds":{"all":0},"dt":1579680279,"sys":{"country":"AU","sunrise":1579643464,"sunset":1579691127},"timezone":28800,"id":2064155,"name":"Onslow","cod":200}'
+    http_version: 
+  recorded_at: Wed, 22 Jan 2020 08:04:39 GMT
+- request:
+    method: get
+    uri: http://api.openweathermap.org/data/2.5/weather?appid=f0c6910d83bee3ef361afdba870cca37&lat=-21.855&lon=115.708
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.15.4
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - openresty
+      date:
+      - Wed, 22 Jan 2020 08:04:39 GMT
+      content-type:
+      - application/json; charset=utf-8
+      content-length:
+      - '459'
+      connection:
+      - close
+      x-cache-key:
+      - "/data/2.5/weather?lat=-21.86&lon=115.71"
+      access-control-allow-origin:
+      - "*"
+      access-control-allow-credentials:
+      - 'true'
+      access-control-allow-methods:
+      - GET, POST
+    body:
+      encoding: UTF-8
+      string: '{"coord":{"lon":115.71,"lat":-21.86},"weather":[{"id":800,"main":"Clear","description":"clear
+        sky","icon":"01d"}],"base":"model","main":{"temp":314.16,"feels_like":309.64,"temp_min":314.16,"temp_max":314.16,"pressure":1005,"humidity":11,"sea_level":1005,"grnd_level":996},"wind":{"speed":4.76,"deg":250},"clouds":{"all":0},"dt":1579680279,"sys":{"country":"AU","sunrise":1579643466,"sunset":1579691130},"timezone":28800,"id":2064155,"name":"Onslow","cod":200}'
+    http_version: 
+  recorded_at: Wed, 22 Jan 2020 08:04:39 GMT
+- request:
+    method: get
+    uri: http://api.openweathermap.org/data/2.5/weather?appid=f0c6910d83bee3ef361afdba870cca37&lat=-30.087&lon=150.053
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.15.4
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - openresty
+      date:
+      - Wed, 22 Jan 2020 08:04:39 GMT
+      content-type:
+      - application/json; charset=utf-8
+      content-length:
+      - '466'
+      connection:
+      - close
+      x-cache-key:
+      - "/data/2.5/weather?lat=-30.09&lon=150.05"
+      access-control-allow-origin:
+      - "*"
+      access-control-allow-credentials:
+      - 'true'
+      access-control-allow-methods:
+      - GET, POST
+    body:
+      encoding: UTF-8
+      string: '{"coord":{"lon":150.05,"lat":-30.09},"weather":[{"id":800,"main":"Clear","description":"clear
+        sky","icon":"01d"}],"base":"stations","main":{"temp":312.19,"feels_like":308.32,"temp_min":311.48,"temp_max":313.15,"pressure":1005,"humidity":10},"visibility":10000,"wind":{"speed":3.1,"deg":360},"clouds":{"all":0},"dt":1579680279,"sys":{"type":1,"id":9563,"country":"AU","sunrise":1579634299,"sunset":1579683810},"timezone":39600,"id":2167767,"name":"Edgeroi","cod":200}'
+    http_version: 
+  recorded_at: Wed, 22 Jan 2020 08:04:39 GMT
+- request:
+    method: get
+    uri: http://api.openweathermap.org/data/2.5/weather?appid=f0c6910d83bee3ef361afdba870cca37&lat=-30.097&lon=150.045
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.15.4
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - openresty
+      date:
+      - Wed, 22 Jan 2020 08:04:39 GMT
+      content-type:
+      - application/json; charset=utf-8
+      content-length:
+      - '465'
+      connection:
+      - close
+      x-cache-key:
+      - "/data/2.5/weather?lat=-30.1&lon=150.04"
+      access-control-allow-origin:
+      - "*"
+      access-control-allow-credentials:
+      - 'true'
+      access-control-allow-methods:
+      - GET, POST
+    body:
+      encoding: UTF-8
+      string: '{"coord":{"lon":150.04,"lat":-30.1},"weather":[{"id":800,"main":"Clear","description":"clear
+        sky","icon":"01d"}],"base":"stations","main":{"temp":312.18,"feels_like":308.31,"temp_min":311.48,"temp_max":313.15,"pressure":1005,"humidity":10},"visibility":10000,"wind":{"speed":3.1,"deg":360},"clouds":{"all":0},"dt":1579680279,"sys":{"type":1,"id":9563,"country":"AU","sunrise":1579634300,"sunset":1579683813},"timezone":39600,"id":2167767,"name":"Edgeroi","cod":200}'
+    http_version: 
+  recorded_at: Wed, 22 Jan 2020 08:04:39 GMT
+- request:
+    method: get
+    uri: http://api.openweathermap.org/data/2.5/weather?appid=f0c6910d83bee3ef361afdba870cca37&lat=-30.108&lon=150.036
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.15.4
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - openresty
+      date:
+      - Wed, 22 Jan 2020 08:04:39 GMT
+      content-type:
+      - application/json; charset=utf-8
+      content-length:
+      - '466'
+      connection:
+      - close
+      x-cache-key:
+      - "/data/2.5/weather?lat=-30.11&lon=150.04"
+      access-control-allow-origin:
+      - "*"
+      access-control-allow-credentials:
+      - 'true'
+      access-control-allow-methods:
+      - GET, POST
+    body:
+      encoding: UTF-8
+      string: '{"coord":{"lon":150.04,"lat":-30.11},"weather":[{"id":800,"main":"Clear","description":"clear
+        sky","icon":"01d"}],"base":"stations","main":{"temp":311.82,"feels_like":307.91,"temp_min":311.48,"temp_max":312.15,"pressure":1005,"humidity":10},"visibility":10000,"wind":{"speed":3.1,"deg":360},"clouds":{"all":0},"dt":1579680279,"sys":{"type":1,"id":9563,"country":"AU","sunrise":1579634299,"sunset":1579683815},"timezone":39600,"id":2167767,"name":"Edgeroi","cod":200}'
+    http_version: 
+  recorded_at: Wed, 22 Jan 2020 08:04:39 GMT
+- request:
+    method: get
+    uri: http://api.openweathermap.org/data/2.5/weather?appid=f0c6910d83bee3ef361afdba870cca37&lat=-30.106&lon=150.046
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.15.4
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - openresty
+      date:
+      - Wed, 22 Jan 2020 08:04:39 GMT
+      content-type:
+      - application/json; charset=utf-8
+      content-length:
+      - '472'
+      connection:
+      - close
+      x-cache-key:
+      - "/data/2.5/weather?lat=-30.11&lon=150.05"
+      access-control-allow-origin:
+      - "*"
+      access-control-allow-credentials:
+      - 'true'
+      access-control-allow-methods:
+      - GET, POST
+    body:
+      encoding: UTF-8
+      string: '{"coord":{"lon":150.05,"lat":-30.11},"weather":[{"id":800,"main":"Clear","description":"clear
+        sky","icon":"01d"}],"base":"stations","main":{"temp":311.82,"feels_like":307.91,"temp_min":311.48,"temp_max":312.15,"pressure":1005,"humidity":10},"visibility":10000,"wind":{"speed":3.1,"deg":360},"clouds":{"all":0},"dt":1579680279,"sys":{"type":1,"id":9563,"country":"AU","sunrise":1579634297,"sunset":1579683812},"timezone":39600,"id":2173490,"name":"Bullawa
+        Creek","cod":200}'
+    http_version: 
+  recorded_at: Wed, 22 Jan 2020 08:04:39 GMT
+- request:
+    method: get
+    uri: http://api.openweathermap.org/data/2.5/weather?appid=f0c6910d83bee3ef361afdba870cca37&lat=-30.117&lon=150.038
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.15.4
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - openresty
+      date:
+      - Wed, 22 Jan 2020 08:04:39 GMT
+      content-type:
+      - application/json; charset=utf-8
+      content-length:
+      - '472'
+      connection:
+      - close
+      x-cache-key:
+      - "/data/2.5/weather?lat=-30.12&lon=150.04"
+      access-control-allow-origin:
+      - "*"
+      access-control-allow-credentials:
+      - 'true'
+      access-control-allow-methods:
+      - GET, POST
+    body:
+      encoding: UTF-8
+      string: '{"coord":{"lon":150.04,"lat":-30.12},"weather":[{"id":800,"main":"Clear","description":"clear
+        sky","icon":"01d"}],"base":"stations","main":{"temp":311.82,"feels_like":307.91,"temp_min":311.48,"temp_max":312.15,"pressure":1005,"humidity":10},"visibility":10000,"wind":{"speed":3.1,"deg":360},"clouds":{"all":0},"dt":1579680279,"sys":{"type":1,"id":9563,"country":"AU","sunrise":1579634298,"sunset":1579683816},"timezone":39600,"id":2173490,"name":"Bullawa
+        Creek","cod":200}'
+    http_version: 
+  recorded_at: Wed, 22 Jan 2020 08:04:39 GMT
+- request:
+    method: get
+    uri: http://api.openweathermap.org/data/2.5/weather?appid=f0c6910d83bee3ef361afdba870cca37&lat=-30.115&lon=150.048
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.15.4
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - openresty
+      date:
+      - Wed, 22 Jan 2020 08:04:40 GMT
+      content-type:
+      - application/json; charset=utf-8
+      content-length:
+      - '472'
+      connection:
+      - close
+      x-cache-key:
+      - "/data/2.5/weather?lat=-30.11&lon=150.05"
+      access-control-allow-origin:
+      - "*"
+      access-control-allow-credentials:
+      - 'true'
+      access-control-allow-methods:
+      - GET, POST
+    body:
+      encoding: UTF-8
+      string: '{"coord":{"lon":150.05,"lat":-30.11},"weather":[{"id":800,"main":"Clear","description":"clear
+        sky","icon":"01d"}],"base":"stations","main":{"temp":311.82,"feels_like":307.91,"temp_min":311.48,"temp_max":312.15,"pressure":1005,"humidity":10},"visibility":10000,"wind":{"speed":3.1,"deg":360},"clouds":{"all":0},"dt":1579680279,"sys":{"type":1,"id":9563,"country":"AU","sunrise":1579634297,"sunset":1579683812},"timezone":39600,"id":2173490,"name":"Bullawa
+        Creek","cod":200}'
+    http_version: 
+  recorded_at: Wed, 22 Jan 2020 08:04:40 GMT
+- request:
+    method: get
+    uri: http://api.openweathermap.org/data/2.5/weather?appid=f0c6910d83bee3ef361afdba870cca37&lat=-30.127&lon=150.029
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.15.4
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - openresty
+      date:
+      - Wed, 22 Jan 2020 08:04:40 GMT
+      content-type:
+      - application/json; charset=utf-8
+      content-length:
+      - '472'
+      connection:
+      - close
+      x-cache-key:
+      - "/data/2.5/weather?lat=-30.13&lon=150.03"
+      access-control-allow-origin:
+      - "*"
+      access-control-allow-credentials:
+      - 'true'
+      access-control-allow-methods:
+      - GET, POST
+    body:
+      encoding: UTF-8
+      string: '{"coord":{"lon":150.03,"lat":-30.13},"weather":[{"id":800,"main":"Clear","description":"clear
+        sky","icon":"01d"}],"base":"stations","main":{"temp":311.82,"feels_like":307.91,"temp_min":311.48,"temp_max":312.15,"pressure":1005,"humidity":10},"visibility":10000,"wind":{"speed":3.1,"deg":360},"clouds":{"all":0},"dt":1579680280,"sys":{"type":1,"id":9563,"country":"AU","sunrise":1579634299,"sunset":1579683820},"timezone":39600,"id":2173490,"name":"Bullawa
+        Creek","cod":200}'
+    http_version: 
+  recorded_at: Wed, 22 Jan 2020 08:04:40 GMT
+- request:
+    method: get
+    uri: http://api.openweathermap.org/data/2.5/weather?appid=f0c6910d83bee3ef361afdba870cca37&lat=-30.126&lon=150.04
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.15.4
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - openresty
+      date:
+      - Wed, 22 Jan 2020 08:04:40 GMT
+      content-type:
+      - application/json; charset=utf-8
+      content-length:
+      - '472'
+      connection:
+      - close
+      x-cache-key:
+      - "/data/2.5/weather?lat=-30.13&lon=150.04"
+      access-control-allow-origin:
+      - "*"
+      access-control-allow-credentials:
+      - 'true'
+      access-control-allow-methods:
+      - GET, POST
+    body:
+      encoding: UTF-8
+      string: '{"coord":{"lon":150.04,"lat":-30.13},"weather":[{"id":800,"main":"Clear","description":"clear
+        sky","icon":"01d"}],"base":"stations","main":{"temp":311.82,"feels_like":307.91,"temp_min":311.48,"temp_max":312.15,"pressure":1005,"humidity":10},"visibility":10000,"wind":{"speed":3.1,"deg":360},"clouds":{"all":0},"dt":1579680280,"sys":{"type":1,"id":9563,"country":"AU","sunrise":1579634297,"sunset":1579683817},"timezone":39600,"id":2173490,"name":"Bullawa
+        Creek","cod":200}'
+    http_version: 
+  recorded_at: Wed, 22 Jan 2020 08:04:40 GMT
+- request:
+    method: get
+    uri: http://api.openweathermap.org/data/2.5/weather?appid=f0c6910d83bee3ef361afdba870cca37&lat=-30.124&lon=150.05
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.15.4
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - openresty
+      date:
+      - Wed, 22 Jan 2020 08:04:40 GMT
+      content-type:
+      - application/json; charset=utf-8
+      content-length:
+      - '472'
+      connection:
+      - close
+      x-cache-key:
+      - "/data/2.5/weather?lat=-30.12&lon=150.05"
+      access-control-allow-origin:
+      - "*"
+      access-control-allow-credentials:
+      - 'true'
+      access-control-allow-methods:
+      - GET, POST
+    body:
+      encoding: UTF-8
+      string: '{"coord":{"lon":150.05,"lat":-30.12},"weather":[{"id":800,"main":"Clear","description":"clear
+        sky","icon":"01d"}],"base":"stations","main":{"temp":311.82,"feels_like":307.91,"temp_min":311.48,"temp_max":312.15,"pressure":1005,"humidity":10},"visibility":10000,"wind":{"speed":3.1,"deg":360},"clouds":{"all":0},"dt":1579680280,"sys":{"type":1,"id":9563,"country":"AU","sunrise":1579634296,"sunset":1579683814},"timezone":39600,"id":2173490,"name":"Bullawa
+        Creek","cod":200}'
+    http_version: 
+  recorded_at: Wed, 22 Jan 2020 08:04:40 GMT
+- request:
+    method: get
+    uri: http://api.openweathermap.org/data/2.5/weather?appid=f0c6910d83bee3ef361afdba870cca37&lat=-30.12&lon=150.081
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.15.4
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - openresty
+      date:
+      - Wed, 22 Jan 2020 08:04:40 GMT
+      content-type:
+      - application/json; charset=utf-8
+      content-length:
+      - '472'
+      connection:
+      - close
+      x-cache-key:
+      - "/data/2.5/weather?lat=-30.12&lon=150.08"
+      access-control-allow-origin:
+      - "*"
+      access-control-allow-credentials:
+      - 'true'
+      access-control-allow-methods:
+      - GET, POST
+    body:
+      encoding: UTF-8
+      string: '{"coord":{"lon":150.08,"lat":-30.12},"weather":[{"id":800,"main":"Clear","description":"clear
+        sky","icon":"01d"}],"base":"stations","main":{"temp":311.82,"feels_like":307.91,"temp_min":311.48,"temp_max":312.15,"pressure":1005,"humidity":10},"visibility":10000,"wind":{"speed":3.1,"deg":360},"clouds":{"all":0},"dt":1579680280,"sys":{"type":1,"id":9563,"country":"AU","sunrise":1579634288,"sunset":1579683806},"timezone":39600,"id":2173490,"name":"Bullawa
+        Creek","cod":200}'
+    http_version: 
+  recorded_at: Wed, 22 Jan 2020 08:04:40 GMT
+- request:
+    method: get
+    uri: http://api.openweathermap.org/data/2.5/weather?appid=f0c6910d83bee3ef361afdba870cca37&lat=-29.9&lon=151.61
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.15.4
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - openresty
+      date:
+      - Wed, 22 Jan 2020 08:04:40 GMT
+      content-type:
+      - application/json; charset=utf-8
+      content-length:
+      - '468'
+      connection:
+      - close
+      x-cache-key:
+      - "/data/2.5/weather?lat=-29.9&lon=151.61"
+      access-control-allow-origin:
+      - "*"
+      access-control-allow-credentials:
+      - 'true'
+      access-control-allow-methods:
+      - GET, POST
+    body:
+      encoding: UTF-8
+      string: '{"coord":{"lon":151.61,"lat":-29.9},"weather":[{"id":803,"main":"Clouds","description":"broken
+        clouds","icon":"04d"}],"base":"stations","main":{"temp":300.95,"feels_like":300.26,"temp_min":299.26,"temp_max":302.59,"pressure":1011,"humidity":32},"wind":{"speed":0.89,"deg":213,"gust":3.13},"clouds":{"all":73},"dt":1579680280,"sys":{"type":3,"id":2017978,"country":"AU","sunrise":1579633948,"sunset":1579683412},"timezone":39600,"id":2158460,"name":"Maybole","cod":200}'
+    http_version: 
+  recorded_at: Wed, 22 Jan 2020 08:04:40 GMT
+- request:
+    method: get
+    uri: http://api.openweathermap.org/data/2.5/weather?appid=f0c6910d83bee3ef361afdba870cca37&lat=-31.98&lon=149.039
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.15.4
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - openresty
+      date:
+      - Wed, 22 Jan 2020 08:04:40 GMT
+      content-type:
+      - application/json; charset=utf-8
+      content-length:
+      - '470'
+      connection:
+      - close
+      x-cache-key:
+      - "/data/2.5/weather?lat=-31.98&lon=149.04"
+      access-control-allow-origin:
+      - "*"
+      access-control-allow-credentials:
+      - 'true'
+      access-control-allow-methods:
+      - GET, POST
+    body:
+      encoding: UTF-8
+      string: '{"coord":{"lon":149.04,"lat":-31.98},"weather":[{"id":800,"main":"Clear","description":"clear
+        sky","icon":"01d"}],"base":"stations","main":{"temp":307.99,"feels_like":302.02,"temp_min":306.48,"temp_max":309.15,"pressure":1005,"humidity":11},"visibility":10000,"wind":{"speed":5.7,"deg":340},"clouds":{"all":0},"dt":1579680280,"sys":{"type":1,"id":9596,"country":"AU","sunrise":1579634307,"sunset":1579684287},"timezone":39600,"id":2167467,"name":"Elong
+        Elong","cod":200}'
+    http_version: 
+  recorded_at: Wed, 22 Jan 2020 08:04:40 GMT
+- request:
+    method: get
+    uri: http://api.openweathermap.org/data/2.5/weather?appid=f0c6910d83bee3ef361afdba870cca37&lat=-31.989&lon=149.04
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.15.4
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - openresty
+      date:
+      - Wed, 22 Jan 2020 08:04:40 GMT
+      content-type:
+      - application/json; charset=utf-8
+      content-length:
+      - '470'
+      connection:
+      - close
+      x-cache-key:
+      - "/data/2.5/weather?lat=-31.99&lon=149.04"
+      access-control-allow-origin:
+      - "*"
+      access-control-allow-credentials:
+      - 'true'
+      access-control-allow-methods:
+      - GET, POST
+    body:
+      encoding: UTF-8
+      string: '{"coord":{"lon":149.04,"lat":-31.99},"weather":[{"id":800,"main":"Clear","description":"clear
+        sky","icon":"01d"}],"base":"stations","main":{"temp":307.99,"feels_like":302.02,"temp_min":306.48,"temp_max":309.15,"pressure":1005,"humidity":11},"visibility":10000,"wind":{"speed":5.7,"deg":340},"clouds":{"all":0},"dt":1579680280,"sys":{"type":1,"id":9596,"country":"AU","sunrise":1579634305,"sunset":1579684289},"timezone":39600,"id":2167467,"name":"Elong
+        Elong","cod":200}'
+    http_version: 
+  recorded_at: Wed, 22 Jan 2020 08:04:40 GMT
+- request:
+    method: get
+    uri: http://api.openweathermap.org/data/2.5/weather?appid=f0c6910d83bee3ef361afdba870cca37&lat=-31.987&lon=149.052
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.15.4
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - openresty
+      date:
+      - Wed, 22 Jan 2020 08:04:40 GMT
+      content-type:
+      - application/json; charset=utf-8
+      content-length:
+      - '467'
+      connection:
+      - close
+      x-cache-key:
+      - "/data/2.5/weather?lat=-31.99&lon=149.05"
+      access-control-allow-origin:
+      - "*"
+      access-control-allow-credentials:
+      - 'true'
+      access-control-allow-methods:
+      - GET, POST
+    body:
+      encoding: UTF-8
+      string: '{"coord":{"lon":149.05,"lat":-31.99},"weather":[{"id":800,"main":"Clear","description":"clear
+        sky","icon":"01d"}],"base":"stations","main":{"temp":307.98,"feels_like":302,"temp_min":306.48,"temp_max":309.15,"pressure":1005,"humidity":11},"visibility":10000,"wind":{"speed":5.7,"deg":340},"clouds":{"all":0},"dt":1579680280,"sys":{"type":1,"id":9596,"country":"AU","sunrise":1579634303,"sunset":1579684286},"timezone":39600,"id":2167467,"name":"Elong
+        Elong","cod":200}'
+    http_version: 
+  recorded_at: Wed, 22 Jan 2020 08:04:40 GMT
+- request:
+    method: get
+    uri: http://api.openweathermap.org/data/2.5/weather?appid=f0c6910d83bee3ef361afdba870cca37&lat=-31.986&lon=149.063
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.15.4
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - openresty
+      date:
+      - Wed, 22 Jan 2020 08:04:40 GMT
+      content-type:
+      - application/json; charset=utf-8
+      content-length:
+      - '470'
+      connection:
+      - close
+      x-cache-key:
+      - "/data/2.5/weather?lat=-31.99&lon=149.06"
+      access-control-allow-origin:
+      - "*"
+      access-control-allow-credentials:
+      - 'true'
+      access-control-allow-methods:
+      - GET, POST
+    body:
+      encoding: UTF-8
+      string: '{"coord":{"lon":149.06,"lat":-31.99},"weather":[{"id":800,"main":"Clear","description":"clear
+        sky","icon":"01d"}],"base":"stations","main":{"temp":307.97,"feels_like":301.99,"temp_min":306.48,"temp_max":309.15,"pressure":1005,"humidity":11},"visibility":10000,"wind":{"speed":5.7,"deg":340},"clouds":{"all":0},"dt":1579680280,"sys":{"type":1,"id":9596,"country":"AU","sunrise":1579634301,"sunset":1579684284},"timezone":39600,"id":2167467,"name":"Elong
+        Elong","cod":200}'
+    http_version: 
+  recorded_at: Wed, 22 Jan 2020 08:04:40 GMT
+- request:
+    method: get
+    uri: http://api.openweathermap.org/data/2.5/weather?appid=f0c6910d83bee3ef361afdba870cca37&lat=-31.998&lon=149.042
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.15.4
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - openresty
+      date:
+      - Wed, 22 Jan 2020 08:04:40 GMT
+      content-type:
+      - application/json; charset=utf-8
+      content-length:
+      - '467'
+      connection:
+      - close
+      x-cache-key:
+      - "/data/2.5/weather?lat=-32&lon=149.04"
+      access-control-allow-origin:
+      - "*"
+      access-control-allow-credentials:
+      - 'true'
+      access-control-allow-methods:
+      - GET, POST
+    body:
+      encoding: UTF-8
+      string: '{"coord":{"lon":149.04,"lat":-32},"weather":[{"id":800,"main":"Clear","description":"clear
+        sky","icon":"01d"}],"base":"stations","main":{"temp":307.99,"feels_like":302.02,"temp_min":306.48,"temp_max":309.15,"pressure":1005,"humidity":11},"visibility":10000,"wind":{"speed":5.7,"deg":340},"clouds":{"all":0},"dt":1579680280,"sys":{"type":1,"id":9596,"country":"AU","sunrise":1579634304,"sunset":1579684290},"timezone":39600,"id":2167467,"name":"Elong
+        Elong","cod":200}'
+    http_version: 
+  recorded_at: Wed, 22 Jan 2020 08:04:40 GMT
+- request:
+    method: get
+    uri: http://api.openweathermap.org/data/2.5/weather?appid=f0c6910d83bee3ef361afdba870cca37&lat=-31.995&lon=149.064
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.15.4
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - openresty
+      date:
+      - Wed, 22 Jan 2020 08:04:41 GMT
+      content-type:
+      - application/json; charset=utf-8
+      content-length:
+      - '467'
+      connection:
+      - close
+      x-cache-key:
+      - "/data/2.5/weather?lat=-32&lon=149.06"
+      access-control-allow-origin:
+      - "*"
+      access-control-allow-credentials:
+      - 'true'
+      access-control-allow-methods:
+      - GET, POST
+    body:
+      encoding: UTF-8
+      string: '{"coord":{"lon":149.06,"lat":-32},"weather":[{"id":800,"main":"Clear","description":"clear
+        sky","icon":"01d"}],"base":"stations","main":{"temp":307.97,"feels_like":301.99,"temp_min":306.48,"temp_max":309.15,"pressure":1005,"humidity":11},"visibility":10000,"wind":{"speed":5.7,"deg":340},"clouds":{"all":0},"dt":1579680281,"sys":{"type":1,"id":9596,"country":"AU","sunrise":1579634299,"sunset":1579684285},"timezone":39600,"id":2167467,"name":"Elong
+        Elong","cod":200}'
+    http_version: 
+  recorded_at: Wed, 22 Jan 2020 08:04:41 GMT
+- request:
+    method: get
+    uri: http://api.openweathermap.org/data/2.5/weather?appid=f0c6910d83bee3ef361afdba870cca37&lat=-31.994&lon=149.075
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.15.4
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - openresty
+      date:
+      - Wed, 22 Jan 2020 08:04:41 GMT
+      content-type:
+      - application/json; charset=utf-8
+      content-length:
+      - '470'
+      connection:
+      - close
+      x-cache-key:
+      - "/data/2.5/weather?lat=-31.99&lon=149.07"
+      access-control-allow-origin:
+      - "*"
+      access-control-allow-credentials:
+      - 'true'
+      access-control-allow-methods:
+      - GET, POST
+    body:
+      encoding: UTF-8
+      string: '{"coord":{"lon":149.07,"lat":-31.99},"weather":[{"id":800,"main":"Clear","description":"clear
+        sky","icon":"01d"}],"base":"stations","main":{"temp":307.97,"feels_like":301.99,"temp_min":306.48,"temp_max":309.15,"pressure":1005,"humidity":11},"visibility":10000,"wind":{"speed":5.7,"deg":340},"clouds":{"all":0},"dt":1579680281,"sys":{"type":1,"id":9596,"country":"AU","sunrise":1579634298,"sunset":1579684281},"timezone":39600,"id":2167467,"name":"Elong
+        Elong","cod":200}'
+    http_version: 
+  recorded_at: Wed, 22 Jan 2020 08:04:41 GMT
+- request:
+    method: get
+    uri: http://api.openweathermap.org/data/2.5/weather?appid=f0c6910d83bee3ef361afdba870cca37&lat=-32.007&lon=149.044
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.15.4
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - openresty
+      date:
+      - Wed, 22 Jan 2020 08:04:41 GMT
+      content-type:
+      - application/json; charset=utf-8
+      content-length:
+      - '467'
+      connection:
+      - close
+      x-cache-key:
+      - "/data/2.5/weather?lat=-32.01&lon=149.04"
+      access-control-allow-origin:
+      - "*"
+      access-control-allow-credentials:
+      - 'true'
+      access-control-allow-methods:
+      - GET, POST
+    body:
+      encoding: UTF-8
+      string: '{"coord":{"lon":149.04,"lat":-32.01},"weather":[{"id":800,"main":"Clear","description":"clear
+        sky","icon":"01d"}],"base":"stations","main":{"temp":307.98,"feels_like":302,"temp_min":306.48,"temp_max":309.15,"pressure":1005,"humidity":11},"visibility":10000,"wind":{"speed":5.7,"deg":340},"clouds":{"all":0},"dt":1579680281,"sys":{"type":1,"id":9596,"country":"AU","sunrise":1579634303,"sunset":1579684291},"timezone":39600,"id":2167467,"name":"Elong
+        Elong","cod":200}'
+    http_version: 
+  recorded_at: Wed, 22 Jan 2020 08:04:41 GMT
+- request:
+    method: get
+    uri: http://api.openweathermap.org/data/2.5/weather?appid=f0c6910d83bee3ef361afdba870cca37&lat=-32.006&lon=149.055
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.15.4
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - openresty
+      date:
+      - Wed, 22 Jan 2020 08:04:41 GMT
+      content-type:
+      - application/json; charset=utf-8
+      content-length:
+      - '470'
+      connection:
+      - close
+      x-cache-key:
+      - "/data/2.5/weather?lat=-32.01&lon=149.06"
+      access-control-allow-origin:
+      - "*"
+      access-control-allow-credentials:
+      - 'true'
+      access-control-allow-methods:
+      - GET, POST
+    body:
+      encoding: UTF-8
+      string: '{"coord":{"lon":149.06,"lat":-32.01},"weather":[{"id":800,"main":"Clear","description":"clear
+        sky","icon":"01d"}],"base":"stations","main":{"temp":307.97,"feels_like":301.99,"temp_min":306.48,"temp_max":309.15,"pressure":1005,"humidity":11},"visibility":10000,"wind":{"speed":5.7,"deg":340},"clouds":{"all":0},"dt":1579680281,"sys":{"type":1,"id":9596,"country":"AU","sunrise":1579634298,"sunset":1579684286},"timezone":39600,"id":2167467,"name":"Elong
+        Elong","cod":200}'
+    http_version: 
+  recorded_at: Wed, 22 Jan 2020 08:04:41 GMT
+- request:
+    method: get
+    uri: http://api.openweathermap.org/data/2.5/weather?appid=f0c6910d83bee3ef361afdba870cca37&lat=-32.004&lon=149.066
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.15.4
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - openresty
+      date:
+      - Wed, 22 Jan 2020 08:04:41 GMT
+      content-type:
+      - application/json; charset=utf-8
+      content-length:
+      - '467'
+      connection:
+      - close
+      x-cache-key:
+      - "/data/2.5/weather?lat=-32&lon=149.07"
+      access-control-allow-origin:
+      - "*"
+      access-control-allow-credentials:
+      - 'true'
+      access-control-allow-methods:
+      - GET, POST
+    body:
+      encoding: UTF-8
+      string: '{"coord":{"lon":149.07,"lat":-32},"weather":[{"id":800,"main":"Clear","description":"clear
+        sky","icon":"01d"}],"base":"stations","main":{"temp":307.97,"feels_like":301.99,"temp_min":306.48,"temp_max":309.15,"pressure":1005,"humidity":11},"visibility":10000,"wind":{"speed":5.7,"deg":340},"clouds":{"all":0},"dt":1579680281,"sys":{"type":1,"id":9596,"country":"AU","sunrise":1579634297,"sunset":1579684283},"timezone":39600,"id":2167467,"name":"Elong
+        Elong","cod":200}'
+    http_version: 
+  recorded_at: Wed, 22 Jan 2020 08:04:41 GMT
+- request:
+    method: get
+    uri: http://api.openweathermap.org/data/2.5/weather?appid=f0c6910d83bee3ef361afdba870cca37&lat=-32.003&lon=149.077
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.15.4
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - openresty
+      date:
+      - Wed, 22 Jan 2020 08:04:41 GMT
+      content-type:
+      - application/json; charset=utf-8
+      content-length:
+      - '467'
+      connection:
+      - close
+      x-cache-key:
+      - "/data/2.5/weather?lat=-32&lon=149.08"
+      access-control-allow-origin:
+      - "*"
+      access-control-allow-credentials:
+      - 'true'
+      access-control-allow-methods:
+      - GET, POST
+    body:
+      encoding: UTF-8
+      string: '{"coord":{"lon":149.08,"lat":-32},"weather":[{"id":800,"main":"Clear","description":"clear
+        sky","icon":"01d"}],"base":"stations","main":{"temp":307.96,"feels_like":301.98,"temp_min":306.48,"temp_max":309.15,"pressure":1005,"humidity":11},"visibility":10000,"wind":{"speed":5.7,"deg":340},"clouds":{"all":0},"dt":1579680281,"sys":{"type":1,"id":9596,"country":"AU","sunrise":1579634295,"sunset":1579684280},"timezone":39600,"id":2167467,"name":"Elong
+        Elong","cod":200}'
+    http_version: 
+  recorded_at: Wed, 22 Jan 2020 08:04:41 GMT
+- request:
+    method: get
+    uri: http://api.openweathermap.org/data/2.5/weather?appid=f0c6910d83bee3ef361afdba870cca37&lat=-32.013&lon=149.05
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.15.4
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - openresty
+      date:
+      - Wed, 22 Jan 2020 08:04:41 GMT
+      content-type:
+      - application/json; charset=utf-8
+      content-length:
+      - '467'
+      connection:
+      - close
+      x-cache-key:
+      - "/data/2.5/weather?lat=-32.01&lon=149.05"
+      access-control-allow-origin:
+      - "*"
+      access-control-allow-credentials:
+      - 'true'
+      access-control-allow-methods:
+      - GET, POST
+    body:
+      encoding: UTF-8
+      string: '{"coord":{"lon":149.05,"lat":-32.01},"weather":[{"id":800,"main":"Clear","description":"clear
+        sky","icon":"01d"}],"base":"stations","main":{"temp":307.98,"feels_like":302,"temp_min":306.48,"temp_max":309.15,"pressure":1005,"humidity":11},"visibility":10000,"wind":{"speed":5.7,"deg":340},"clouds":{"all":0},"dt":1579680281,"sys":{"type":1,"id":9596,"country":"AU","sunrise":1579634301,"sunset":1579684289},"timezone":39600,"id":2167467,"name":"Elong
+        Elong","cod":200}'
+    http_version: 
+  recorded_at: Wed, 22 Jan 2020 08:04:41 GMT
+- request:
+    method: get
+    uri: http://api.openweathermap.org/data/2.5/weather?appid=f0c6910d83bee3ef361afdba870cca37&lat=-32.011&lon=149.062
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.15.4
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - openresty
+      date:
+      - Wed, 22 Jan 2020 08:04:41 GMT
+      content-type:
+      - application/json; charset=utf-8
+      content-length:
+      - '470'
+      connection:
+      - close
+      x-cache-key:
+      - "/data/2.5/weather?lat=-32.01&lon=149.06"
+      access-control-allow-origin:
+      - "*"
+      access-control-allow-credentials:
+      - 'true'
+      access-control-allow-methods:
+      - GET, POST
+    body:
+      encoding: UTF-8
+      string: '{"coord":{"lon":149.06,"lat":-32.01},"weather":[{"id":800,"main":"Clear","description":"clear
+        sky","icon":"01d"}],"base":"stations","main":{"temp":307.97,"feels_like":301.99,"temp_min":306.48,"temp_max":309.15,"pressure":1005,"humidity":11},"visibility":10000,"wind":{"speed":5.7,"deg":340},"clouds":{"all":0},"dt":1579680281,"sys":{"type":1,"id":9596,"country":"AU","sunrise":1579634298,"sunset":1579684286},"timezone":39600,"id":2167467,"name":"Elong
+        Elong","cod":200}'
+    http_version: 
+  recorded_at: Wed, 22 Jan 2020 08:04:41 GMT
+- request:
+    method: get
+    uri: http://api.openweathermap.org/data/2.5/weather?appid=f0c6910d83bee3ef361afdba870cca37&lat=-32.01&lon=149.073
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.15.4
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - openresty
+      date:
+      - Wed, 22 Jan 2020 08:04:41 GMT
+      content-type:
+      - application/json; charset=utf-8
+      content-length:
+      - '470'
+      connection:
+      - close
+      x-cache-key:
+      - "/data/2.5/weather?lat=-32.01&lon=149.07"
+      access-control-allow-origin:
+      - "*"
+      access-control-allow-credentials:
+      - 'true'
+      access-control-allow-methods:
+      - GET, POST
+    body:
+      encoding: UTF-8
+      string: '{"coord":{"lon":149.07,"lat":-32.01},"weather":[{"id":800,"main":"Clear","description":"clear
+        sky","icon":"01d"}],"base":"stations","main":{"temp":307.96,"feels_like":301.98,"temp_min":306.48,"temp_max":309.15,"pressure":1005,"humidity":11},"visibility":10000,"wind":{"speed":5.7,"deg":340},"clouds":{"all":0},"dt":1579680281,"sys":{"type":1,"id":9596,"country":"AU","sunrise":1579634296,"sunset":1579684284},"timezone":39600,"id":2167467,"name":"Elong
+        Elong","cod":200}'
+    http_version: 
+  recorded_at: Wed, 22 Jan 2020 08:04:41 GMT
+- request:
+    method: get
+    uri: http://api.openweathermap.org/data/2.5/weather?appid=f0c6910d83bee3ef361afdba870cca37&lat=-32.022&lon=149.052
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.15.4
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - openresty
+      date:
+      - Wed, 22 Jan 2020 08:04:41 GMT
+      content-type:
+      - application/json; charset=utf-8
+      content-length:
+      - '467'
+      connection:
+      - close
+      x-cache-key:
+      - "/data/2.5/weather?lat=-32.02&lon=149.05"
+      access-control-allow-origin:
+      - "*"
+      access-control-allow-credentials:
+      - 'true'
+      access-control-allow-methods:
+      - GET, POST
+    body:
+      encoding: UTF-8
+      string: '{"coord":{"lon":149.05,"lat":-32.02},"weather":[{"id":800,"main":"Clear","description":"clear
+        sky","icon":"01d"}],"base":"stations","main":{"temp":307.98,"feels_like":302,"temp_min":306.48,"temp_max":309.15,"pressure":1005,"humidity":11},"visibility":10000,"wind":{"speed":5.7,"deg":340},"clouds":{"all":0},"dt":1579680281,"sys":{"type":1,"id":9596,"country":"AU","sunrise":1579634299,"sunset":1579684290},"timezone":39600,"id":2167467,"name":"Elong
+        Elong","cod":200}'
+    http_version: 
+  recorded_at: Wed, 22 Jan 2020 08:04:41 GMT
+- request:
+    method: get
+    uri: http://api.openweathermap.org/data/2.5/weather?appid=f0c6910d83bee3ef361afdba870cca37&lat=-32.02&lon=149.063
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.15.4
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - openresty
+      date:
+      - Wed, 22 Jan 2020 08:04:41 GMT
+      content-type:
+      - application/json; charset=utf-8
+      content-length:
+      - '470'
+      connection:
+      - close
+      x-cache-key:
+      - "/data/2.5/weather?lat=-32.02&lon=149.06"
+      access-control-allow-origin:
+      - "*"
+      access-control-allow-credentials:
+      - 'true'
+      access-control-allow-methods:
+      - GET, POST
+    body:
+      encoding: UTF-8
+      string: '{"coord":{"lon":149.06,"lat":-32.02},"weather":[{"id":800,"main":"Clear","description":"clear
+        sky","icon":"01d"}],"base":"stations","main":{"temp":307.97,"feels_like":301.99,"temp_min":306.48,"temp_max":309.15,"pressure":1005,"humidity":11},"visibility":10000,"wind":{"speed":5.7,"deg":340},"clouds":{"all":0},"dt":1579680281,"sys":{"type":1,"id":9596,"country":"AU","sunrise":1579634297,"sunset":1579684288},"timezone":39600,"id":2167467,"name":"Elong
+        Elong","cod":200}'
+    http_version: 
+  recorded_at: Wed, 22 Jan 2020 08:04:41 GMT
+- request:
+    method: get
+    uri: http://api.openweathermap.org/data/2.5/weather?appid=f0c6910d83bee3ef361afdba870cca37&lat=-32.541&lon=150.44
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.15.4
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - openresty
+      date:
+      - Wed, 22 Jan 2020 08:04:42 GMT
+      content-type:
+      - application/json; charset=utf-8
+      content-length:
+      - '458'
+      connection:
+      - close
+      x-cache-key:
+      - "/data/2.5/weather?lat=-32.54&lon=150.44"
+      access-control-allow-origin:
+      - "*"
+      access-control-allow-credentials:
+      - 'true'
+      access-control-allow-methods:
+      - GET, POST
+    body:
+      encoding: UTF-8
+      string: '{"coord":{"lon":150.44,"lat":-32.54},"weather":[{"id":800,"main":"Clear","description":"clear
+        sky","icon":"01d"}],"base":"model","main":{"temp":299.06,"feels_like":297.75,"temp_min":299.06,"temp_max":299.06,"pressure":1007,"humidity":31,"sea_level":1007,"grnd_level":965},"wind":{"speed":1.03,"deg":1},"clouds":{"all":0},"dt":1579680282,"sys":{"country":"AU","sunrise":1579633899,"sunset":1579684023},"timezone":39600,"id":2177270,"name":"Baerami","cod":200}'
+    http_version: 
+  recorded_at: Wed, 22 Jan 2020 08:04:42 GMT
+- request:
+    method: get
+    uri: http://api.openweathermap.org/data/2.5/weather?appid=f0c6910d83bee3ef361afdba870cca37&lat=-32.54&lon=150.451
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.15.4
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - openresty
+      date:
+      - Wed, 22 Jan 2020 08:04:42 GMT
+      content-type:
+      - application/json; charset=utf-8
+      content-length:
+      - '458'
+      connection:
+      - close
+      x-cache-key:
+      - "/data/2.5/weather?lat=-32.54&lon=150.45"
+      access-control-allow-origin:
+      - "*"
+      access-control-allow-credentials:
+      - 'true'
+      access-control-allow-methods:
+      - GET, POST
+    body:
+      encoding: UTF-8
+      string: '{"coord":{"lon":150.45,"lat":-32.54},"weather":[{"id":800,"main":"Clear","description":"clear
+        sky","icon":"01d"}],"base":"model","main":{"temp":299.06,"feels_like":297.75,"temp_min":299.06,"temp_max":299.06,"pressure":1007,"humidity":31,"sea_level":1007,"grnd_level":965},"wind":{"speed":1.03,"deg":1},"clouds":{"all":0},"dt":1579680282,"sys":{"country":"AU","sunrise":1579633896,"sunset":1579684021},"timezone":39600,"id":2177270,"name":"Baerami","cod":200}'
+    http_version: 
+  recorded_at: Wed, 22 Jan 2020 08:04:42 GMT
+- request:
+    method: get
+    uri: http://api.openweathermap.org/data/2.5/weather?appid=f0c6910d83bee3ef361afdba870cca37&lat=-32.632&lon=150.178
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.15.4
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - openresty
+      date:
+      - Wed, 22 Jan 2020 08:04:42 GMT
+      content-type:
+      - application/json; charset=utf-8
+      content-length:
+      - '464'
+      connection:
+      - close
+      x-cache-key:
+      - "/data/2.5/weather?lat=-32.63&lon=150.18"
+      access-control-allow-origin:
+      - "*"
+      access-control-allow-credentials:
+      - 'true'
+      access-control-allow-methods:
+      - GET, POST
+    body:
+      encoding: UTF-8
+      string: '{"coord":{"lon":150.18,"lat":-32.63},"weather":[{"id":800,"main":"Clear","description":"clear
+        sky","icon":"01d"}],"base":"stations","main":{"temp":307.3,"feels_like":305.19,"temp_min":306.48,"temp_max":308.15,"pressure":1006,"humidity":29},"visibility":10000,"wind":{"speed":4.6,"deg":320},"clouds":{"all":0},"dt":1579680282,"sys":{"type":1,"id":9547,"country":"AU","sunrise":1579633950,"sunset":1579684097},"timezone":39600,"id":2154387,"name":"Olinda","cod":200}'
+    http_version: 
+  recorded_at: Wed, 22 Jan 2020 08:04:42 GMT
+- request:
+    method: get
+    uri: http://api.openweathermap.org/data/2.5/weather?appid=f0c6910d83bee3ef361afdba870cca37&lat=-32.642&lon=150.169
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.15.4
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - openresty
+      date:
+      - Wed, 22 Jan 2020 08:04:42 GMT
+      content-type:
+      - application/json; charset=utf-8
+      content-length:
+      - '464'
+      connection:
+      - close
+      x-cache-key:
+      - "/data/2.5/weather?lat=-32.64&lon=150.17"
+      access-control-allow-origin:
+      - "*"
+      access-control-allow-credentials:
+      - 'true'
+      access-control-allow-methods:
+      - GET, POST
+    body:
+      encoding: UTF-8
+      string: '{"coord":{"lon":150.17,"lat":-32.64},"weather":[{"id":800,"main":"Clear","description":"clear
+        sky","icon":"01d"}],"base":"stations","main":{"temp":307.3,"feels_like":305.19,"temp_min":306.48,"temp_max":308.15,"pressure":1006,"humidity":29},"visibility":10000,"wind":{"speed":4.6,"deg":320},"clouds":{"all":0},"dt":1579680282,"sys":{"type":1,"id":9547,"country":"AU","sunrise":1579633951,"sunset":1579684101},"timezone":39600,"id":2154387,"name":"Olinda","cod":200}'
+    http_version: 
+  recorded_at: Wed, 22 Jan 2020 08:04:42 GMT
+- request:
+    method: get
+    uri: http://api.openweathermap.org/data/2.5/weather?appid=f0c6910d83bee3ef361afdba870cca37&lat=-32.641&lon=150.18
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.15.4
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - openresty
+      date:
+      - Wed, 22 Jan 2020 08:04:42 GMT
+      content-type:
+      - application/json; charset=utf-8
+      content-length:
+      - '464'
+      connection:
+      - close
+      x-cache-key:
+      - "/data/2.5/weather?lat=-32.64&lon=150.18"
+      access-control-allow-origin:
+      - "*"
+      access-control-allow-credentials:
+      - 'true'
+      access-control-allow-methods:
+      - GET, POST
+    body:
+      encoding: UTF-8
+      string: '{"coord":{"lon":150.18,"lat":-32.64},"weather":[{"id":800,"main":"Clear","description":"clear
+        sky","icon":"01d"}],"base":"stations","main":{"temp":307.3,"feels_like":305.19,"temp_min":306.48,"temp_max":308.15,"pressure":1006,"humidity":29},"visibility":10000,"wind":{"speed":4.6,"deg":320},"clouds":{"all":0},"dt":1579680282,"sys":{"type":1,"id":9547,"country":"AU","sunrise":1579633948,"sunset":1579684098},"timezone":39600,"id":2154387,"name":"Olinda","cod":200}'
+    http_version: 
+  recorded_at: Wed, 22 Jan 2020 08:04:42 GMT
+- request:
+    method: get
+    uri: http://api.openweathermap.org/data/2.5/weather?appid=f0c6910d83bee3ef361afdba870cca37&lat=-32.639&lon=150.191
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.15.4
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - openresty
+      date:
+      - Wed, 22 Jan 2020 08:04:42 GMT
+      content-type:
+      - application/json; charset=utf-8
+      content-length:
+      - '464'
+      connection:
+      - close
+      x-cache-key:
+      - "/data/2.5/weather?lat=-32.64&lon=150.19"
+      access-control-allow-origin:
+      - "*"
+      access-control-allow-credentials:
+      - 'true'
+      access-control-allow-methods:
+      - GET, POST
+    body:
+      encoding: UTF-8
+      string: '{"coord":{"lon":150.19,"lat":-32.64},"weather":[{"id":800,"main":"Clear","description":"clear
+        sky","icon":"01d"}],"base":"stations","main":{"temp":307.3,"feels_like":305.19,"temp_min":306.48,"temp_max":308.15,"pressure":1006,"humidity":29},"visibility":10000,"wind":{"speed":4.6,"deg":320},"clouds":{"all":0},"dt":1579680282,"sys":{"type":1,"id":9547,"country":"AU","sunrise":1579633946,"sunset":1579684096},"timezone":39600,"id":2154387,"name":"Olinda","cod":200}'
+    http_version: 
+  recorded_at: Wed, 22 Jan 2020 08:04:42 GMT
+- request:
+    method: get
+    uri: http://api.openweathermap.org/data/2.5/weather?appid=f0c6910d83bee3ef361afdba870cca37&lat=-32.663&lon=150.872
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.15.4
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - openresty
+      date:
+      - Wed, 22 Jan 2020 08:04:42 GMT
+      content-type:
+      - application/json; charset=utf-8
+      content-length:
+      - '463'
+      connection:
+      - close
+      x-cache-key:
+      - "/data/2.5/weather?lat=-32.66&lon=150.87"
+      access-control-allow-origin:
+      - "*"
+      access-control-allow-credentials:
+      - 'true'
+      access-control-allow-methods:
+      - GET, POST
+    body:
+      encoding: UTF-8
+      string: '{"coord":{"lon":150.87,"lat":-32.66},"weather":[{"id":800,"main":"Clear","description":"clear
+        sky","icon":"01d"}],"base":"stations","main":{"temp":307.04,"feels_like":305.47,"temp_min":307.04,"temp_max":307.04,"pressure":999,"humidity":32},"wind":{"speed":4.47,"deg":140,"gust":7.6},"clouds":{"all":0},"dt":1579680282,"sys":{"type":3,"id":2013427,"country":"AU","sunrise":1579633780,"sunset":1579683936},"timezone":39600,"id":7839771,"name":"Singleton","cod":200}'
+    http_version: 
+  recorded_at: Wed, 22 Jan 2020 08:04:42 GMT
+- request:
+    method: get
+    uri: http://api.openweathermap.org/data/2.5/weather?appid=f0c6910d83bee3ef361afdba870cca37&lat=-33.279&lon=150.416
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.15.4
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - openresty
+      date:
+      - Wed, 22 Jan 2020 08:04:42 GMT
+      content-type:
+      - application/json; charset=utf-8
+      content-length:
+      - '466'
+      connection:
+      - close
+      x-cache-key:
+      - "/data/2.5/weather?lat=-33.28&lon=150.42"
+      access-control-allow-origin:
+      - "*"
+      access-control-allow-credentials:
+      - 'true'
+      access-control-allow-methods:
+      - GET, POST
+    body:
+      encoding: UTF-8
+      string: '{"coord":{"lon":150.42,"lat":-33.28},"weather":[{"id":800,"main":"Clear","description":"clear
+        sky","icon":"01d"}],"base":"stations","main":{"temp":304.05,"feels_like":302.03,"temp_min":301.48,"temp_max":305.15,"pressure":1003,"humidity":43},"visibility":10000,"wind":{"speed":6.2,"deg":100},"clouds":{"all":0},"dt":1579680282,"sys":{"type":1,"id":9599,"country":"AU","sunrise":1579633807,"sunset":1579684124},"timezone":39600,"id":7839746,"name":"Lithgow","cod":200}'
+    http_version: 
+  recorded_at: Wed, 22 Jan 2020 08:04:42 GMT
+- request:
+    method: get
+    uri: http://api.openweathermap.org/data/2.5/weather?appid=f0c6910d83bee3ef361afdba870cca37&lat=-34.463&lon=150.877
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.15.4
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - openresty
+      date:
+      - Wed, 22 Jan 2020 08:04:42 GMT
+      content-type:
+      - application/json; charset=utf-8
+      content-length:
+      - '469'
+      connection:
+      - close
+      x-cache-key:
+      - "/data/2.5/weather?lat=-34.46&lon=150.88"
+      access-control-allow-origin:
+      - "*"
+      access-control-allow-credentials:
+      - 'true'
+      access-control-allow-methods:
+      - GET, POST
+    body:
+      encoding: UTF-8
+      string: '{"coord":{"lon":150.88,"lat":-34.46},"weather":[{"id":801,"main":"Clouds","description":"few
+        clouds","icon":"02d"}],"base":"stations","main":{"temp":302.13,"feels_like":300.02,"temp_min":299.26,"temp_max":303.71,"pressure":1004,"humidity":58},"visibility":10000,"wind":{"speed":8.2,"deg":50},"clouds":{"all":20},"dt":1579680282,"sys":{"type":1,"id":9600,"country":"AU","sunrise":1579633539,"sunset":1579684172},"timezone":39600,"id":2169990,"name":"Cringila","cod":200}'
+    http_version: 
+  recorded_at: Wed, 22 Jan 2020 08:04:42 GMT
+- request:
+    method: get
+    uri: http://api.openweathermap.org/data/2.5/weather?appid=f0c6910d83bee3ef361afdba870cca37&lat=-34.736&lon=150.298
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.15.4
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - openresty
+      date:
+      - Wed, 22 Jan 2020 08:04:42 GMT
+      content-type:
+      - application/json; charset=utf-8
+      content-length:
+      - '469'
+      connection:
+      - close
+      x-cache-key:
+      - "/data/2.5/weather?lat=-34.74&lon=150.3"
+      access-control-allow-origin:
+      - "*"
+      access-control-allow-credentials:
+      - 'true'
+      access-control-allow-methods:
+      - GET, POST
+    body:
+      encoding: UTF-8
+      string: '{"coord":{"lon":150.3,"lat":-34.74},"weather":[{"id":801,"main":"Clouds","description":"few
+        clouds","icon":"02d"}],"base":"stations","main":{"temp":300.82,"feels_like":296.53,"temp_min":299.26,"temp_max":302.15,"pressure":1003,"humidity":51},"visibility":10000,"wind":{"speed":9.3,"deg":50},"clouds":{"all":20},"dt":1579680282,"sys":{"type":1,"id":9594,"country":"AU","sunrise":1579633640,"sunset":1579684349},"timezone":39600,"id":2173306,"name":"Bundanoon","cod":200}'
+    http_version: 
+  recorded_at: Wed, 22 Jan 2020 08:04:42 GMT
+- request:
+    method: get
+    uri: http://api.openweathermap.org/data/2.5/weather?appid=f0c6910d83bee3ef361afdba870cca37&lat=-35.734&lon=149.827
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.15.4
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - openresty
+      date:
+      - Wed, 22 Jan 2020 08:04:42 GMT
+      content-type:
+      - application/json; charset=utf-8
+      content-length:
+      - '469'
+      connection:
+      - close
+      x-cache-key:
+      - "/data/2.5/weather?lat=-35.73&lon=149.83"
+      access-control-allow-origin:
+      - "*"
+      access-control-allow-credentials:
+      - 'true'
+      access-control-allow-methods:
+      - GET, POST
+    body:
+      encoding: UTF-8
+      string: '{"coord":{"lon":149.83,"lat":-35.73},"weather":[{"id":803,"main":"Clouds","description":"broken
+        clouds","icon":"04d"}],"base":"stations","main":{"temp":297.59,"feels_like":297.76,"temp_min":297.59,"temp_max":297.59,"pressure":1001,"humidity":91},"wind":{"speed":7.15,"deg":11,"gust":12.96},"clouds":{"all":67},"dt":1579680282,"sys":{"type":3,"id":2010627,"country":"AU","sunrise":1579633616,"sunset":1579684599},"timezone":39600,"id":2177764,"name":"Araluen","cod":200}'
+    http_version: 
+  recorded_at: Wed, 22 Jan 2020 08:04:42 GMT
+- request:
+    method: get
+    uri: http://api.openweathermap.org/data/2.5/weather?appid=f0c6910d83bee3ef361afdba870cca37&lat=-35.743&lon=149.829
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.15.4
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - openresty
+      date:
+      - Wed, 22 Jan 2020 08:04:43 GMT
+      content-type:
+      - application/json; charset=utf-8
+      content-length:
+      - '469'
+      connection:
+      - close
+      x-cache-key:
+      - "/data/2.5/weather?lat=-35.74&lon=149.83"
+      access-control-allow-origin:
+      - "*"
+      access-control-allow-credentials:
+      - 'true'
+      access-control-allow-methods:
+      - GET, POST
+    body:
+      encoding: UTF-8
+      string: '{"coord":{"lon":149.83,"lat":-35.74},"weather":[{"id":803,"main":"Clouds","description":"broken
+        clouds","icon":"04d"}],"base":"stations","main":{"temp":297.59,"feels_like":297.76,"temp_min":297.59,"temp_max":297.59,"pressure":1001,"humidity":91},"wind":{"speed":7.15,"deg":11,"gust":12.96},"clouds":{"all":67},"dt":1579680283,"sys":{"type":3,"id":2010627,"country":"AU","sunrise":1579633614,"sunset":1579684600},"timezone":39600,"id":2177764,"name":"Araluen","cod":200}'
+    http_version: 
+  recorded_at: Wed, 22 Jan 2020 08:04:43 GMT
+- request:
+    method: get
+    uri: http://api.openweathermap.org/data/2.5/weather?appid=f0c6910d83bee3ef361afdba870cca37&lat=-35.749&lon=149.855
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.15.4
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - openresty
+      date:
+      - Wed, 22 Jan 2020 08:04:43 GMT
+      content-type:
+      - application/json; charset=utf-8
+      content-length:
+      - '472'
+      connection:
+      - close
+      x-cache-key:
+      - "/data/2.5/weather?lat=-35.75&lon=149.85"
+      access-control-allow-origin:
+      - "*"
+      access-control-allow-credentials:
+      - 'true'
+      access-control-allow-methods:
+      - GET, POST
+    body:
+      encoding: UTF-8
+      string: '{"coord":{"lon":149.85,"lat":-35.75},"weather":[{"id":802,"main":"Clouds","description":"scattered
+        clouds","icon":"03d"}],"base":"stations","main":{"temp":297.59,"feels_like":297.76,"temp_min":297.59,"temp_max":297.59,"pressure":1001,"humidity":91},"wind":{"speed":7.15,"deg":11,"gust":12.96},"clouds":{"all":45},"dt":1579680283,"sys":{"type":3,"id":2010627,"country":"AU","sunrise":1579633608,"sunset":1579684597},"timezone":39600,"id":2177764,"name":"Araluen","cod":200}'
+    http_version: 
+  recorded_at: Wed, 22 Jan 2020 08:04:43 GMT
+- request:
+    method: get
+    uri: http://api.openweathermap.org/data/2.5/weather?appid=f0c6910d83bee3ef361afdba870cca37&lat=-35.755&lon=149.85
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.15.4
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - openresty
+      date:
+      - Wed, 22 Jan 2020 08:04:43 GMT
+      content-type:
+      - application/json; charset=utf-8
+      content-length:
+      - '472'
+      connection:
+      - close
+      x-cache-key:
+      - "/data/2.5/weather?lat=-35.76&lon=149.85"
+      access-control-allow-origin:
+      - "*"
+      access-control-allow-credentials:
+      - 'true'
+      access-control-allow-methods:
+      - GET, POST
+    body:
+      encoding: UTF-8
+      string: '{"coord":{"lon":149.85,"lat":-35.76},"weather":[{"id":802,"main":"Clouds","description":"scattered
+        clouds","icon":"03d"}],"base":"stations","main":{"temp":297.59,"feels_like":297.76,"temp_min":297.59,"temp_max":297.59,"pressure":1001,"humidity":91},"wind":{"speed":7.15,"deg":11,"gust":12.96},"clouds":{"all":45},"dt":1579680283,"sys":{"type":3,"id":2010627,"country":"AU","sunrise":1579633607,"sunset":1579684598},"timezone":39600,"id":2177764,"name":"Araluen","cod":200}'
+    http_version: 
+  recorded_at: Wed, 22 Jan 2020 08:04:43 GMT
+- request:
+    method: get
+    uri: http://api.openweathermap.org/data/2.5/weather?appid=f0c6910d83bee3ef361afdba870cca37&lat=-35.754&lon=149.862
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.15.4
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - openresty
+      date:
+      - Wed, 22 Jan 2020 08:04:43 GMT
+      content-type:
+      - application/json; charset=utf-8
+      content-length:
+      - '472'
+      connection:
+      - close
+      x-cache-key:
+      - "/data/2.5/weather?lat=-35.75&lon=149.86"
+      access-control-allow-origin:
+      - "*"
+      access-control-allow-credentials:
+      - 'true'
+      access-control-allow-methods:
+      - GET, POST
+    body:
+      encoding: UTF-8
+      string: '{"coord":{"lon":149.86,"lat":-35.75},"weather":[{"id":802,"main":"Clouds","description":"scattered
+        clouds","icon":"03d"}],"base":"stations","main":{"temp":297.59,"feels_like":297.76,"temp_min":297.59,"temp_max":297.59,"pressure":1001,"humidity":91},"wind":{"speed":7.15,"deg":11,"gust":12.96},"clouds":{"all":45},"dt":1579680283,"sys":{"type":3,"id":2010627,"country":"AU","sunrise":1579633606,"sunset":1579684595},"timezone":39600,"id":2177764,"name":"Araluen","cod":200}'
+    http_version: 
+  recorded_at: Wed, 22 Jan 2020 08:04:43 GMT
+- request:
+    method: get
+    uri: http://api.openweathermap.org/data/2.5/weather?appid=f0c6910d83bee3ef361afdba870cca37&lat=-35.889&lon=149.749
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.15.4
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - openresty
+      date:
+      - Wed, 22 Jan 2020 08:04:43 GMT
+      content-type:
+      - application/json; charset=utf-8
+      content-length:
+      - '476'
+      connection:
+      - close
+      x-cache-key:
+      - "/data/2.5/weather?lat=-35.89&lon=149.75"
+      access-control-allow-origin:
+      - "*"
+      access-control-allow-credentials:
+      - 'true'
+      access-control-allow-methods:
+      - GET, POST
+    body:
+      encoding: UTF-8
+      string: '{"coord":{"lon":149.75,"lat":-35.89},"weather":[{"id":802,"main":"Clouds","description":"scattered
+        clouds","icon":"03d"}],"base":"stations","main":{"temp":297.59,"feels_like":297.76,"temp_min":297.59,"temp_max":297.59,"pressure":1001,"humidity":91},"wind":{"speed":7.15,"deg":11,"gust":12.96},"clouds":{"all":45},"dt":1579680283,"sys":{"type":3,"id":2010627,"country":"AU","sunrise":1579633612,"sunset":1579684641},"timezone":39600,"id":7839359,"name":"Eurobodalla","cod":200}'
+    http_version: 
+  recorded_at: Wed, 22 Jan 2020 08:04:43 GMT
+- request:
+    method: get
+    uri: http://api.openweathermap.org/data/2.5/weather?appid=f0c6910d83bee3ef361afdba870cca37&lat=-35.887&lon=149.761
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.15.4
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - openresty
+      date:
+      - Wed, 22 Jan 2020 08:04:43 GMT
+      content-type:
+      - application/json; charset=utf-8
+      content-length:
+      - '476'
+      connection:
+      - close
+      x-cache-key:
+      - "/data/2.5/weather?lat=-35.89&lon=149.76"
+      access-control-allow-origin:
+      - "*"
+      access-control-allow-credentials:
+      - 'true'
+      access-control-allow-methods:
+      - GET, POST
+    body:
+      encoding: UTF-8
+      string: '{"coord":{"lon":149.76,"lat":-35.89},"weather":[{"id":802,"main":"Clouds","description":"scattered
+        clouds","icon":"03d"}],"base":"stations","main":{"temp":297.59,"feels_like":297.76,"temp_min":297.59,"temp_max":297.59,"pressure":1001,"humidity":91},"wind":{"speed":7.15,"deg":11,"gust":12.96},"clouds":{"all":45},"dt":1579680283,"sys":{"type":3,"id":2010627,"country":"AU","sunrise":1579633610,"sunset":1579684638},"timezone":39600,"id":7839359,"name":"Eurobodalla","cod":200}'
+    http_version: 
+  recorded_at: Wed, 22 Jan 2020 08:04:43 GMT
+- request:
+    method: get
+    uri: http://api.openweathermap.org/data/2.5/weather?appid=f0c6910d83bee3ef361afdba870cca37&lat=-35.91&lon=149.729
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.15.4
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - openresty
+      date:
+      - Wed, 22 Jan 2020 08:04:43 GMT
+      content-type:
+      - application/json; charset=utf-8
+      content-length:
+      - '475'
+      connection:
+      - close
+      x-cache-key:
+      - "/data/2.5/weather?lat=-35.91&lon=149.73"
+      access-control-allow-origin:
+      - "*"
+      access-control-allow-credentials:
+      - 'true'
+      access-control-allow-methods:
+      - GET, POST
+    body:
+      encoding: UTF-8
+      string: '{"coord":{"lon":149.73,"lat":-35.91},"weather":[{"id":804,"main":"Clouds","description":"overcast
+        clouds","icon":"04d"}],"base":"stations","main":{"temp":297.59,"feels_like":297.76,"temp_min":297.59,"temp_max":297.59,"pressure":1001,"humidity":91},"wind":{"speed":7.15,"deg":11,"gust":12.96},"clouds":{"all":93},"dt":1579680283,"sys":{"type":3,"id":2010627,"country":"AU","sunrise":1579633614,"sunset":1579684648},"timezone":39600,"id":7839359,"name":"Eurobodalla","cod":200}'
+    http_version: 
+  recorded_at: Wed, 22 Jan 2020 08:04:43 GMT
+- request:
+    method: get
+    uri: http://api.openweathermap.org/data/2.5/weather?appid=f0c6910d83bee3ef361afdba870cca37&lat=-35.909&lon=149.741
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.15.4
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - openresty
+      date:
+      - Wed, 22 Jan 2020 08:04:43 GMT
+      content-type:
+      - application/json; charset=utf-8
+      content-length:
+      - '475'
+      connection:
+      - close
+      x-cache-key:
+      - "/data/2.5/weather?lat=-35.91&lon=149.74"
+      access-control-allow-origin:
+      - "*"
+      access-control-allow-credentials:
+      - 'true'
+      access-control-allow-methods:
+      - GET, POST
+    body:
+      encoding: UTF-8
+      string: '{"coord":{"lon":149.74,"lat":-35.91},"weather":[{"id":804,"main":"Clouds","description":"overcast
+        clouds","icon":"04d"}],"base":"stations","main":{"temp":297.59,"feels_like":297.76,"temp_min":297.59,"temp_max":297.59,"pressure":1001,"humidity":91},"wind":{"speed":7.15,"deg":11,"gust":12.96},"clouds":{"all":93},"dt":1579680283,"sys":{"type":3,"id":2010627,"country":"AU","sunrise":1579633612,"sunset":1579684646},"timezone":39600,"id":7839359,"name":"Eurobodalla","cod":200}'
+    http_version: 
+  recorded_at: Wed, 22 Jan 2020 08:04:43 GMT
+- request:
+    method: get
+    uri: http://api.openweathermap.org/data/2.5/weather?appid=f0c6910d83bee3ef361afdba870cca37&lat=-35.99&lon=149.968
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.15.4
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - openresty
+      date:
+      - Wed, 22 Jan 2020 08:04:43 GMT
+      content-type:
+      - application/json; charset=utf-8
+      content-length:
+      - '476'
+      connection:
+      - close
+      x-cache-key:
+      - "/data/2.5/weather?lat=-35.99&lon=149.97"
+      access-control-allow-origin:
+      - "*"
+      access-control-allow-credentials:
+      - 'true'
+      access-control-allow-methods:
+      - GET, POST
+    body:
+      encoding: UTF-8
+      string: '{"coord":{"lon":149.97,"lat":-35.99},"weather":[{"id":802,"main":"Clouds","description":"scattered
+        clouds","icon":"03d"}],"base":"stations","main":{"temp":297.59,"feels_like":297.76,"temp_min":297.59,"temp_max":297.59,"pressure":1001,"humidity":91},"wind":{"speed":7.15,"deg":11,"gust":12.96},"clouds":{"all":45},"dt":1579680283,"sys":{"type":3,"id":2010627,"country":"AU","sunrise":1579633545,"sunset":1579684602},"timezone":39600,"id":7839359,"name":"Eurobodalla","cod":200}'
+    http_version: 
+  recorded_at: Wed, 22 Jan 2020 08:04:43 GMT
+- request:
+    method: get
+    uri: http://api.openweathermap.org/data/2.5/weather?appid=f0c6910d83bee3ef361afdba870cca37&lat=-36.069&lon=149.99
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.15.4
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - openresty
+      date:
+      - Wed, 22 Jan 2020 08:04:43 GMT
+      content-type:
+      - application/json; charset=utf-8
+      content-length:
+      - '472'
+      connection:
+      - close
+      x-cache-key:
+      - "/data/2.5/weather?lat=-36.07&lon=149.99"
+      access-control-allow-origin:
+      - "*"
+      access-control-allow-credentials:
+      - 'true'
+      access-control-allow-methods:
+      - GET, POST
+    body:
+      encoding: UTF-8
+      string: '{"coord":{"lon":149.99,"lat":-36.07},"weather":[{"id":802,"main":"Clouds","description":"scattered
+        clouds","icon":"03d"}],"base":"stations","main":{"temp":297.59,"feels_like":297.76,"temp_min":297.59,"temp_max":297.59,"pressure":1001,"humidity":91},"wind":{"speed":7.15,"deg":11,"gust":12.96},"clouds":{"all":45},"dt":1579680283,"sys":{"type":3,"id":2010627,"country":"AU","sunrise":1579633529,"sunset":1579684609},"timezone":39600,"id":2175108,"name":"Bodalla","cod":200}'
+    http_version: 
+  recorded_at: Wed, 22 Jan 2020 08:04:43 GMT
+- request:
+    method: get
+    uri: http://api.openweathermap.org/data/2.5/weather?appid=f0c6910d83bee3ef361afdba870cca37&lat=-36.209&lon=150.03
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.15.4
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - openresty
+      date:
+      - Wed, 22 Jan 2020 08:04:44 GMT
+      content-type:
+      - application/json; charset=utf-8
+      content-length:
+      - '472'
+      connection:
+      - close
+      x-cache-key:
+      - "/data/2.5/weather?lat=-36.21&lon=150.03"
+      access-control-allow-origin:
+      - "*"
+      access-control-allow-credentials:
+      - 'true'
+      access-control-allow-methods:
+      - GET, POST
+    body:
+      encoding: UTF-8
+      string: '{"coord":{"lon":150.03,"lat":-36.21},"weather":[{"id":802,"main":"Clouds","description":"scattered
+        clouds","icon":"03d"}],"base":"stations","main":{"temp":297.59,"feels_like":297.76,"temp_min":297.59,"temp_max":297.59,"pressure":1001,"humidity":91},"wind":{"speed":7.15,"deg":11,"gust":12.96},"clouds":{"all":45},"dt":1579680284,"sys":{"type":3,"id":2010627,"country":"AU","sunrise":1579633500,"sunset":1579684619},"timezone":39600,"id":2155750,"name":"Narooma","cod":200}'
+    http_version: 
+  recorded_at: Wed, 22 Jan 2020 08:04:44 GMT
+- request:
+    method: get
+    uri: http://api.openweathermap.org/data/2.5/weather?appid=f0c6910d83bee3ef361afdba870cca37&lat=-36.208&lon=150.042
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.15.4
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - openresty
+      date:
+      - Wed, 22 Jan 2020 08:04:44 GMT
+      content-type:
+      - application/json; charset=utf-8
+      content-length:
+      - '472'
+      connection:
+      - close
+      x-cache-key:
+      - "/data/2.5/weather?lat=-36.21&lon=150.04"
+      access-control-allow-origin:
+      - "*"
+      access-control-allow-credentials:
+      - 'true'
+      access-control-allow-methods:
+      - GET, POST
+    body:
+      encoding: UTF-8
+      string: '{"coord":{"lon":150.04,"lat":-36.21},"weather":[{"id":802,"main":"Clouds","description":"scattered
+        clouds","icon":"03d"}],"base":"stations","main":{"temp":297.59,"feels_like":297.76,"temp_min":297.59,"temp_max":297.59,"pressure":1001,"humidity":91},"wind":{"speed":7.15,"deg":11,"gust":12.96},"clouds":{"all":45},"dt":1579680284,"sys":{"type":3,"id":2010627,"country":"AU","sunrise":1579633497,"sunset":1579684617},"timezone":39600,"id":2155750,"name":"Narooma","cod":200}'
+    http_version: 
+  recorded_at: Wed, 22 Jan 2020 08:04:44 GMT
+- request:
+    method: get
+    uri: http://api.openweathermap.org/data/2.5/weather?appid=f0c6910d83bee3ef361afdba870cca37&lat=-36.22&lon=150.02
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.15.4
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - openresty
+      date:
+      - Wed, 22 Jan 2020 08:04:44 GMT
+      content-type:
+      - application/json; charset=utf-8
+      content-length:
+      - '472'
+      connection:
+      - close
+      x-cache-key:
+      - "/data/2.5/weather?lat=-36.22&lon=150.02"
+      access-control-allow-origin:
+      - "*"
+      access-control-allow-credentials:
+      - 'true'
+      access-control-allow-methods:
+      - GET, POST
+    body:
+      encoding: UTF-8
+      string: '{"coord":{"lon":150.02,"lat":-36.22},"weather":[{"id":802,"main":"Clouds","description":"scattered
+        clouds","icon":"03d"}],"base":"stations","main":{"temp":297.59,"feels_like":297.76,"temp_min":297.59,"temp_max":297.59,"pressure":1001,"humidity":91},"wind":{"speed":7.15,"deg":11,"gust":12.96},"clouds":{"all":45},"dt":1579680284,"sys":{"type":3,"id":2010627,"country":"AU","sunrise":1579633501,"sunset":1579684623},"timezone":39600,"id":2155750,"name":"Narooma","cod":200}'
+    http_version: 
+  recorded_at: Wed, 22 Jan 2020 08:04:44 GMT
+- request:
+    method: get
+    uri: http://api.openweathermap.org/data/2.5/weather?appid=f0c6910d83bee3ef361afdba870cca37&lat=-36.219&lon=150.032
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.15.4
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - openresty
+      date:
+      - Wed, 22 Jan 2020 08:04:44 GMT
+      content-type:
+      - application/json; charset=utf-8
+      content-length:
+      - '472'
+      connection:
+      - close
+      x-cache-key:
+      - "/data/2.5/weather?lat=-36.22&lon=150.03"
+      access-control-allow-origin:
+      - "*"
+      access-control-allow-credentials:
+      - 'true'
+      access-control-allow-methods:
+      - GET, POST
+    body:
+      encoding: UTF-8
+      string: '{"coord":{"lon":150.03,"lat":-36.22},"weather":[{"id":802,"main":"Clouds","description":"scattered
+        clouds","icon":"03d"}],"base":"stations","main":{"temp":297.59,"feels_like":297.76,"temp_min":297.59,"temp_max":297.59,"pressure":1001,"humidity":91},"wind":{"speed":7.15,"deg":11,"gust":12.96},"clouds":{"all":45},"dt":1579680284,"sys":{"type":3,"id":2010627,"country":"AU","sunrise":1579633498,"sunset":1579684620},"timezone":39600,"id":2155750,"name":"Narooma","cod":200}'
+    http_version: 
+  recorded_at: Wed, 22 Jan 2020 08:04:44 GMT
+- request:
+    method: get
+    uri: http://api.openweathermap.org/data/2.5/weather?appid=f0c6910d83bee3ef361afdba870cca37&lat=-36.339&lon=149.952
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.15.4
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - openresty
+      date:
+      - Wed, 22 Jan 2020 08:04:44 GMT
+      content-type:
+      - application/json; charset=utf-8
+      content-length:
+      - '480'
+      connection:
+      - close
+      x-cache-key:
+      - "/data/2.5/weather?lat=-36.34&lon=149.95"
+      access-control-allow-origin:
+      - "*"
+      access-control-allow-credentials:
+      - 'true'
+      access-control-allow-methods:
+      - GET, POST
+    body:
+      encoding: UTF-8
+      string: '{"coord":{"lon":149.95,"lat":-36.34},"weather":[{"id":802,"main":"Clouds","description":"scattered
+        clouds","icon":"03d"}],"base":"stations","main":{"temp":297.81,"feels_like":297.09,"temp_min":297.59,"temp_max":298.15,"pressure":1002,"humidity":78},"visibility":10000,"wind":{"speed":6.7,"deg":20},"clouds":{"all":35},"dt":1579680284,"sys":{"type":1,"id":9543,"country":"AU","sunrise":1579633500,"sunset":1579684657},"timezone":39600,"id":2168849,"name":"Dignams
+        Creek","cod":200}'
+    http_version: 
+  recorded_at: Wed, 22 Jan 2020 08:04:44 GMT
+- request:
+    method: get
+    uri: http://api.openweathermap.org/data/2.5/weather?appid=f0c6910d83bee3ef361afdba870cca37&lat=-36.493&lon=149.958
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.15.4
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - openresty
+      date:
+      - Wed, 22 Jan 2020 08:04:44 GMT
+      content-type:
+      - application/json; charset=utf-8
+      content-length:
+      - '473'
+      connection:
+      - close
+      x-cache-key:
+      - "/data/2.5/weather?lat=-36.49&lon=149.96"
+      access-control-allow-origin:
+      - "*"
+      access-control-allow-credentials:
+      - 'true'
+      access-control-allow-methods:
+      - GET, POST
+    body:
+      encoding: UTF-8
+      string: '{"coord":{"lon":149.96,"lat":-36.49},"weather":[{"id":802,"main":"Clouds","description":"scattered
+        clouds","icon":"03d"}],"base":"stations","main":{"temp":297.84,"feels_like":297.13,"temp_min":297.59,"temp_max":298.15,"pressure":1002,"humidity":78},"visibility":10000,"wind":{"speed":6.7,"deg":20},"clouds":{"all":35},"dt":1579680284,"sys":{"type":1,"id":9543,"country":"AU","sunrise":1579633476,"sunset":1579684676},"timezone":39600,"id":2156127,"name":"Murrah","cod":200}'
+    http_version: 
+  recorded_at: Wed, 22 Jan 2020 08:04:44 GMT
+- request:
+    method: get
+    uri: http://api.openweathermap.org/data/2.5/weather?appid=f0c6910d83bee3ef361afdba870cca37&lat=-36.553&lon=149.933
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.15.4
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - openresty
+      date:
+      - Wed, 22 Jan 2020 08:04:44 GMT
+      content-type:
+      - application/json; charset=utf-8
+      content-length:
+      - '472'
+      connection:
+      - close
+      x-cache-key:
+      - "/data/2.5/weather?lat=-36.55&lon=149.93"
+      access-control-allow-origin:
+      - "*"
+      access-control-allow-credentials:
+      - 'true'
+      access-control-allow-methods:
+      - GET, POST
+    body:
+      encoding: UTF-8
+      string: '{"coord":{"lon":149.93,"lat":-36.55},"weather":[{"id":802,"main":"Clouds","description":"scattered
+        clouds","icon":"03d"}],"base":"stations","main":{"temp":297.85,"feels_like":297.15,"temp_min":297.59,"temp_max":298.15,"pressure":1002,"humidity":78},"visibility":10000,"wind":{"speed":6.7,"deg":20},"clouds":{"all":35},"dt":1579680284,"sys":{"type":1,"id":9543,"country":"AU","sunrise":1579633475,"sunset":1579684692},"timezone":39600,"id":2147464,"name":"Tanja","cod":200}'
+    http_version: 
+  recorded_at: Wed, 22 Jan 2020 08:04:44 GMT
+- request:
+    method: get
+    uri: http://api.openweathermap.org/data/2.5/weather?appid=f0c6910d83bee3ef361afdba870cca37&lat=-36.552&lon=149.945
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.15.4
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - openresty
+      date:
+      - Wed, 22 Jan 2020 08:04:44 GMT
+      content-type:
+      - application/json; charset=utf-8
+      content-length:
+      - '472'
+      connection:
+      - close
+      x-cache-key:
+      - "/data/2.5/weather?lat=-36.55&lon=149.94"
+      access-control-allow-origin:
+      - "*"
+      access-control-allow-credentials:
+      - 'true'
+      access-control-allow-methods:
+      - GET, POST
+    body:
+      encoding: UTF-8
+      string: '{"coord":{"lon":149.95,"lat":-36.55},"weather":[{"id":802,"main":"Clouds","description":"scattered
+        clouds","icon":"03d"}],"base":"stations","main":{"temp":297.85,"feels_like":297.15,"temp_min":297.59,"temp_max":298.15,"pressure":1002,"humidity":78},"visibility":10000,"wind":{"speed":6.7,"deg":20},"clouds":{"all":35},"dt":1579680284,"sys":{"type":1,"id":9543,"country":"AU","sunrise":1579633470,"sunset":1579684687},"timezone":39600,"id":2147464,"name":"Tanja","cod":200}'
+    http_version: 
+  recorded_at: Wed, 22 Jan 2020 08:04:44 GMT
+- request:
+    method: get
+    uri: http://api.openweathermap.org/data/2.5/weather?appid=f0c6910d83bee3ef361afdba870cca37&lat=-37.267&lon=149.104
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.15.4
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - openresty
+      date:
+      - Wed, 22 Jan 2020 08:04:44 GMT
+      content-type:
+      - application/json; charset=utf-8
+      content-length:
+      - '469'
+      connection:
+      - close
+      x-cache-key:
+      - "/data/2.5/weather?lat=-37.27&lon=149.1"
+      access-control-allow-origin:
+      - "*"
+      access-control-allow-credentials:
+      - 'true'
+      access-control-allow-methods:
+      - GET, POST
+    body:
+      encoding: UTF-8
+      string: '{"coord":{"lon":149.1,"lat":-37.27},"weather":[{"id":804,"main":"Clouds","description":"overcast
+        clouds","icon":"04d"}],"base":"model","main":{"temp":297.27,"feels_like":296.54,"temp_min":297.27,"temp_max":297.27,"pressure":1002,"humidity":44,"sea_level":1002,"grnd_level":965},"wind":{"speed":1.54,"deg":37},"clouds":{"all":85},"dt":1579680284,"sys":{"country":"AU","sunrise":1579633570,"sunset":1579684996},"timezone":39600,"id":2170921,"name":"Combienbar","cod":200}'
+    http_version: 
+  recorded_at: Wed, 22 Jan 2020 08:04:44 GMT
+- request:
+    method: get
+    uri: http://api.openweathermap.org/data/2.5/weather?appid=f0c6910d83bee3ef361afdba870cca37&lat=-37.264&lon=149.129
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.15.4
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - openresty
+      date:
+      - Wed, 22 Jan 2020 08:04:44 GMT
+      content-type:
+      - application/json; charset=utf-8
+      content-length:
+      - '470'
+      connection:
+      - close
+      x-cache-key:
+      - "/data/2.5/weather?lat=-37.26&lon=149.13"
+      access-control-allow-origin:
+      - "*"
+      access-control-allow-credentials:
+      - 'true'
+      access-control-allow-methods:
+      - GET, POST
+    body:
+      encoding: UTF-8
+      string: '{"coord":{"lon":149.13,"lat":-37.26},"weather":[{"id":804,"main":"Clouds","description":"overcast
+        clouds","icon":"04d"}],"base":"model","main":{"temp":297.27,"feels_like":296.54,"temp_min":297.27,"temp_max":297.27,"pressure":1002,"humidity":44,"sea_level":1002,"grnd_level":965},"wind":{"speed":1.54,"deg":37},"clouds":{"all":85},"dt":1579680285,"sys":{"country":"AU","sunrise":1579633564,"sunset":1579684987},"timezone":39600,"id":2170921,"name":"Combienbar","cod":200}'
+    http_version: 
+  recorded_at: Wed, 22 Jan 2020 08:04:45 GMT
+- request:
+    method: get
+    uri: http://api.openweathermap.org/data/2.5/weather?appid=f0c6910d83bee3ef361afdba870cca37&lat=-37.312&lon=149.486
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.15.4
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - openresty
+      date:
+      - Wed, 22 Jan 2020 08:04:45 GMT
+      content-type:
+      - application/json; charset=utf-8
+      content-length:
+      - '469'
+      connection:
+      - close
+      x-cache-key:
+      - "/data/2.5/weather?lat=-37.31&lon=149.49"
+      access-control-allow-origin:
+      - "*"
+      access-control-allow-credentials:
+      - 'true'
+      access-control-allow-methods:
+      - GET, POST
+    body:
+      encoding: UTF-8
+      string: '{"coord":{"lon":149.49,"lat":-37.31},"weather":[{"id":803,"main":"Clouds","description":"broken
+        clouds","icon":"04d"}],"base":"stations","main":{"temp":298.15,"feels_like":297.59,"temp_min":298.15,"temp_max":298.15,"pressure":1002,"humidity":78},"visibility":10000,"wind":{"speed":6.7,"deg":20},"clouds":{"all":66},"dt":1579680285,"sys":{"type":1,"id":9543,"country":"AU","sunrise":1579633470,"sunset":1579684908},"timezone":39600,"id":2165758,"name":"Genoa","cod":200}'
+    http_version: 
+  recorded_at: Wed, 22 Jan 2020 08:04:45 GMT
+- request:
+    method: get
+    uri: http://api.openweathermap.org/data/2.5/weather?appid=f0c6910d83bee3ef361afdba870cca37&lat=-37.311&lon=149.499
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.15.4
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - openresty
+      date:
+      - Wed, 22 Jan 2020 08:04:45 GMT
+      content-type:
+      - application/json; charset=utf-8
+      content-length:
+      - '468'
+      connection:
+      - close
+      x-cache-key:
+      - "/data/2.5/weather?lat=-37.31&lon=149.5"
+      access-control-allow-origin:
+      - "*"
+      access-control-allow-credentials:
+      - 'true'
+      access-control-allow-methods:
+      - GET, POST
+    body:
+      encoding: UTF-8
+      string: '{"coord":{"lon":149.5,"lat":-37.31},"weather":[{"id":803,"main":"Clouds","description":"broken
+        clouds","icon":"04d"}],"base":"stations","main":{"temp":298.15,"feels_like":297.59,"temp_min":298.15,"temp_max":298.15,"pressure":1002,"humidity":78},"visibility":10000,"wind":{"speed":6.7,"deg":20},"clouds":{"all":66},"dt":1579680285,"sys":{"type":1,"id":9543,"country":"AU","sunrise":1579633468,"sunset":1579684906},"timezone":39600,"id":2165758,"name":"Genoa","cod":200}'
+    http_version: 
+  recorded_at: Wed, 22 Jan 2020 08:04:45 GMT
+- request:
+    method: get
+    uri: http://api.openweathermap.org/data/2.5/weather?appid=f0c6910d83bee3ef361afdba870cca37&lat=-37.363&lon=149.313
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.15.4
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - openresty
+      date:
+      - Wed, 22 Jan 2020 08:04:45 GMT
+      content-type:
+      - application/json; charset=utf-8
+      content-length:
+      - '467'
+      connection:
+      - close
+      x-cache-key:
+      - "/data/2.5/weather?lat=-37.36&lon=149.31"
+      access-control-allow-origin:
+      - "*"
+      access-control-allow-credentials:
+      - 'true'
+      access-control-allow-methods:
+      - GET, POST
+    body:
+      encoding: UTF-8
+      string: '{"coord":{"lon":149.31,"lat":-37.36},"weather":[{"id":803,"main":"Clouds","description":"broken
+        clouds","icon":"04d"}],"base":"model","main":{"temp":296.98,"feels_like":296.49,"temp_min":296.98,"temp_max":296.98,"pressure":1003,"humidity":58,"sea_level":1003,"grnd_level":981},"wind":{"speed":3.04,"deg":36},"clouds":{"all":66},"dt":1579680285,"sys":{"country":"AU","sunrise":1579633506,"sunset":1579684959},"timezone":39600,"id":2155143,"name":"Noorinbee","cod":200}'
+    http_version: 
+  recorded_at: Wed, 22 Jan 2020 08:04:45 GMT
+- request:
+    method: get
+    uri: http://api.openweathermap.org/data/2.5/weather?appid=f0c6910d83bee3ef361afdba870cca37&lat=-37.397&lon=149.378
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.15.4
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - openresty
+      date:
+      - Wed, 22 Jan 2020 08:04:45 GMT
+      content-type:
+      - application/json; charset=utf-8
+      content-length:
+      - '462'
+      connection:
+      - close
+      x-cache-key:
+      - "/data/2.5/weather?lat=-37.4&lon=149.38"
+      access-control-allow-origin:
+      - "*"
+      access-control-allow-credentials:
+      - 'true'
+      access-control-allow-methods:
+      - GET, POST
+    body:
+      encoding: UTF-8
+      string: '{"coord":{"lon":149.38,"lat":-37.4},"weather":[{"id":803,"main":"Clouds","description":"broken
+        clouds","icon":"04d"}],"base":"model","main":{"temp":296.98,"feels_like":296.49,"temp_min":296.98,"temp_max":296.98,"pressure":1003,"humidity":58,"sea_level":1003,"grnd_level":981},"wind":{"speed":3.04,"deg":36},"clouds":{"all":66},"dt":1579680285,"sys":{"country":"AU","sunrise":1579633483,"sunset":1579684948},"timezone":39600,"id":2165758,"name":"Genoa","cod":200}'
+    http_version: 
+  recorded_at: Wed, 22 Jan 2020 08:04:45 GMT
+- request:
+    method: get
+    uri: http://api.openweathermap.org/data/2.5/weather?appid=f0c6910d83bee3ef361afdba870cca37&lat=-37.327&lon=149.955
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.15.4
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - openresty
+      date:
+      - Wed, 22 Jan 2020 08:04:45 GMT
+      content-type:
+      - application/json; charset=utf-8
+      content-length:
+      - '471'
+      connection:
+      - close
+      x-cache-key:
+      - "/data/2.5/weather?lat=-37.33&lon=149.96"
+      access-control-allow-origin:
+      - "*"
+      access-control-allow-credentials:
+      - 'true'
+      access-control-allow-methods:
+      - GET, POST
+    body:
+      encoding: UTF-8
+      string: '{"coord":{"lon":149.96,"lat":-37.33},"weather":[{"id":802,"main":"Clouds","description":"scattered
+        clouds","icon":"03d"}],"base":"stations","main":{"temp":298.15,"feels_like":297.59,"temp_min":298.15,"temp_max":298.15,"pressure":1002,"humidity":78},"visibility":10000,"wind":{"speed":6.7,"deg":20},"clouds":{"all":49},"dt":1579680285,"sys":{"type":1,"id":9543,"country":"AU","sunrise":1579633354,"sunset":1579684798},"timezone":39600,"id":2161522,"name":"Kiah","cod":200}'
+    http_version: 
+  recorded_at: Wed, 22 Jan 2020 08:04:45 GMT
+- request:
+    method: get
+    uri: http://api.openweathermap.org/data/2.5/weather?appid=f0c6910d83bee3ef361afdba870cca37&lat=-37.418&lon=149.29
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.15.4
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - openresty
+      date:
+      - Wed, 22 Jan 2020 08:04:45 GMT
+      content-type:
+      - application/json; charset=utf-8
+      content-length:
+      - '467'
+      connection:
+      - close
+      x-cache-key:
+      - "/data/2.5/weather?lat=-37.42&lon=149.29"
+      access-control-allow-origin:
+      - "*"
+      access-control-allow-credentials:
+      - 'true'
+      access-control-allow-methods:
+      - GET, POST
+    body:
+      encoding: UTF-8
+      string: '{"coord":{"lon":149.29,"lat":-37.42},"weather":[{"id":803,"main":"Clouds","description":"broken
+        clouds","icon":"04d"}],"base":"model","main":{"temp":296.98,"feels_like":296.49,"temp_min":296.98,"temp_max":296.98,"pressure":1003,"humidity":58,"sea_level":1003,"grnd_level":981},"wind":{"speed":3.04,"deg":36},"clouds":{"all":66},"dt":1579680285,"sys":{"country":"AU","sunrise":1579633502,"sunset":1579684972},"timezone":39600,"id":2155143,"name":"Noorinbee","cod":200}'
+    http_version: 
+  recorded_at: Wed, 22 Jan 2020 08:04:45 GMT
+- request:
+    method: get
+    uri: http://api.openweathermap.org/data/2.5/weather?appid=f0c6910d83bee3ef361afdba870cca37&lat=-37.416&lon=149.304
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.15.4
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - openresty
+      date:
+      - Wed, 22 Jan 2020 08:04:45 GMT
+      content-type:
+      - application/json; charset=utf-8
+      content-length:
+      - '466'
+      connection:
+      - close
+      x-cache-key:
+      - "/data/2.5/weather?lat=-37.42&lon=149.3"
+      access-control-allow-origin:
+      - "*"
+      access-control-allow-credentials:
+      - 'true'
+      access-control-allow-methods:
+      - GET, POST
+    body:
+      encoding: UTF-8
+      string: '{"coord":{"lon":149.3,"lat":-37.42},"weather":[{"id":803,"main":"Clouds","description":"broken
+        clouds","icon":"04d"}],"base":"model","main":{"temp":296.98,"feels_like":296.49,"temp_min":296.98,"temp_max":296.98,"pressure":1003,"humidity":58,"sea_level":1003,"grnd_level":981},"wind":{"speed":3.04,"deg":36},"clouds":{"all":66},"dt":1579680285,"sys":{"country":"AU","sunrise":1579633499,"sunset":1579684970},"timezone":39600,"id":2155143,"name":"Noorinbee","cod":200}'
+    http_version: 
+  recorded_at: Wed, 22 Jan 2020 08:04:45 GMT
+- request:
+    method: get
+    uri: http://api.openweathermap.org/data/2.5/weather?appid=f0c6910d83bee3ef361afdba870cca37&lat=-37.437&lon=149.213
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.15.4
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - openresty
+      date:
+      - Wed, 22 Jan 2020 08:04:45 GMT
+      content-type:
+      - application/json; charset=utf-8
+      content-length:
+      - '469'
+      connection:
+      - close
+      x-cache-key:
+      - "/data/2.5/weather?lat=-37.44&lon=149.21"
+      access-control-allow-origin:
+      - "*"
+      access-control-allow-credentials:
+      - 'true'
+      access-control-allow-methods:
+      - GET, POST
+    body:
+      encoding: UTF-8
+      string: '{"coord":{"lon":149.21,"lat":-37.44},"weather":[{"id":804,"main":"Clouds","description":"overcast
+        clouds","icon":"04d"}],"base":"model","main":{"temp":297.27,"feels_like":296.54,"temp_min":297.27,"temp_max":297.27,"pressure":1002,"humidity":44,"sea_level":1002,"grnd_level":965},"wind":{"speed":1.54,"deg":37},"clouds":{"all":85},"dt":1579680285,"sys":{"country":"AU","sunrise":1579633518,"sunset":1579684994},"timezone":39600,"id":2155143,"name":"Noorinbee","cod":200}'
+    http_version: 
+  recorded_at: Wed, 22 Jan 2020 08:04:45 GMT
+- request:
+    method: get
+    uri: http://api.openweathermap.org/data/2.5/weather?appid=f0c6910d83bee3ef361afdba870cca37&lat=-37.435&lon=149.226
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.15.4
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - openresty
+      date:
+      - Wed, 22 Jan 2020 08:04:45 GMT
+      content-type:
+      - application/json; charset=utf-8
+      content-length:
+      - '469'
+      connection:
+      - close
+      x-cache-key:
+      - "/data/2.5/weather?lat=-37.44&lon=149.23"
+      access-control-allow-origin:
+      - "*"
+      access-control-allow-credentials:
+      - 'true'
+      access-control-allow-methods:
+      - GET, POST
+    body:
+      encoding: UTF-8
+      string: '{"coord":{"lon":149.23,"lat":-37.44},"weather":[{"id":804,"main":"Clouds","description":"overcast
+        clouds","icon":"04d"}],"base":"model","main":{"temp":297.27,"feels_like":296.54,"temp_min":297.27,"temp_max":297.27,"pressure":1002,"humidity":44,"sea_level":1002,"grnd_level":965},"wind":{"speed":1.54,"deg":37},"clouds":{"all":85},"dt":1579680285,"sys":{"country":"AU","sunrise":1579633513,"sunset":1579684990},"timezone":39600,"id":2155143,"name":"Noorinbee","cod":200}'
+    http_version: 
+  recorded_at: Wed, 22 Jan 2020 08:04:45 GMT
+- request:
+    method: get
+    uri: http://api.openweathermap.org/data/2.5/weather?appid=f0c6910d83bee3ef361afdba870cca37&lat=-37.36&lon=149.924
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.15.4
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - openresty
+      date:
+      - Wed, 22 Jan 2020 08:04:45 GMT
+      content-type:
+      - application/json; charset=utf-8
+      content-length:
+      - '471'
+      connection:
+      - close
+      x-cache-key:
+      - "/data/2.5/weather?lat=-37.36&lon=149.92"
+      access-control-allow-origin:
+      - "*"
+      access-control-allow-credentials:
+      - 'true'
+      access-control-allow-methods:
+      - GET, POST
+    body:
+      encoding: UTF-8
+      string: '{"coord":{"lon":149.92,"lat":-37.36},"weather":[{"id":802,"main":"Clouds","description":"scattered
+        clouds","icon":"03d"}],"base":"stations","main":{"temp":298.15,"feels_like":297.59,"temp_min":298.15,"temp_max":298.15,"pressure":1002,"humidity":78},"visibility":10000,"wind":{"speed":6.7,"deg":20},"clouds":{"all":49},"dt":1579680285,"sys":{"type":1,"id":9543,"country":"AU","sunrise":1579633359,"sunset":1579684812},"timezone":39600,"id":2161522,"name":"Kiah","cod":200}'
+    http_version: 
+  recorded_at: Wed, 22 Jan 2020 08:04:45 GMT
+- request:
+    method: get
+    uri: http://api.openweathermap.org/data/2.5/weather?appid=f0c6910d83bee3ef361afdba870cca37&lat=-37.413&lon=149.731
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.15.4
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - openresty
+      date:
+      - Wed, 22 Jan 2020 08:04:46 GMT
+      content-type:
+      - application/json; charset=utf-8
+      content-length:
+      - '469'
+      connection:
+      - close
+      x-cache-key:
+      - "/data/2.5/weather?lat=-37.41&lon=149.73"
+      access-control-allow-origin:
+      - "*"
+      access-control-allow-credentials:
+      - 'true'
+      access-control-allow-methods:
+      - GET, POST
+    body:
+      encoding: UTF-8
+      string: '{"coord":{"lon":149.73,"lat":-37.41},"weather":[{"id":803,"main":"Clouds","description":"broken
+        clouds","icon":"04d"}],"base":"stations","main":{"temp":298.15,"feels_like":297.59,"temp_min":298.15,"temp_max":298.15,"pressure":1002,"humidity":78},"visibility":10000,"wind":{"speed":6.7,"deg":20},"clouds":{"all":66},"dt":1579680286,"sys":{"type":1,"id":9543,"country":"AU","sunrise":1579633398,"sunset":1579684865},"timezone":39600,"id":2165758,"name":"Genoa","cod":200}'
+    http_version: 
+  recorded_at: Wed, 22 Jan 2020 08:04:46 GMT
+- request:
+    method: get
+    uri: http://api.openweathermap.org/data/2.5/weather?appid=f0c6910d83bee3ef361afdba870cca37&lat=-37.662&lon=148.941
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.15.4
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - openresty
+      date:
+      - Wed, 22 Jan 2020 08:04:46 GMT
+      content-type:
+      - application/json; charset=utf-8
+      content-length:
+      - '472'
+      connection:
+      - close
+      x-cache-key:
+      - "/data/2.5/weather?lat=-37.66&lon=148.94"
+      access-control-allow-origin:
+      - "*"
+      access-control-allow-credentials:
+      - 'true'
+      access-control-allow-methods:
+      - GET, POST
+    body:
+      encoding: UTF-8
+      string: '{"coord":{"lon":148.94,"lat":-37.66},"weather":[{"id":804,"main":"Clouds","description":"overcast
+        clouds","icon":"04d"}],"base":"model","main":{"temp":297.27,"feels_like":296.54,"temp_min":297.27,"temp_max":297.27,"pressure":1002,"humidity":44,"sea_level":1002,"grnd_level":965},"wind":{"speed":1.54,"deg":37},"clouds":{"all":85},"dt":1579680286,"sys":{"country":"AU","sunrise":1579633550,"sunset":1579685092},"timezone":39600,"id":2171281,"name":"Club
+        Terrace","cod":200}'
+    http_version: 
+  recorded_at: Wed, 22 Jan 2020 08:04:46 GMT
+- request:
+    method: get
+    uri: http://api.openweathermap.org/data/2.5/weather?appid=f0c6910d83bee3ef361afdba870cca37&lat=-37.66&lon=148.954
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.15.4
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - openresty
+      date:
+      - Wed, 22 Jan 2020 08:04:46 GMT
+      content-type:
+      - application/json; charset=utf-8
+      content-length:
+      - '472'
+      connection:
+      - close
+      x-cache-key:
+      - "/data/2.5/weather?lat=-37.66&lon=148.95"
+      access-control-allow-origin:
+      - "*"
+      access-control-allow-credentials:
+      - 'true'
+      access-control-allow-methods:
+      - GET, POST
+    body:
+      encoding: UTF-8
+      string: '{"coord":{"lon":148.95,"lat":-37.66},"weather":[{"id":804,"main":"Clouds","description":"overcast
+        clouds","icon":"04d"}],"base":"model","main":{"temp":297.27,"feels_like":296.54,"temp_min":297.27,"temp_max":297.27,"pressure":1002,"humidity":44,"sea_level":1002,"grnd_level":965},"wind":{"speed":1.54,"deg":37},"clouds":{"all":85},"dt":1579680286,"sys":{"country":"AU","sunrise":1579633548,"sunset":1579685089},"timezone":39600,"id":2171281,"name":"Club
+        Terrace","cod":200}'
+    http_version: 
+  recorded_at: Wed, 22 Jan 2020 08:04:46 GMT
+- request:
+    method: get
+    uri: http://api.openweathermap.org/data/2.5/weather?appid=f0c6910d83bee3ef361afdba870cca37&lat=-37.67&lon=148.956
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.15.4
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - openresty
+      date:
+      - Wed, 22 Jan 2020 08:04:46 GMT
+      content-type:
+      - application/json; charset=utf-8
+      content-length:
+      - '472'
+      connection:
+      - close
+      x-cache-key:
+      - "/data/2.5/weather?lat=-37.67&lon=148.96"
+      access-control-allow-origin:
+      - "*"
+      access-control-allow-credentials:
+      - 'true'
+      access-control-allow-methods:
+      - GET, POST
+    body:
+      encoding: UTF-8
+      string: '{"coord":{"lon":148.96,"lat":-37.67},"weather":[{"id":804,"main":"Clouds","description":"overcast
+        clouds","icon":"04d"}],"base":"model","main":{"temp":297.27,"feels_like":296.54,"temp_min":297.27,"temp_max":297.27,"pressure":1002,"humidity":44,"sea_level":1002,"grnd_level":965},"wind":{"speed":1.54,"deg":37},"clouds":{"all":85},"dt":1579680286,"sys":{"country":"AU","sunrise":1579633544,"sunset":1579685089},"timezone":39600,"id":2171281,"name":"Club
+        Terrace","cod":200}'
+    http_version: 
+  recorded_at: Wed, 22 Jan 2020 08:04:46 GMT
+- request:
+    method: get
+    uri: http://api.openweathermap.org/data/2.5/weather?appid=f0c6910d83bee3ef361afdba870cca37&lat=-37.685&lon=148.917
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.15.4
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - openresty
+      date:
+      - Wed, 22 Jan 2020 08:04:46 GMT
+      content-type:
+      - application/json; charset=utf-8
+      content-length:
+      - '472'
+      connection:
+      - close
+      x-cache-key:
+      - "/data/2.5/weather?lat=-37.69&lon=148.92"
+      access-control-allow-origin:
+      - "*"
+      access-control-allow-credentials:
+      - 'true'
+      access-control-allow-methods:
+      - GET, POST
+    body:
+      encoding: UTF-8
+      string: '{"coord":{"lon":148.92,"lat":-37.69},"weather":[{"id":804,"main":"Clouds","description":"overcast
+        clouds","icon":"04d"}],"base":"model","main":{"temp":297.27,"feels_like":296.54,"temp_min":297.27,"temp_max":297.27,"pressure":1002,"humidity":44,"sea_level":1002,"grnd_level":965},"wind":{"speed":1.54,"deg":37},"clouds":{"all":85},"dt":1579680286,"sys":{"country":"AU","sunrise":1579633551,"sunset":1579685101},"timezone":39600,"id":2171281,"name":"Club
+        Terrace","cod":200}'
+    http_version: 
+  recorded_at: Wed, 22 Jan 2020 08:04:46 GMT
+- request:
+    method: get
+    uri: http://api.openweathermap.org/data/2.5/weather?appid=f0c6910d83bee3ef361afdba870cca37&lat=-37.68&lon=148.958
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.15.4
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - openresty
+      date:
+      - Wed, 22 Jan 2020 08:04:46 GMT
+      content-type:
+      - application/json; charset=utf-8
+      content-length:
+      - '472'
+      connection:
+      - close
+      x-cache-key:
+      - "/data/2.5/weather?lat=-37.68&lon=148.96"
+      access-control-allow-origin:
+      - "*"
+      access-control-allow-credentials:
+      - 'true'
+      access-control-allow-methods:
+      - GET, POST
+    body:
+      encoding: UTF-8
+      string: '{"coord":{"lon":148.96,"lat":-37.68},"weather":[{"id":804,"main":"Clouds","description":"overcast
+        clouds","icon":"04d"}],"base":"model","main":{"temp":297.27,"feels_like":296.54,"temp_min":297.27,"temp_max":297.27,"pressure":1002,"humidity":44,"sea_level":1002,"grnd_level":965},"wind":{"speed":1.54,"deg":37},"clouds":{"all":85},"dt":1579680286,"sys":{"country":"AU","sunrise":1579633542,"sunset":1579685090},"timezone":39600,"id":2171281,"name":"Club
+        Terrace","cod":200}'
+    http_version: 
+  recorded_at: Wed, 22 Jan 2020 08:04:46 GMT
+- request:
+    method: get
+    uri: http://api.openweathermap.org/data/2.5/weather?appid=f0c6910d83bee3ef361afdba870cca37&lat=-37.678&lon=148.971
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.15.4
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - openresty
+      date:
+      - Wed, 22 Jan 2020 08:04:46 GMT
+      content-type:
+      - application/json; charset=utf-8
+      content-length:
+      - '472'
+      connection:
+      - close
+      x-cache-key:
+      - "/data/2.5/weather?lat=-37.68&lon=148.97"
+      access-control-allow-origin:
+      - "*"
+      access-control-allow-credentials:
+      - 'true'
+      access-control-allow-methods:
+      - GET, POST
+    body:
+      encoding: UTF-8
+      string: '{"coord":{"lon":148.97,"lat":-37.68},"weather":[{"id":804,"main":"Clouds","description":"overcast
+        clouds","icon":"04d"}],"base":"model","main":{"temp":297.27,"feels_like":296.54,"temp_min":297.27,"temp_max":297.27,"pressure":1002,"humidity":44,"sea_level":1002,"grnd_level":965},"wind":{"speed":1.54,"deg":37},"clouds":{"all":85},"dt":1579680286,"sys":{"country":"AU","sunrise":1579633540,"sunset":1579685088},"timezone":39600,"id":2171281,"name":"Club
+        Terrace","cod":200}'
+    http_version: 
+  recorded_at: Wed, 22 Jan 2020 08:04:46 GMT
+- request:
+    method: get
+    uri: http://api.openweathermap.org/data/2.5/weather?appid=f0c6910d83bee3ef361afdba870cca37&lat=-31.997&lon=149.053
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.15.4
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - openresty
+      date:
+      - Wed, 22 Jan 2020 08:04:46 GMT
+      content-type:
+      - application/json; charset=utf-8
+      content-length:
+      - '464'
+      connection:
+      - close
+      x-cache-key:
+      - "/data/2.5/weather?lat=-32&lon=149.05"
+      access-control-allow-origin:
+      - "*"
+      access-control-allow-credentials:
+      - 'true'
+      access-control-allow-methods:
+      - GET, POST
+    body:
+      encoding: UTF-8
+      string: '{"coord":{"lon":149.05,"lat":-32},"weather":[{"id":800,"main":"Clear","description":"clear
+        sky","icon":"01d"}],"base":"stations","main":{"temp":307.98,"feels_like":302,"temp_min":306.48,"temp_max":309.15,"pressure":1005,"humidity":11},"visibility":10000,"wind":{"speed":5.7,"deg":340},"clouds":{"all":0},"dt":1579680286,"sys":{"type":1,"id":9596,"country":"AU","sunrise":1579634302,"sunset":1579684287},"timezone":39600,"id":2167467,"name":"Elong
+        Elong","cod":200}'
+    http_version: 
+  recorded_at: Wed, 22 Jan 2020 08:04:46 GMT
+- request:
+    method: get
+    uri: http://api.openweathermap.org/data/2.5/weather?appid=f0c6910d83bee3ef361afdba870cca37&lat=-28.334&lon=148.328
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.15.4
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - openresty
+      date:
+      - Wed, 22 Jan 2020 08:04:46 GMT
+      content-type:
+      - application/json; charset=utf-8
+      content-length:
+      - '466'
+      connection:
+      - close
+      x-cache-key:
+      - "/data/2.5/weather?lat=-28.33&lon=148.33"
+      access-control-allow-origin:
+      - "*"
+      access-control-allow-credentials:
+      - 'true'
+      access-control-allow-methods:
+      - GET, POST
+    body:
+      encoding: UTF-8
+      string: '{"coord":{"lon":148.33,"lat":-28.33},"weather":[{"id":800,"main":"Clear","description":"clear
+        sky","icon":"01d"}],"base":"model","main":{"temp":309.44,"feels_like":306.87,"temp_min":309.44,"temp_max":309.44,"pressure":1005,"humidity":15,"sea_level":1005,"grnd_level":984},"wind":{"speed":2.21,"deg":280},"clouds":{"all":6},"dt":1579680286,"sys":{"country":"AU","sunrise":1579634922,"sunset":1579684013},"timezone":36000,"id":2177036,"name":"Balonne
+        Shire","cod":200}'
+    http_version: 
+  recorded_at: Wed, 22 Jan 2020 08:04:46 GMT
+- request:
+    method: get
+    uri: http://api.openweathermap.org/data/2.5/weather?appid=f0c6910d83bee3ef361afdba870cca37&lat=-28.333&lon=148.339
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.15.4
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - openresty
+      date:
+      - Wed, 22 Jan 2020 08:04:46 GMT
+      content-type:
+      - application/json; charset=utf-8
+      content-length:
+      - '466'
+      connection:
+      - close
+      x-cache-key:
+      - "/data/2.5/weather?lat=-28.33&lon=148.34"
+      access-control-allow-origin:
+      - "*"
+      access-control-allow-credentials:
+      - 'true'
+      access-control-allow-methods:
+      - GET, POST
+    body:
+      encoding: UTF-8
+      string: '{"coord":{"lon":148.34,"lat":-28.33},"weather":[{"id":800,"main":"Clear","description":"clear
+        sky","icon":"01d"}],"base":"model","main":{"temp":309.44,"feels_like":306.87,"temp_min":309.44,"temp_max":309.44,"pressure":1005,"humidity":15,"sea_level":1005,"grnd_level":984},"wind":{"speed":2.21,"deg":280},"clouds":{"all":6},"dt":1579680286,"sys":{"country":"AU","sunrise":1579634920,"sunset":1579684010},"timezone":36000,"id":2177036,"name":"Balonne
+        Shire","cod":200}'
+    http_version: 
+  recorded_at: Wed, 22 Jan 2020 08:04:46 GMT
+- request:
+    method: get
+    uri: http://api.openweathermap.org/data/2.5/weather?appid=f0c6910d83bee3ef361afdba870cca37&lat=-28.344&lon=148.33
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.15.4
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - openresty
+      date:
+      - Wed, 22 Jan 2020 08:04:47 GMT
+      content-type:
+      - application/json; charset=utf-8
+      content-length:
+      - '466'
+      connection:
+      - close
+      x-cache-key:
+      - "/data/2.5/weather?lat=-28.34&lon=148.33"
+      access-control-allow-origin:
+      - "*"
+      access-control-allow-credentials:
+      - 'true'
+      access-control-allow-methods:
+      - GET, POST
+    body:
+      encoding: UTF-8
+      string: '{"coord":{"lon":148.33,"lat":-28.34},"weather":[{"id":800,"main":"Clear","description":"clear
+        sky","icon":"01d"}],"base":"model","main":{"temp":309.44,"feels_like":306.87,"temp_min":309.44,"temp_max":309.44,"pressure":1005,"humidity":15,"sea_level":1005,"grnd_level":984},"wind":{"speed":2.21,"deg":280},"clouds":{"all":6},"dt":1579680287,"sys":{"country":"AU","sunrise":1579634921,"sunset":1579684014},"timezone":36000,"id":2177036,"name":"Balonne
+        Shire","cod":200}'
+    http_version: 
+  recorded_at: Wed, 22 Jan 2020 08:04:47 GMT
+- request:
+    method: get
+    uri: http://api.openweathermap.org/data/2.5/weather?appid=f0c6910d83bee3ef361afdba870cca37&lat=-28.227&lon=151.407
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.15.4
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - openresty
+      date:
+      - Wed, 22 Jan 2020 08:04:47 GMT
+      content-type:
+      - application/json; charset=utf-8
+      content-length:
+      - '478'
+      connection:
+      - close
+      x-cache-key:
+      - "/data/2.5/weather?lat=-28.23&lon=151.41"
+      access-control-allow-origin:
+      - "*"
+      access-control-allow-credentials:
+      - 'true'
+      access-control-allow-methods:
+      - GET, POST
+    body:
+      encoding: UTF-8
+      string: '{"coord":{"lon":151.41,"lat":-28.23},"weather":[{"id":500,"main":"Rain","description":"light
+        rain","icon":"10d"}],"base":"stations","main":{"temp":299.26,"feels_like":301.85,"temp_min":299.26,"temp_max":299.26,"pressure":1013,"humidity":62},"wind":{"speed":0.45,"deg":330,"gust":4.47},"rain":{"3h":0.88},"clouds":{"all":69},"dt":1579680287,"sys":{"type":3,"id":20785,"country":"AU","sunrise":1579634194,"sunset":1579683262},"timezone":36000,"id":2164882,"name":"Gore","cod":200}'
+    http_version: 
+  recorded_at: Wed, 22 Jan 2020 08:04:47 GMT
+- request:
+    method: get
+    uri: http://api.openweathermap.org/data/2.5/weather?appid=f0c6910d83bee3ef361afdba870cca37&lat=-28.714&lon=148.089
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.15.4
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - openresty
+      date:
+      - Wed, 22 Jan 2020 08:04:47 GMT
+      content-type:
+      - application/json; charset=utf-8
+      content-length:
+      - '464'
+      connection:
+      - close
+      x-cache-key:
+      - "/data/2.5/weather?lat=-28.71&lon=148.09"
+      access-control-allow-origin:
+      - "*"
+      access-control-allow-credentials:
+      - 'true'
+      access-control-allow-methods:
+      - GET, POST
+    body:
+      encoding: UTF-8
+      string: '{"coord":{"lon":148.09,"lat":-28.71},"weather":[{"id":801,"main":"Clouds","description":"few
+        clouds","icon":"02d"}],"base":"model","main":{"temp":308.4,"feels_like":304.86,"temp_min":308.4,"temp_max":308.4,"pressure":1005,"humidity":13,"sea_level":1005,"grnd_level":986},"wind":{"speed":2.83,"deg":320},"clouds":{"all":22},"dt":1579680287,"sys":{"country":"AU","sunrise":1579634935,"sunset":1579684115},"timezone":36000,"id":2168726,"name":"Dirranbandi","cod":200}'
+    http_version: 
+  recorded_at: Wed, 22 Jan 2020 08:04:47 GMT
+- request:
+    method: get
+    uri: http://api.openweathermap.org/data/2.5/weather?appid=f0c6910d83bee3ef361afdba870cca37&lat=-30.0&lon=150.212
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.15.4
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - openresty
+      date:
+      - Wed, 22 Jan 2020 08:04:47 GMT
+      content-type:
+      - application/json; charset=utf-8
+      content-length:
+      - '462'
+      connection:
+      - close
+      x-cache-key:
+      - "/data/2.5/weather?lat=-30&lon=150.21"
+      access-control-allow-origin:
+      - "*"
+      access-control-allow-credentials:
+      - 'true'
+      access-control-allow-methods:
+      - GET, POST
+    body:
+      encoding: UTF-8
+      string: '{"coord":{"lon":150.21,"lat":-30},"weather":[{"id":800,"main":"Clear","description":"clear
+        sky","icon":"01d"}],"base":"stations","main":{"temp":312.62,"feels_like":308.81,"temp_min":312.15,"temp_max":313.15,"pressure":1005,"humidity":10},"visibility":10000,"wind":{"speed":3.1,"deg":360},"clouds":{"all":0},"dt":1579680287,"sys":{"type":1,"id":9563,"country":"AU","sunrise":1579634272,"sunset":1579683761},"timezone":39600,"id":2163051,"name":"Horton","cod":200}'
+    http_version: 
+  recorded_at: Wed, 22 Jan 2020 08:04:47 GMT
+- request:
+    method: get
+    uri: http://api.openweathermap.org/data/2.5/weather?appid=f0c6910d83bee3ef361afdba870cca37&lat=-30.088&lon=150.043
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.15.4
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - openresty
+      date:
+      - Wed, 22 Jan 2020 08:04:47 GMT
+      content-type:
+      - application/json; charset=utf-8
+      content-length:
+      - '466'
+      connection:
+      - close
+      x-cache-key:
+      - "/data/2.5/weather?lat=-30.09&lon=150.04"
+      access-control-allow-origin:
+      - "*"
+      access-control-allow-credentials:
+      - 'true'
+      access-control-allow-methods:
+      - GET, POST
+    body:
+      encoding: UTF-8
+      string: '{"coord":{"lon":150.04,"lat":-30.09},"weather":[{"id":800,"main":"Clear","description":"clear
+        sky","icon":"01d"}],"base":"stations","main":{"temp":312.18,"feels_like":308.31,"temp_min":311.48,"temp_max":313.15,"pressure":1005,"humidity":10},"visibility":10000,"wind":{"speed":3.1,"deg":360},"clouds":{"all":0},"dt":1579680287,"sys":{"type":1,"id":9563,"country":"AU","sunrise":1579634302,"sunset":1579683812},"timezone":39600,"id":2167767,"name":"Edgeroi","cod":200}'
+    http_version: 
+  recorded_at: Wed, 22 Jan 2020 08:04:47 GMT
+- request:
+    method: get
+    uri: http://api.openweathermap.org/data/2.5/weather?appid=f0c6910d83bee3ef361afdba870cca37&lat=-12.735&lon=143.236
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.15.4
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - openresty
+      date:
+      - Wed, 22 Jan 2020 08:04:47 GMT
+      content-type:
+      - application/json; charset=utf-8
+      content-length:
+      - '472'
+      connection:
+      - close
+      x-cache-key:
+      - "/data/2.5/weather?lat=-12.73&lon=143.24"
+      access-control-allow-origin:
+      - "*"
+      access-control-allow-credentials:
+      - 'true'
+      access-control-allow-methods:
+      - GET, POST
+    body:
+      encoding: UTF-8
+      string: '{"coord":{"lon":143.24,"lat":-12.74},"weather":[{"id":804,"main":"Clouds","description":"overcast
+        clouds","icon":"04d"}],"base":"model","main":{"temp":301.36,"feels_like":305.86,"temp_min":301.36,"temp_max":301.36,"pressure":1009,"humidity":74,"sea_level":1009,"grnd_level":995},"wind":{"speed":1.16,"deg":257},"clouds":{"all":100},"dt":1579680287,"sys":{"country":"AU","sunrise":1579637745,"sunset":1579683633},"timezone":36000,"id":7839573,"name":"Cook
+        Shire","cod":200}'
+    http_version: 
+  recorded_at: Wed, 22 Jan 2020 08:04:47 GMT
+- request:
+    method: get
+    uri: http://api.openweathermap.org/data/2.5/weather?appid=f0c6910d83bee3ef361afdba870cca37&lat=-12.734&lon=143.247
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.15.4
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - openresty
+      date:
+      - Wed, 22 Jan 2020 08:04:47 GMT
+      content-type:
+      - application/json; charset=utf-8
+      content-length:
+      - '481'
+      connection:
+      - close
+      x-cache-key:
+      - "/data/2.5/weather?lat=-12.73&lon=143.25"
+      access-control-allow-origin:
+      - "*"
+      access-control-allow-credentials:
+      - 'true'
+      access-control-allow-methods:
+      - GET, POST
+    body:
+      encoding: UTF-8
+      string: '{"coord":{"lon":143.25,"lat":-12.73},"weather":[{"id":500,"main":"Rain","description":"light
+        rain","icon":"10d"}],"base":"model","main":{"temp":303.8,"feels_like":308.79,"temp_min":303.8,"temp_max":303.8,"pressure":1009,"humidity":74,"sea_level":1009,"grnd_level":1008},"wind":{"speed":2.47,"deg":249},"rain":{"3h":1.94},"clouds":{"all":98},"dt":1579680287,"sys":{"country":"AU","sunrise":1579637744,"sunset":1579683630},"timezone":36000,"id":7839573,"name":"Cook
+        Shire","cod":200}'
+    http_version: 
+  recorded_at: Wed, 22 Jan 2020 08:04:47 GMT
+- request:
+    method: get
+    uri: http://api.openweathermap.org/data/2.5/weather?appid=f0c6910d83bee3ef361afdba870cca37&lat=-17.937&lon=145.278
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.15.4
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - openresty
+      date:
+      - Wed, 22 Jan 2020 08:04:47 GMT
+      content-type:
+      - application/json; charset=utf-8
+      content-length:
+      - '490'
+      connection:
+      - close
+      x-cache-key:
+      - "/data/2.5/weather?lat=-17.94&lon=145.28"
+      access-control-allow-origin:
+      - "*"
+      access-control-allow-credentials:
+      - 'true'
+      access-control-allow-methods:
+      - GET, POST
+    body:
+      encoding: UTF-8
+      string: '{"coord":{"lon":145.28,"lat":-17.94},"weather":[{"id":500,"main":"Rain","description":"light
+        rain","icon":"10d"}],"base":"model","main":{"temp":295.99,"feels_like":299.37,"temp_min":295.99,"temp_max":295.99,"pressure":1009,"humidity":94,"sea_level":1009,"grnd_level":932},"wind":{"speed":1.75,"deg":62},"rain":{"3h":0.88},"clouds":{"all":100},"dt":1579680287,"sys":{"country":"AU","sunrise":1579636761,"sunset":1579683638},"timezone":36000,"id":2162679,"name":"Innot
+        Hot Springs","cod":200}'
+    http_version: 
+  recorded_at: Wed, 22 Jan 2020 08:04:47 GMT
+- request:
+    method: get
+    uri: http://api.openweathermap.org/data/2.5/weather?appid=f0c6910d83bee3ef361afdba870cca37&lat=-19.357&lon=144.601
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.15.4
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - openresty
+      date:
+      - Wed, 22 Jan 2020 08:04:47 GMT
+      content-type:
+      - application/json; charset=utf-8
+      content-length:
+      - '482'
+      connection:
+      - close
+      x-cache-key:
+      - "/data/2.5/weather?lat=-19.36&lon=144.6"
+      access-control-allow-origin:
+      - "*"
+      access-control-allow-credentials:
+      - 'true'
+      access-control-allow-methods:
+      - GET, POST
+    body:
+      encoding: UTF-8
+      string: '{"coord":{"lon":144.6,"lat":-19.36},"weather":[{"id":500,"main":"Rain","description":"light
+        rain","icon":"10d"}],"base":"model","main":{"temp":297.72,"feels_like":300.17,"temp_min":297.72,"temp_max":297.72,"pressure":1008,"humidity":76,"sea_level":1008,"grnd_level":929},"wind":{"speed":1.82,"deg":123},"rain":{"3h":2.81},"clouds":{"all":99},"dt":1579680287,"sys":{"country":"AU","sunrise":1579636784,"sunset":1579683942},"timezone":36000,"id":2152274,"name":"Queensland","cod":200}'
+    http_version: 
+  recorded_at: Wed, 22 Jan 2020 08:04:47 GMT
+- request:
+    method: get
+    uri: http://api.openweathermap.org/data/2.5/weather?appid=f0c6910d83bee3ef361afdba870cca37&lat=-19.355&lon=144.613
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.15.4
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - openresty
+      date:
+      - Wed, 22 Jan 2020 08:04:47 GMT
+      content-type:
+      - application/json; charset=utf-8
+      content-length:
+      - '483'
+      connection:
+      - close
+      x-cache-key:
+      - "/data/2.5/weather?lat=-19.36&lon=144.61"
+      access-control-allow-origin:
+      - "*"
+      access-control-allow-credentials:
+      - 'true'
+      access-control-allow-methods:
+      - GET, POST
+    body:
+      encoding: UTF-8
+      string: '{"coord":{"lon":144.61,"lat":-19.36},"weather":[{"id":500,"main":"Rain","description":"light
+        rain","icon":"10d"}],"base":"model","main":{"temp":297.72,"feels_like":300.17,"temp_min":297.72,"temp_max":297.72,"pressure":1008,"humidity":76,"sea_level":1008,"grnd_level":929},"wind":{"speed":1.82,"deg":123},"rain":{"3h":2.81},"clouds":{"all":99},"dt":1579680287,"sys":{"country":"AU","sunrise":1579636781,"sunset":1579683940},"timezone":36000,"id":2152274,"name":"Queensland","cod":200}'
+    http_version: 
+  recorded_at: Wed, 22 Jan 2020 08:04:47 GMT
+- request:
+    method: get
+    uri: http://api.openweathermap.org/data/2.5/weather?appid=f0c6910d83bee3ef361afdba870cca37&lat=-19.365&lon=144.614
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.15.4
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - openresty
+      date:
+      - Wed, 22 Jan 2020 08:04:48 GMT
+      content-type:
+      - application/json; charset=utf-8
+      content-length:
+      - '483'
+      connection:
+      - close
+      x-cache-key:
+      - "/data/2.5/weather?lat=-19.36&lon=144.61"
+      access-control-allow-origin:
+      - "*"
+      access-control-allow-credentials:
+      - 'true'
+      access-control-allow-methods:
+      - GET, POST
+    body:
+      encoding: UTF-8
+      string: '{"coord":{"lon":144.61,"lat":-19.36},"weather":[{"id":500,"main":"Rain","description":"light
+        rain","icon":"10d"}],"base":"model","main":{"temp":297.72,"feels_like":300.17,"temp_min":297.72,"temp_max":297.72,"pressure":1008,"humidity":76,"sea_level":1008,"grnd_level":929},"wind":{"speed":1.82,"deg":123},"rain":{"3h":2.81},"clouds":{"all":99},"dt":1579680287,"sys":{"country":"AU","sunrise":1579636781,"sunset":1579683940},"timezone":36000,"id":2152274,"name":"Queensland","cod":200}'
+    http_version: 
+  recorded_at: Wed, 22 Jan 2020 08:04:48 GMT
+- request:
+    method: get
+    uri: http://api.openweathermap.org/data/2.5/weather?appid=f0c6910d83bee3ef361afdba870cca37&lat=-22.171&lon=148.893
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.15.4
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - openresty
+      date:
+      - Wed, 22 Jan 2020 08:04:48 GMT
+      content-type:
+      - application/json; charset=utf-8
+      content-length:
+      - '456'
+      connection:
+      - close
+      x-cache-key:
+      - "/data/2.5/weather?lat=-22.17&lon=148.89"
+      access-control-allow-origin:
+      - "*"
+      access-control-allow-credentials:
+      - 'true'
+      access-control-allow-methods:
+      - GET, POST
+    body:
+      encoding: UTF-8
+      string: '{"coord":{"lon":148.89,"lat":-22.17},"weather":[{"id":800,"main":"Clear","description":"clear
+        sky","icon":"01d"}],"base":"model","main":{"temp":299.49,"feels_like":300.23,"temp_min":299.49,"temp_max":299.49,"pressure":1009,"humidity":73,"sea_level":1009,"grnd_level":983},"wind":{"speed":4.99,"deg":43},"clouds":{"all":9},"dt":1579680288,"sys":{"country":"AU","sunrise":1579635467,"sunset":1579683199},"timezone":36000,"id":2155628,"name":"Nebo","cod":200}'
+    http_version: 
+  recorded_at: Wed, 22 Jan 2020 08:04:48 GMT
+- request:
+    method: get
+    uri: http://api.openweathermap.org/data/2.5/weather?appid=f0c6910d83bee3ef361afdba870cca37&lat=-22.366&lon=150.261
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.15.4
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - openresty
+      date:
+      - Wed, 22 Jan 2020 08:04:48 GMT
+      content-type:
+      - application/json; charset=utf-8
+      content-length:
+      - '463'
+      connection:
+      - close
+      x-cache-key:
+      - "/data/2.5/weather?lat=-22.37&lon=150.26"
+      access-control-allow-origin:
+      - "*"
+      access-control-allow-credentials:
+      - 'true'
+      access-control-allow-methods:
+      - GET, POST
+    body:
+      encoding: UTF-8
+      string: '{"coord":{"lon":150.26,"lat":-22.37},"weather":[{"id":800,"main":"Clear","description":"clear
+        sky","icon":"01d"}],"base":"model","main":{"temp":300.54,"feels_like":303.85,"temp_min":300.54,"temp_max":300.54,"pressure":1010,"humidity":79,"sea_level":1010,"grnd_level":1006},"wind":{"speed":3.1,"deg":19},"clouds":{"all":8},"dt":1579680288,"sys":{"country":"AU","sunrise":1579635117,"sunset":1579682891},"timezone":36000,"id":7839389,"name":"Rockhampton","cod":200}'
+    http_version: 
+  recorded_at: Wed, 22 Jan 2020 08:04:48 GMT
+- request:
+    method: get
+    uri: http://api.openweathermap.org/data/2.5/weather?appid=f0c6910d83bee3ef361afdba870cca37&lat=-23.919&lon=148.315
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.15.4
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - openresty
+      date:
+      - Wed, 22 Jan 2020 08:04:48 GMT
+      content-type:
+      - application/json; charset=utf-8
+      content-length:
+      - '485'
+      connection:
+      - close
+      x-cache-key:
+      - "/data/2.5/weather?lat=-23.92&lon=148.31"
+      access-control-allow-origin:
+      - "*"
+      access-control-allow-credentials:
+      - 'true'
+      access-control-allow-methods:
+      - GET, POST
+    body:
+      encoding: UTF-8
+      string: '{"coord":{"lon":148.32,"lat":-23.92},"weather":[{"id":802,"main":"Clouds","description":"scattered
+        clouds","icon":"03d"}],"base":"stations","main":{"temp":310.15,"feels_like":309.18,"temp_min":310.15,"temp_max":310.15,"pressure":1006,"humidity":32},"visibility":10000,"wind":{"speed":5.1,"deg":360},"clouds":{"all":49},"dt":1579680288,"sys":{"type":1,"id":9524,"country":"AU","sunrise":1579635419,"sunset":1579683521},"timezone":36000,"id":7839569,"name":"Central
+        Highlands","cod":200}'
+    http_version: 
+  recorded_at: Wed, 22 Jan 2020 08:04:48 GMT
+- request:
+    method: get
+    uri: http://api.openweathermap.org/data/2.5/weather?appid=f0c6910d83bee3ef361afdba870cca37&lat=-23.918&lon=148.324
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.15.4
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - openresty
+      date:
+      - Wed, 22 Jan 2020 08:04:48 GMT
+      content-type:
+      - application/json; charset=utf-8
+      content-length:
+      - '485'
+      connection:
+      - close
+      x-cache-key:
+      - "/data/2.5/weather?lat=-23.92&lon=148.32"
+      access-control-allow-origin:
+      - "*"
+      access-control-allow-credentials:
+      - 'true'
+      access-control-allow-methods:
+      - GET, POST
+    body:
+      encoding: UTF-8
+      string: '{"coord":{"lon":148.32,"lat":-23.92},"weather":[{"id":802,"main":"Clouds","description":"scattered
+        clouds","icon":"03d"}],"base":"stations","main":{"temp":310.15,"feels_like":309.18,"temp_min":310.15,"temp_max":310.15,"pressure":1006,"humidity":32},"visibility":10000,"wind":{"speed":5.1,"deg":360},"clouds":{"all":49},"dt":1579680288,"sys":{"type":1,"id":9524,"country":"AU","sunrise":1579635419,"sunset":1579683521},"timezone":36000,"id":7839569,"name":"Central
+        Highlands","cod":200}'
+    http_version: 
+  recorded_at: Wed, 22 Jan 2020 08:04:48 GMT
+- request:
+    method: get
+    uri: http://api.openweathermap.org/data/2.5/weather?appid=f0c6910d83bee3ef361afdba870cca37&lat=-24.412&lon=149.665
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.15.4
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - openresty
+      date:
+      - Wed, 22 Jan 2020 08:04:48 GMT
+      content-type:
+      - application/json; charset=utf-8
+      content-length:
+      - '477'
+      connection:
+      - close
+      x-cache-key:
+      - "/data/2.5/weather?lat=-24.41&lon=149.66"
+      access-control-allow-origin:
+      - "*"
+      access-control-allow-credentials:
+      - 'true'
+      access-control-allow-methods:
+      - GET, POST
+    body:
+      encoding: UTF-8
+      string: '{"coord":{"lon":149.67,"lat":-24.41},"weather":[{"id":500,"main":"Rain","description":"light
+        rain","icon":"10d"}],"base":"model","main":{"temp":304.36,"feels_like":303,"temp_min":304.36,"temp_max":304.36,"pressure":1009,"humidity":51,"sea_level":1009,"grnd_level":992},"wind":{"speed":7.12,"deg":32},"rain":{"3h":0.13},"clouds":{"all":25},"dt":1579680288,"sys":{"country":"AU","sunrise":1579635041,"sunset":1579683250},"timezone":36000,"id":2176910,"name":"Baralaba","cod":200}'
+    http_version: 
+  recorded_at: Wed, 22 Jan 2020 08:04:48 GMT
+- request:
+    method: get
+    uri: http://api.openweathermap.org/data/2.5/weather?appid=f0c6910d83bee3ef361afdba870cca37&lat=-24.448&lon=149.487
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.15.4
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - openresty
+      date:
+      - Wed, 22 Jan 2020 08:04:48 GMT
+      content-type:
+      - application/json; charset=utf-8
+      content-length:
+      - '479'
+      connection:
+      - close
+      x-cache-key:
+      - "/data/2.5/weather?lat=-24.45&lon=149.49"
+      access-control-allow-origin:
+      - "*"
+      access-control-allow-credentials:
+      - 'true'
+      access-control-allow-methods:
+      - GET, POST
+    body:
+      encoding: UTF-8
+      string: '{"coord":{"lon":149.49,"lat":-24.45},"weather":[{"id":500,"main":"Rain","description":"light
+        rain","icon":"10d"}],"base":"model","main":{"temp":304.36,"feels_like":303,"temp_min":304.36,"temp_max":304.36,"pressure":1009,"humidity":51,"sea_level":1009,"grnd_level":992},"wind":{"speed":7.12,"deg":32},"rain":{"3h":0.13},"clouds":{"all":25},"dt":1579680288,"sys":{"country":"AU","sunrise":1579635080,"sunset":1579683298},"timezone":36000,"id":2142940,"name":"Woorabinda","cod":200}'
+    http_version: 
+  recorded_at: Wed, 22 Jan 2020 08:04:48 GMT
+- request:
+    method: get
+    uri: http://api.openweathermap.org/data/2.5/weather?appid=f0c6910d83bee3ef361afdba870cca37&lat=-24.427&lon=149.626
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.15.4
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - openresty
+      date:
+      - Wed, 22 Jan 2020 08:04:48 GMT
+      content-type:
+      - application/json; charset=utf-8
+      content-length:
+      - '477'
+      connection:
+      - close
+      x-cache-key:
+      - "/data/2.5/weather?lat=-24.43&lon=149.63"
+      access-control-allow-origin:
+      - "*"
+      access-control-allow-credentials:
+      - 'true'
+      access-control-allow-methods:
+      - GET, POST
+    body:
+      encoding: UTF-8
+      string: '{"coord":{"lon":149.63,"lat":-24.43},"weather":[{"id":500,"main":"Rain","description":"light
+        rain","icon":"10d"}],"base":"model","main":{"temp":304.36,"feels_like":303,"temp_min":304.36,"temp_max":304.36,"pressure":1009,"humidity":51,"sea_level":1009,"grnd_level":992},"wind":{"speed":7.12,"deg":32},"rain":{"3h":0.13},"clouds":{"all":25},"dt":1579680288,"sys":{"country":"AU","sunrise":1579635049,"sunset":1579683262},"timezone":36000,"id":2176910,"name":"Baralaba","cod":200}'
+    http_version: 
+  recorded_at: Wed, 22 Jan 2020 08:04:48 GMT
+- request:
+    method: get
+    uri: http://api.openweathermap.org/data/2.5/weather?appid=f0c6910d83bee3ef361afdba870cca37&lat=-24.425&lon=149.636
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.15.4
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - openresty
+      date:
+      - Wed, 22 Jan 2020 08:04:48 GMT
+      content-type:
+      - application/json; charset=utf-8
+      content-length:
+      - '477'
+      connection:
+      - close
+      x-cache-key:
+      - "/data/2.5/weather?lat=-24.43&lon=149.64"
+      access-control-allow-origin:
+      - "*"
+      access-control-allow-credentials:
+      - 'true'
+      access-control-allow-methods:
+      - GET, POST
+    body:
+      encoding: UTF-8
+      string: '{"coord":{"lon":149.64,"lat":-24.43},"weather":[{"id":500,"main":"Rain","description":"light
+        rain","icon":"10d"}],"base":"model","main":{"temp":304.36,"feels_like":303,"temp_min":304.36,"temp_max":304.36,"pressure":1009,"humidity":51,"sea_level":1009,"grnd_level":992},"wind":{"speed":7.12,"deg":32},"rain":{"3h":0.13},"clouds":{"all":25},"dt":1579680288,"sys":{"country":"AU","sunrise":1579635047,"sunset":1579683259},"timezone":36000,"id":2176910,"name":"Baralaba","cod":200}'
+    http_version: 
+  recorded_at: Wed, 22 Jan 2020 08:04:48 GMT
+- request:
+    method: get
+    uri: http://api.openweathermap.org/data/2.5/weather?appid=f0c6910d83bee3ef361afdba870cca37&lat=-24.421&lon=149.667
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.15.4
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - openresty
+      date:
+      - Wed, 22 Jan 2020 08:04:48 GMT
+      content-type:
+      - application/json; charset=utf-8
+      content-length:
+      - '477'
+      connection:
+      - close
+      x-cache-key:
+      - "/data/2.5/weather?lat=-24.42&lon=149.67"
+      access-control-allow-origin:
+      - "*"
+      access-control-allow-credentials:
+      - 'true'
+      access-control-allow-methods:
+      - GET, POST
+    body:
+      encoding: UTF-8
+      string: '{"coord":{"lon":149.67,"lat":-24.42},"weather":[{"id":500,"main":"Rain","description":"light
+        rain","icon":"10d"}],"base":"model","main":{"temp":304.36,"feels_like":303,"temp_min":304.36,"temp_max":304.36,"pressure":1009,"humidity":51,"sea_level":1009,"grnd_level":992},"wind":{"speed":7.12,"deg":32},"rain":{"3h":0.13},"clouds":{"all":25},"dt":1579680288,"sys":{"country":"AU","sunrise":1579635040,"sunset":1579683251},"timezone":36000,"id":2176910,"name":"Baralaba","cod":200}'
+    http_version: 
+  recorded_at: Wed, 22 Jan 2020 08:04:48 GMT
+- request:
+    method: get
+    uri: http://api.openweathermap.org/data/2.5/weather?appid=f0c6910d83bee3ef361afdba870cca37&lat=-24.436&lon=149.628
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.15.4
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - openresty
+      date:
+      - Wed, 22 Jan 2020 08:04:49 GMT
+      content-type:
+      - application/json; charset=utf-8
+      content-length:
+      - '477'
+      connection:
+      - close
+      x-cache-key:
+      - "/data/2.5/weather?lat=-24.44&lon=149.63"
+      access-control-allow-origin:
+      - "*"
+      access-control-allow-credentials:
+      - 'true'
+      access-control-allow-methods:
+      - GET, POST
+    body:
+      encoding: UTF-8
+      string: '{"coord":{"lon":149.63,"lat":-24.44},"weather":[{"id":500,"main":"Rain","description":"light
+        rain","icon":"10d"}],"base":"model","main":{"temp":304.36,"feels_like":303,"temp_min":304.36,"temp_max":304.36,"pressure":1009,"humidity":51,"sea_level":1009,"grnd_level":992},"wind":{"speed":7.12,"deg":32},"rain":{"3h":0.13},"clouds":{"all":25},"dt":1579680289,"sys":{"country":"AU","sunrise":1579635048,"sunset":1579683263},"timezone":36000,"id":2176910,"name":"Baralaba","cod":200}'
+    http_version: 
+  recorded_at: Wed, 22 Jan 2020 08:04:49 GMT
+- request:
+    method: get
+    uri: http://api.openweathermap.org/data/2.5/weather?appid=f0c6910d83bee3ef361afdba870cca37&lat=-24.435&lon=149.638
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.15.4
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - openresty
+      date:
+      - Wed, 22 Jan 2020 08:04:49 GMT
+      content-type:
+      - application/json; charset=utf-8
+      content-length:
+      - '477'
+      connection:
+      - close
+      x-cache-key:
+      - "/data/2.5/weather?lat=-24.43&lon=149.64"
+      access-control-allow-origin:
+      - "*"
+      access-control-allow-credentials:
+      - 'true'
+      access-control-allow-methods:
+      - GET, POST
+    body:
+      encoding: UTF-8
+      string: '{"coord":{"lon":149.64,"lat":-24.43},"weather":[{"id":500,"main":"Rain","description":"light
+        rain","icon":"10d"}],"base":"model","main":{"temp":304.36,"feels_like":303,"temp_min":304.36,"temp_max":304.36,"pressure":1009,"humidity":51,"sea_level":1009,"grnd_level":992},"wind":{"speed":7.12,"deg":32},"rain":{"3h":0.13},"clouds":{"all":25},"dt":1579680288,"sys":{"country":"AU","sunrise":1579635047,"sunset":1579683259},"timezone":36000,"id":2176910,"name":"Baralaba","cod":200}'
+    http_version: 
+  recorded_at: Wed, 22 Jan 2020 08:04:49 GMT
+- request:
+    method: get
+    uri: http://api.openweathermap.org/data/2.5/weather?appid=f0c6910d83bee3ef361afdba870cca37&lat=-25.268&lon=150.155
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.15.4
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - openresty
+      date:
+      - Wed, 22 Jan 2020 08:04:49 GMT
+      content-type:
+      - application/json; charset=utf-8
+      content-length:
+      - '464'
+      connection:
+      - close
+      x-cache-key:
+      - "/data/2.5/weather?lat=-25.27&lon=150.16"
+      access-control-allow-origin:
+      - "*"
+      access-control-allow-credentials:
+      - 'true'
+      access-control-allow-methods:
+      - GET, POST
+    body:
+      encoding: UTF-8
+      string: '{"coord":{"lon":150.16,"lat":-25.27},"weather":[{"id":803,"main":"Clouds","description":"broken
+        clouds","icon":"04d"}],"base":"model","main":{"temp":303.3,"feels_like":306.57,"temp_min":303.3,"temp_max":303.3,"pressure":1010,"humidity":56,"sea_level":1010,"grnd_level":982},"wind":{"speed":0.88,"deg":336},"clouds":{"all":67},"dt":1579680289,"sys":{"country":"AU","sunrise":1579634830,"sunset":1579683226},"timezone":36000,"id":2146901,"name":"Theodore","cod":200}'
+    http_version: 
+  recorded_at: Wed, 22 Jan 2020 08:04:49 GMT
+- request:
+    method: get
+    uri: http://api.openweathermap.org/data/2.5/weather?appid=f0c6910d83bee3ef361afdba870cca37&lat=-25.284&lon=150.899
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.15.4
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - openresty
+      date:
+      - Wed, 22 Jan 2020 08:04:49 GMT
+      content-type:
+      - application/json; charset=utf-8
+      content-length:
+      - '478'
+      connection:
+      - close
+      x-cache-key:
+      - "/data/2.5/weather?lat=-25.28&lon=150.9"
+      access-control-allow-origin:
+      - "*"
+      access-control-allow-credentials:
+      - 'true'
+      access-control-allow-methods:
+      - GET, POST
+    body:
+      encoding: UTF-8
+      string: '{"coord":{"lon":150.9,"lat":-25.28},"weather":[{"id":500,"main":"Rain","description":"light
+        rain","icon":"10d"}],"base":"model","main":{"temp":300.59,"feels_like":302.44,"temp_min":300.59,"temp_max":300.59,"pressure":1010,"humidity":67,"sea_level":1010,"grnd_level":984},"wind":{"speed":3.16,"deg":58},"rain":{"3h":0.94},"clouds":{"all":65},"dt":1579680289,"sys":{"country":"AU","sunrise":1579634651,"sunset":1579683050},"timezone":36000,"id":2169585,"name":"Cynthia","cod":200}'
+    http_version: 
+  recorded_at: Wed, 22 Jan 2020 08:04:49 GMT
+- request:
+    method: get
+    uri: http://api.openweathermap.org/data/2.5/weather?appid=f0c6910d83bee3ef361afdba870cca37&lat=-25.282&lon=150.909
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.15.4
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - openresty
+      date:
+      - Wed, 22 Jan 2020 08:04:49 GMT
+      content-type:
+      - application/json; charset=utf-8
+      content-length:
+      - '479'
+      connection:
+      - close
+      x-cache-key:
+      - "/data/2.5/weather?lat=-25.28&lon=150.91"
+      access-control-allow-origin:
+      - "*"
+      access-control-allow-credentials:
+      - 'true'
+      access-control-allow-methods:
+      - GET, POST
+    body:
+      encoding: UTF-8
+      string: '{"coord":{"lon":150.91,"lat":-25.28},"weather":[{"id":500,"main":"Rain","description":"light
+        rain","icon":"10d"}],"base":"model","main":{"temp":300.59,"feels_like":302.44,"temp_min":300.59,"temp_max":300.59,"pressure":1010,"humidity":67,"sea_level":1010,"grnd_level":984},"wind":{"speed":3.16,"deg":58},"rain":{"3h":0.94},"clouds":{"all":65},"dt":1579680289,"sys":{"country":"AU","sunrise":1579634649,"sunset":1579683048},"timezone":36000,"id":2169585,"name":"Cynthia","cod":200}'
+    http_version: 
+  recorded_at: Wed, 22 Jan 2020 08:04:49 GMT
+- request:
+    method: get
+    uri: http://api.openweathermap.org/data/2.5/weather?appid=f0c6910d83bee3ef361afdba870cca37&lat=-25.799&lon=152.105
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.15.4
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - openresty
+      date:
+      - Wed, 22 Jan 2020 08:04:49 GMT
+      content-type:
+      - application/json; charset=utf-8
+      content-length:
+      - '475'
+      connection:
+      - close
+      x-cache-key:
+      - "/data/2.5/weather?lat=-25.8&lon=152.1"
+      access-control-allow-origin:
+      - "*"
+      access-control-allow-credentials:
+      - 'true'
+      access-control-allow-methods:
+      - GET, POST
+    body:
+      encoding: UTF-8
+      string: '{"coord":{"lon":152.1,"lat":-25.8},"weather":[{"id":500,"main":"Rain","description":"light
+        rain","icon":"10d"}],"base":"model","main":{"temp":297.9,"feels_like":300.56,"temp_min":297.9,"temp_max":297.9,"pressure":1011,"humidity":85,"sea_level":1011,"grnd_level":978},"wind":{"speed":2.96,"deg":40},"rain":{"3h":1.44},"clouds":{"all":35},"dt":1579680289,"sys":{"country":"AU","sunrise":1579634305,"sunset":1579682820},"timezone":36000,"id":2160732,"name":"Lakeside","cod":200}'
+    http_version: 
+  recorded_at: Wed, 22 Jan 2020 08:04:49 GMT
+- request:
+    method: get
+    uri: http://api.openweathermap.org/data/2.5/weather?appid=f0c6910d83bee3ef361afdba870cca37&lat=-26.014&lon=151.22
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.15.4
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - openresty
+      date:
+      - Wed, 22 Jan 2020 08:04:49 GMT
+      content-type:
+      - application/json; charset=utf-8
+      content-length:
+      - '484'
+      connection:
+      - close
+      x-cache-key:
+      - "/data/2.5/weather?lat=-26.01&lon=151.22"
+      access-control-allow-origin:
+      - "*"
+      access-control-allow-credentials:
+      - 'true'
+      access-control-allow-methods:
+      - GET, POST
+    body:
+      encoding: UTF-8
+      string: '{"coord":{"lon":151.22,"lat":-26.01},"weather":[{"id":501,"main":"Rain","description":"moderate
+        rain","icon":"10d"}],"base":"model","main":{"temp":297.99,"feels_like":300.21,"temp_min":297.99,"temp_max":297.99,"pressure":1010,"humidity":81,"sea_level":1010,"grnd_level":968},"wind":{"speed":3.06,"deg":64},"rain":{"3h":3.19},"clouds":{"all":86},"dt":1579680289,"sys":{"country":"AU","sunrise":1579634493,"sunset":1579683054},"timezone":36000,"id":2174734,"name":"Boondooma","cod":200}'
+    http_version: 
+  recorded_at: Wed, 22 Jan 2020 08:04:49 GMT
+- request:
+    method: get
+    uri: http://api.openweathermap.org/data/2.5/weather?appid=f0c6910d83bee3ef361afdba870cca37&lat=-26.012&lon=151.231
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.15.4
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - openresty
+      date:
+      - Wed, 22 Jan 2020 08:04:49 GMT
+      content-type:
+      - application/json; charset=utf-8
+      content-length:
+      - '484'
+      connection:
+      - close
+      x-cache-key:
+      - "/data/2.5/weather?lat=-26.01&lon=151.23"
+      access-control-allow-origin:
+      - "*"
+      access-control-allow-credentials:
+      - 'true'
+      access-control-allow-methods:
+      - GET, POST
+    body:
+      encoding: UTF-8
+      string: '{"coord":{"lon":151.23,"lat":-26.01},"weather":[{"id":501,"main":"Rain","description":"moderate
+        rain","icon":"10d"}],"base":"model","main":{"temp":297.99,"feels_like":300.21,"temp_min":297.99,"temp_max":297.99,"pressure":1010,"humidity":81,"sea_level":1010,"grnd_level":968},"wind":{"speed":3.06,"deg":64},"rain":{"3h":3.19},"clouds":{"all":86},"dt":1579680289,"sys":{"country":"AU","sunrise":1579634491,"sunset":1579683052},"timezone":36000,"id":2174734,"name":"Boondooma","cod":200}'
+    http_version: 
+  recorded_at: Wed, 22 Jan 2020 08:04:49 GMT
+- request:
+    method: get
+    uri: http://api.openweathermap.org/data/2.5/weather?appid=f0c6910d83bee3ef361afdba870cca37&lat=-10.073&lon=148.196
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.15.4
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - openresty
+      date:
+      - Wed, 22 Jan 2020 08:04:49 GMT
+      content-type:
+      - application/json; charset=utf-8
+      content-length:
+      - '479'
+      connection:
+      - close
+      x-cache-key:
+      - "/data/2.5/weather?lat=-10.07&lon=148.2"
+      access-control-allow-origin:
+      - "*"
+      access-control-allow-credentials:
+      - 'true'
+      access-control-allow-methods:
+      - GET, POST
+    body:
+      encoding: UTF-8
+      string: '{"coord":{"lon":148.2,"lat":-10.07},"weather":[{"id":802,"main":"Clouds","description":"scattered
+        clouds","icon":"03d"}],"base":"model","main":{"temp":301.32,"feels_like":304.08,"temp_min":301.32,"temp_max":301.32,"pressure":1010,"humidity":68,"sea_level":1010,"grnd_level":1002},"wind":{"speed":2.54,"deg":266},"clouds":{"all":37},"dt":1579680289,"sys":{"country":"PG","sunrise":1579636799,"sunset":1579682199},"timezone":36000,"id":2089478,"name":"Northern
+        Province","cod":200}'
+    http_version: 
+  recorded_at: Wed, 22 Jan 2020 08:04:49 GMT
+- request:
+    method: get
+    uri: http://api.openweathermap.org/data/2.5/weather?appid=f0c6910d83bee3ef361afdba870cca37&lat=-13.973&lon=123.312
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.15.4
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - openresty
+      date:
+      - Wed, 22 Jan 2020 08:04:49 GMT
+      content-type:
+      - application/json; charset=utf-8
+      content-length:
+      - '453'
+      connection:
+      - close
+      x-cache-key:
+      - "/data/2.5/weather?lat=-13.97&lon=123.31"
+      access-control-allow-origin:
+      - "*"
+      access-control-allow-credentials:
+      - 'true'
+      access-control-allow-methods:
+      - GET, POST
+    body:
+      encoding: UTF-8
+      string: '{"coord":{"lon":123.31,"lat":-13.97},"weather":[{"id":500,"main":"Rain","description":"light
+        rain","icon":"10d"}],"base":"model","main":{"temp":302.35,"feels_like":304.58,"temp_min":302.35,"temp_max":302.35,"pressure":1008,"humidity":81,"sea_level":1008,"grnd_level":1008},"wind":{"speed":6.52,"deg":250},"rain":{"3h":0.13},"clouds":{"all":25},"dt":1579680289,"sys":{"sunrise":1579642416,"sunset":1579688531},"timezone":28800,"id":0,"name":"","cod":200}'
+    http_version: 
+  recorded_at: Wed, 22 Jan 2020 08:04:49 GMT
+- request:
+    method: get
+    uri: http://api.openweathermap.org/data/2.5/weather?appid=f0c6910d83bee3ef361afdba870cca37&lat=-22.824&lon=120.904
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.15.4
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - openresty
+      date:
+      - Wed, 22 Jan 2020 08:04:50 GMT
+      content-type:
+      - application/json; charset=utf-8
+      content-length:
+      - '458'
+      connection:
+      - close
+      x-cache-key:
+      - "/data/2.5/weather?lat=-22.82&lon=120.9"
+      access-control-allow-origin:
+      - "*"
+      access-control-allow-credentials:
+      - 'true'
+      access-control-allow-methods:
+      - GET, POST
+    body:
+      encoding: UTF-8
+      string: '{"coord":{"lon":120.9,"lat":-22.82},"weather":[{"id":800,"main":"Clear","description":"clear
+        sky","icon":"01d"}],"base":"model","main":{"temp":312.3,"feels_like":307.51,"temp_min":312.3,"temp_max":312.3,"pressure":1003,"humidity":15,"sea_level":1003,"grnd_level":946},"wind":{"speed":6.09,"deg":245},"clouds":{"all":1},"dt":1579680290,"sys":{"country":"AU","sunrise":1579642120,"sunset":1579689984},"timezone":28800,"id":2064403,"name":"Nullagine","cod":200}'
+    http_version: 
+  recorded_at: Wed, 22 Jan 2020 08:04:50 GMT
+- request:
+    method: get
+    uri: http://api.openweathermap.org/data/2.5/weather?appid=f0c6910d83bee3ef361afdba870cca37&lat=-22.826&lon=120.893
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.15.4
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - openresty
+      date:
+      - Wed, 22 Jan 2020 08:04:50 GMT
+      content-type:
+      - application/json; charset=utf-8
+      content-length:
+      - '456'
+      connection:
+      - close
+      x-cache-key:
+      - "/data/2.5/weather?lat=-22.83&lon=120.89"
+      access-control-allow-origin:
+      - "*"
+      access-control-allow-credentials:
+      - 'true'
+      access-control-allow-methods:
+      - GET, POST
+    body:
+      encoding: UTF-8
+      string: '{"coord":{"lon":120.89,"lat":-22.83},"weather":[{"id":800,"main":"Clear","description":"clear
+        sky","icon":"01d"}],"base":"model","main":{"temp":312.3,"feels_like":307.51,"temp_min":312.3,"temp_max":312.3,"pressure":1003,"humidity":15,"sea_level":1003,"grnd_level":946},"wind":{"speed":6.09,"deg":245},"clouds":{"all":1},"dt":1579680290,"sys":{"country":"AU","sunrise":1579642121,"sunset":1579689988},"timezone":28800,"id":2064768,"name":"Newman","cod":200}'
+    http_version: 
+  recorded_at: Wed, 22 Jan 2020 08:04:50 GMT
+- request:
+    method: get
+    uri: http://api.openweathermap.org/data/2.5/weather?appid=f0c6910d83bee3ef361afdba870cca37&lat=-21.866&lon=115.737
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.15.4
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - openresty
+      date:
+      - Wed, 22 Jan 2020 08:04:50 GMT
+      content-type:
+      - application/json; charset=utf-8
+      content-length:
+      - '459'
+      connection:
+      - close
+      x-cache-key:
+      - "/data/2.5/weather?lat=-21.87&lon=115.74"
+      access-control-allow-origin:
+      - "*"
+      access-control-allow-credentials:
+      - 'true'
+      access-control-allow-methods:
+      - GET, POST
+    body:
+      encoding: UTF-8
+      string: '{"coord":{"lon":115.74,"lat":-21.87},"weather":[{"id":800,"main":"Clear","description":"clear
+        sky","icon":"01d"}],"base":"model","main":{"temp":314.16,"feels_like":309.64,"temp_min":314.16,"temp_max":314.16,"pressure":1005,"humidity":11,"sea_level":1005,"grnd_level":996},"wind":{"speed":4.76,"deg":250},"clouds":{"all":0},"dt":1579680290,"sys":{"country":"AU","sunrise":1579643458,"sunset":1579691123},"timezone":28800,"id":2064155,"name":"Onslow","cod":200}'
+    http_version: 
+  recorded_at: Wed, 22 Jan 2020 08:04:50 GMT
+- request:
+    method: get
+    uri: http://api.openweathermap.org/data/2.5/weather?appid=f0c6910d83bee3ef361afdba870cca37&lat=-21.026&lon=117.091
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.15.4
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - openresty
+      date:
+      - Wed, 22 Jan 2020 08:04:50 GMT
+      content-type:
+      - application/json; charset=utf-8
+      content-length:
+      - '462'
+      connection:
+      - close
+      x-cache-key:
+      - "/data/2.5/weather?lat=-21.03&lon=117.09"
+      access-control-allow-origin:
+      - "*"
+      access-control-allow-credentials:
+      - 'true'
+      access-control-allow-methods:
+      - GET, POST
+    body:
+      encoding: UTF-8
+      string: '{"coord":{"lon":117.09,"lat":-21.03},"weather":[{"id":800,"main":"Clear","description":"clear
+        sky","icon":"01d"}],"base":"model","main":{"temp":310.18,"feels_like":305.37,"temp_min":310.18,"temp_max":310.18,"pressure":1005,"humidity":27,"sea_level":1005,"grnd_level":994},"wind":{"speed":9.13,"deg":291},"clouds":{"all":0},"dt":1579680290,"sys":{"country":"AU","sunrise":1579643220,"sunset":1579690713},"timezone":28800,"id":7839634,"name":"Roebourne","cod":200}'
+    http_version: 
+  recorded_at: Wed, 22 Jan 2020 08:04:50 GMT
+- request:
+    method: get
+    uri: http://api.openweathermap.org/data/2.5/weather?appid=f0c6910d83bee3ef361afdba870cca37&lat=-15.027&lon=124.777
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.15.4
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - openresty
+      date:
+      - Wed, 22 Jan 2020 08:04:50 GMT
+      content-type:
+      - application/json; charset=utf-8
+      content-length:
+      - '452'
+      connection:
+      - close
+      x-cache-key:
+      - "/data/2.5/weather?lat=-15.03&lon=124.78"
+      access-control-allow-origin:
+      - "*"
+      access-control-allow-credentials:
+      - 'true'
+      access-control-allow-methods:
+      - GET, POST
+    body:
+      encoding: UTF-8
+      string: '{"coord":{"lon":124.78,"lat":-15.03},"weather":[{"id":500,"main":"Rain","description":"light
+        rain","icon":"10d"}],"base":"model","main":{"temp":302.37,"feels_like":303.5,"temp_min":302.37,"temp_max":302.37,"pressure":1007,"humidity":78,"sea_level":1007,"grnd_level":1005},"wind":{"speed":7.54,"deg":257},"rain":{"3h":0.13},"clouds":{"all":27},"dt":1579680290,"sys":{"sunrise":1579641963,"sunset":1579688278},"timezone":28800,"id":0,"name":"","cod":200}'
+    http_version: 
+  recorded_at: Wed, 22 Jan 2020 08:04:50 GMT
+- request:
+    method: get
+    uri: http://api.openweathermap.org/data/2.5/weather?appid=f0c6910d83bee3ef361afdba870cca37&lat=-13.971&lon=123.322
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.15.4
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - openresty
+      date:
+      - Wed, 22 Jan 2020 08:04:50 GMT
+      content-type:
+      - application/json; charset=utf-8
+      content-length:
+      - '453'
+      connection:
+      - close
+      x-cache-key:
+      - "/data/2.5/weather?lat=-13.97&lon=123.32"
+      access-control-allow-origin:
+      - "*"
+      access-control-allow-credentials:
+      - 'true'
+      access-control-allow-methods:
+      - GET, POST
+    body:
+      encoding: UTF-8
+      string: '{"coord":{"lon":123.32,"lat":-13.97},"weather":[{"id":500,"main":"Rain","description":"light
+        rain","icon":"10d"}],"base":"model","main":{"temp":302.35,"feels_like":304.58,"temp_min":302.35,"temp_max":302.35,"pressure":1008,"humidity":81,"sea_level":1008,"grnd_level":1008},"wind":{"speed":6.52,"deg":250},"rain":{"3h":0.13},"clouds":{"all":25},"dt":1579680290,"sys":{"sunrise":1579642413,"sunset":1579688529},"timezone":28800,"id":0,"name":"","cod":200}'
+    http_version: 
+  recorded_at: Wed, 22 Jan 2020 08:04:50 GMT
+- request:
+    method: get
+    uri: https://nrt4.modaps.eosdis.nasa.gov/api/v2/content/archives/FIRMS/viirs/Australia_NewZealand/VIIRS_I_Australia_NewZealand_VNP14IMGTDL_NRT_2020022.txt
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.15.4
+      Authorization:
+      - Bearer 6EBE7332-DEDC-11E8-A43D-E989E0321698
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      server:
+      - openresty
+      date:
+      - Wed, 22 Jan 2020 08:04:50 GMT
+      content-type:
+      - text/html;charset=UTF-8
+      content-length:
+      - '9'
+      connection:
+      - close
+      access-control-allow-credentials:
+      - 'true'
+      x-frame-options:
+      - SAMEORIGIN
+      strict-transport-security:
+      - max-age=31536000; includeSubDomains
+    body:
+      encoding: UTF-8
+      string: Not Found
+    http_version: 
+  recorded_at: Wed, 22 Jan 2020 08:04:50 GMT
+recorded_with: VCR 5.0.0
