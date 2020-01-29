@@ -2,6 +2,6 @@ class FirmsImportWorker
   include Sidekiq::Worker
 
   def perform
-    ImportFirmsData.import
+    Nasa::FirmsImport.all
   end
 end

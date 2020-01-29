@@ -21,11 +21,11 @@ class Api::V1::FiresController < ApplicationController
   private
 
   def fire_params
-    params.permit(:latitude, :longitude, :distance, :sw_bound_point, :ne_bound_point, :bust_cache)
+    params.permit(:sw_bound_point, :ne_bound_point)
   end
 
   def fires
-    @fires ||= Fire.in_bounds([sw_bound_point, ne_bound_point]).where(detected_at: 24.hours.ago..Time.now)
+    @fires ||= Fire.in_last_24_hours.in_bounds([sw_bound_point, ne_bound_point])
   end
 
   def sw_bound_point
