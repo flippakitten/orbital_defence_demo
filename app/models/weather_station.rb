@@ -24,8 +24,8 @@ class WeatherStation < ApplicationRecord
       )
     end
   end
-end
 
-Fire.find_each do |fire|
-
+  def latest_weather_reading
+    self.weather_readings.last
+  end
 end

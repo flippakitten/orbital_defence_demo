@@ -47,6 +47,11 @@ group :test do
   gem 'rspec_junit_formatter'
   gem 'factory_bot_rails', '>= 5.1.1'
   gem 'rspec-rails', '>= 3.9.0'
+  gem 'shoulda-matchers', '~> 3.1'
+  gem 'vcr'
+  gem 'webmock'
+  gem 'rspec-sidekiq'
+  gem 'timecop', '~> 0.9.1'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

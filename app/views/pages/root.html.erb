@@ -59,20 +59,20 @@
   };
 
   async function fetchWeatherReading(readingId) {
-      const response = await axios.get(`<%= Rails.env.production? ? 'https://api.orbitaldefence.tech/' : 'http://localhost:5000'%>/api/v1/weather_readings/${readingId}`);
+      const response = await axios.get(`<%= Rails.env.production? ? 'https://api.orbitaldefence.tech' : 'http://localhost:5100'%>/api/v1/weather_readings/${readingId}`);
       const data = await response.data;
       return data;
   };
 
   async function firesData() {
-      const response = await axios.get('<%= Rails.env.production? ? 'https://api.orbitaldefence.tech/' : 'http://localhost:5000'%>/api/v1/fires/?sw_bound_point=-39.840939,112.913654&ne_bound_point=-11.332735,154.103939');
+      const response = await axios.get('<%= Rails.env.production? ? 'https://api.orbitaldefence.tech' : 'http://localhost:5100'%>/api/v1/fires/?sw_bound_point=-39.840939,112.913654&ne_bound_point=-11.332735,154.103939');
       const data = await response.data;
       return data;
 
   };
 
   async function firesWindDataInBound(swLatLng, neLatLng) {
-      const response = await axios.get(`<%= Rails.env.production? ? 'https://api.orbitaldefence.tech/' : 'http://localhost:5000'%>/api/v1/fires/windIndicators/?sw_bound_point=${swLatLng}&ne_bound_point=${neLatLng}`);
+      const response = await axios.get(`<%= Rails.env.production? ? 'https://api.orbitaldefence.tech' : 'http://localhost:5100'%>/api/v1/fires/windIndicators/?sw_bound_point=${swLatLng}&ne_bound_point=${neLatLng}`);
       const data = await response.data;
       return data;
 
@@ -121,11 +121,13 @@
       var neLatLng = `${ne.lat()},${ne.lng()}`;
 
       firesWindDataInBound(swLatLng, neLatLng).then(windArrows => {
-          activeWindArrows = windArrows.map(function(windArrow) {
-              return currentWindDirection(windArrow, googleMaps);
+          windArrows.forEach(function(windArrow) {
+              var arrowObject = currentWindDirection(windArrow, googleMaps);
+              arrowObject.setMap(map);
+              activeWindArrows.push(arrowObject);
           });
 
-          activeWindArrows.forEach( arrow => arrow.setMap(map));
+          // activeWindArrows.forEach( arrow => arrow.setMap(map));
       })
   };
 
@@ -230,13 +232,13 @@
       var showWindControl = new ShowWindControl(showWindControlDiv, map);
 
       showWindControl.index = 1;
-      map.controls[google.maps.ControlPosition.RIGHT_CENTER].push(showWindControlDiv);
+      map.controls[google.maps.ControlPosition.LEFT_BOTTOM].push(showWindControlDiv);
 
       var hideWindControlDiv = document.createElement('div');
       var hideWindControl = new HideWindControl(hideWindControlDiv, map);
 
       hideWindControl.index = 2;
-      map.controls[google.maps.ControlPosition.RIGHT_CENTER].push(hideWindControlDiv);
+      map.controls[google.maps.ControlPosition.LEFT_BOTTOM].push(hideWindControlDiv);
     }
 
     function initMap() {
