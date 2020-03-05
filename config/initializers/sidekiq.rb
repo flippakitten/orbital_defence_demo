@@ -20,7 +20,5 @@ Sidekiq.configure_server do |config|
     Sidekiq::Scheduler.reload_schedule!
   end
 end
-Sidekiq::Web.set :session_secret, Rails.application.credentials.secret_key_base
-Sidekiq::Web.set :sessions, Rails.application.config.session_options
 
 Sidekiq.default_worker_options = { backtrace: true }

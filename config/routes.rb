@@ -1,6 +1,12 @@
 # frozen_string_literal: true
-
+require 'sidekiq/web'
 require_dependency 'sidekiq_auth'
+
+Sidekiq::Web.set :session_secret, Rails.application.credentials.secret_key_base
+Sidekiq::Web.set :sessions, Rails.application.config.session_options
+Sidekiq::Web.class_eval do
+  use Rack::Protection, origin_whitelist: ['https://orbitaldefence.tech'] # resolve Rack Protection HttpOrigin
+end
 
 Rails.application.routes.draw do
   constraints ->(request) { SidekiqAuth.admin?(request) } do
