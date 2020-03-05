@@ -16,7 +16,6 @@ class Fire < ApplicationRecord
 
   class << self
     def create_from_csv_row(row, scan_type)
-      puts scan_type
       acq_time = row['acq_time'].include?(':') ? row['acq_time'] : "#{row['acq_time'][0..1]}:#{row['acq_time'][2..3]}"
       detected_at = "#{row['acq_date']} #{acq_time}"
       lat_long = "#{row['latitude']},#{row['longitude']}"
