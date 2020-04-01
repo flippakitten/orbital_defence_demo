@@ -5,11 +5,11 @@ module Nasa
 
   class FirmsClient
     class << self
-      def fetch(url)
+      def fetch(url, date: julian_date, retry_count: 0)
         Rails.logger.info('Nasa::FirmsClient#fetch - Started')
 
         response = firms_client.get do |req|
-          req.url "#{url}#{julian_date}.txt"
+          req.url "#{url}#{date}.txt"
           req.headers['Authorization'] = "Bearer #{Rails.application.credentials[:nasa_api][:key]}"
         end
 
@@ -17,8 +17,24 @@ module Nasa
           Rails.logger.info('Nasa::FirmsClient#fetch - Completed')
           response.body
         else
-          Rails.logger.error("Nasa::FirmsClient#fetch - Failed: #{response.status} #{response.body}")
-          raise RemoteServerError
+          retry_count += 1
+
+          if retry_count <= 3
+            Rails.logger.error("Nasa::FirmsClient#fetch - Failed: retrying #{retry_count}")
+            sleep 5
+            fetch(url, retry_count: retry_count)
+          elsif retry_count == 4
+            sleep 10000
+            retry_count += 1
+            prev_date = julian_date - 1
+
+            Rails.logger.error("Nasa::FirmsClient#fetch - Failed: Fetching Last File #{url}#{prev_date}")
+            fetch(url, date: prev_date, retry_count: retry_count)
+          else
+            retry_count = nil
+            Rails.logger.error("Nasa::FirmsClient#fetch - Failed: #{response.status} #{response.body} - #{url}#{julian_date}")
+            raise RemoteServerError
+          end
         end
       end
 

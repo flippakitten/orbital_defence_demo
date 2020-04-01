@@ -5,8 +5,10 @@ module Nasa
     require 'csv'
 
     FIRMS_DATA_URLS = {
-        modis: '/api/v2/content/archives/FIRMS/c6/Australia_NewZealand/MODIS_C6_Australia_NewZealand_MCD14DL_NRT_',
-        virrs: '/api/v2/content/archives/FIRMS/viirs/Australia_NewZealand/VIIRS_I_Australia_NewZealand_VNP14IMGTDL_NRT_'
+        # modis: '/api/v2/content/archives/FIRMS/c6/Australia_NewZealand/MODIS_C6_Australia_NewZealand_MCD14DL_NRT_',
+        # virrs: '/api/v2/content/archives/FIRMS/viirs/Australia_NewZealand/VIIRS_I_Australia_NewZealand_VNP14IMGTDL_NRT_'
+        modis: '/api/v2/content/archives/FIRMS/c6/Global/MODIS_C6_Global_MCD14DL_NRT_',
+        virrs: '/api/v2/content/archives/FIRMS/viirs/Global/VIIRS_I_Global_VNP14IMGTDL_NRT_'
         #modis: '/api/v2/content/archives/FIRMS/c6/Southern_Africa/MODIS_C6_Southern_Africa_MCD14DL_NRT_',
         #viirs: '/api/v2/content/archives/FIRMS/viirs/Southern_Africa/VIIRS_I_Southern_Africa_VNP14IMGTDL_NRT_'
     }

@@ -65,7 +65,7 @@
   };
 
   async function firesData() {
-      const response = await axios.get('<%= Rails.env.production? ? 'https://api.orbitaldefence.tech' : 'http://localhost:5100'%>/api/v1/fires/?sw_bound_point=-39.840939,112.913654&ne_bound_point=-11.332735,154.103939');
+      const response = await axios.get('<%= Rails.env.production? ? 'https://api.orbitaldefence.tech' : 'http://localhost:5100'%>/api/v1/fires/?sw_bound_point=-58.231939, -179.651275&ne_bound_point=75.145290, 176.072535');
       const data = await response.data;
       return data;
 
@@ -244,8 +244,8 @@
     function initMap() {
       googleMaps = google.maps;
       map = new google.maps.Map(document.getElementById('map'), {
-          zoom: 5,
-          center: { lat: -25.263290, lng: 134.337539 }
+          zoom: 2,
+          center: { lat: 0, lng: 0 }
       });
 
       populateMarkers();
