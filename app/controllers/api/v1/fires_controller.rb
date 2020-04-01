@@ -1,12 +1,16 @@
 class Api::V1::FiresController < ApplicationController
 
   def index
-    render json: fires, status: :ok, each_serializer: Api::V1::FireSerializer
+    render json: Fire.in_last_24_hours, status: :ok, each_serializer: Api::V1::FireSerializer
+  end
+
+  def search
+    render json: fires_in_bounds, status: :ok, each_serializer: Api::V1::FireSerializer
   end
 
   def fires_current_wind_direction_indicator
 
-    wind_indicators = fires.map do |fire|
+    wind_indicators = fires_in_bounds.map do |fire|
       current_weather = fire.weather_station.weather_readings.last
       endpoint = fire.endpoint(current_weather.wind_direction, 2)
       {
@@ -24,10 +28,9 @@ class Api::V1::FiresController < ApplicationController
     params.permit(:sw_bound_point, :ne_bound_point)
   end
 
-  def fires
-    @fires ||= Fire.in_last_24_hours.in_bounds([sw_bound_point, ne_bound_point])
+  def fires_in_bounds
+    @fires_in_bounds ||= Fire.in_last_24_hours.in_bounds([sw_bound_point, ne_bound_point])
   end
-
   def sw_bound_point
     @sw_bound_point ||= Geokit::LatLng.new(get_lat(sw_lat_lng), get_lng(sw_lat_lng))
   end
