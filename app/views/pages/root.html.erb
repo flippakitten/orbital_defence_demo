@@ -54,6 +54,7 @@
     var activeWindArrows = [];
 
     const detectedAtWindArrow = (fire) => {
+      amplitude.getInstance().logEvent('Clicked: detectedAtWindArrow');
       return new google.maps.Polyline({
           path: [
               {lat: fire.fire.latitude, lng: fire.fire.longitude},
@@ -140,6 +141,7 @@
   };
 
   const showWindArrows = () => {
+      amplitude.getInstance().logEvent('Clicked: showWindArrows');
       var bounds =  map.getBounds();
       var ne = bounds.getNorthEast();
       var sw = bounds.getSouthWest();
@@ -159,6 +161,7 @@
   };
 
   const hideWindArrows = () => {
+    amplitude.getInstance().logEvent('Clicked: hideWindArrows');
     if (activeWindArrows.length > 0) {
       activeWindArrows.forEach((arrow) => {
           arrow.setMap(null)
@@ -277,6 +280,7 @@
 
       populateMarkers();
       windControls()
+      amplitude.getInstance().logEvent('Load: Map Fully Loadeds');
   }
 </script>
 <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js">
