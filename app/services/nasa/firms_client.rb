@@ -24,7 +24,6 @@ module Nasa
             sleep 5
             fetch(url, retry_count: retry_count)
           elsif retry_count == 4
-            sleep 10000
             retry_count += 1
             prev_date = julian_date - 1
 
