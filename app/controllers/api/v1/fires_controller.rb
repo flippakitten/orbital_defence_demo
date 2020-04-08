@@ -1,7 +1,10 @@
 class Api::V1::FiresController < ApplicationController
 
   def index
-    render json: Fire.in_last_24_hours, status: :ok, each_serializer: Api::V1::FireSerializer
+    cached_fires = Rails.cache.read('fires-in_last_24_hours')
+    fires = cached_fires || Fire.in_last_24_hours
+
+    render json: fires, status: :ok, each_serializer: Api::V1::FireSerializer
   end
 
   def search

@@ -25,10 +25,11 @@ module FireAssist
 
 
     # rubocop:disable Security/YAMLLoad
-    REDIS_CONFIG = YAML.load(ERB.new(File.read(Rails.root.join('config', 'redis.yml'))).result)
+    # REDIS_CONFIG = YAML.load(ERB.new(File.read(Rails.root.join('config', 'redis.yml'))).result)
     # rubocop:enable Security/YAMLLoad
-    config.cache_store = :redis_store, REDIS_CONFIG[Rails.env].merge(expires_in: 10.minutes)
-
+    # config.cache_store = :redis_cache_store, REDIS_CONFIG[Rails.env].merge(timeout: 10.minutes)
+    cache_config = YAML.load(ERB.new(File.read(Rails.root.join('config', 'redis.yml'))).result)
+    config.cache_store = :redis_cache_store, cache_config[Rails.env]
 
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration can go into files in config/initializers
