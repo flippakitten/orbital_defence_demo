@@ -286,7 +286,7 @@
 <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js">
 </script>
 <script async defer
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDP9kbCnPT5Q6FcZPAPfmuqILX9Xw7EBRg&callback=initMap">
+        src="https://maps.googleapis.com/maps/api/js?key=<%= Rails.application.credentials[:maps_api_key] %>&callback=initMap">
 </script>
 </body>
 </html>
