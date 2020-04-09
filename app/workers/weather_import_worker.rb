@@ -1,11 +1,15 @@
 class WeatherImportWorker
   include Sidekiq::Worker
 
-  sidekiq_options lock: :until_executed, unique_across_queues: true, on_conflict: :reject
-
   def perform
+    return if Rails.cache.read('WeatherImportWorker')
+
+    Rails.cache.write('WeatherImportWorker', true, expires_in: 1.hour)
+
     Fire.in_last_24_hours.each do |fire|
       FireWeatherData.new(fire).find_or_create_weather
     end
+
+    Rails.cache.write('WeatherImportWorker', false)
   end
 end

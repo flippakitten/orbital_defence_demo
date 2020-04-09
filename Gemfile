@@ -11,7 +11,6 @@ gem 'faraday', '~> 0.15.3'
 gem 'geokit-rails', git: 'https://github.com/flippakitten/geokit-rails.git', branch: 'add_cockroachdb_connection'
 gem 'sidekiq', '~>5.2.3'
 gem 'sidekiq-scheduler', '~> 3.0.0'
-gem 'sidekiq-unique-jobs'
 gem 'rack', '>= 2.0.6'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis-rails', '>= 5.0.2'
