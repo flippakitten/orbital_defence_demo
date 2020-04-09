@@ -10,7 +10,7 @@ end
 
 Rails.application.routes.draw do
   constraints ->(request) { SidekiqAuth.admin?(request) } do
-    mount Sidekiq::Web => '/admin/sidekiq'
+    mount Sidekiq::Web, at: '/admin/sidekiq'
   end
 
   root to: "pages#root"

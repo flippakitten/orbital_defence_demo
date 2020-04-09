@@ -21,4 +21,8 @@ Sidekiq.configure_server do |config|
   end
 end
 
+Sidekiq::Web.use(Rack::Auth::Basic) do |user, password|
+  [user, password] == [Rails.application.credentials[:sidekiq][:username], Rails.application.credentials[:sidekiq][:password]]
+end
+
 Sidekiq.default_worker_options = { backtrace: true }
