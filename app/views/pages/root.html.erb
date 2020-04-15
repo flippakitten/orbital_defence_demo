@@ -92,10 +92,11 @@
       return data;
   };
 
-  async function firesData() {
-      const response = await axios.get('<%= Rails.env.production? ? 'https://api.orbitaldefence.tech' : 'http://localhost:5100'%>/api/v1/fires/?sw_bound_point=-58.231939, -179.651275&ne_bound_point=75.145290, 176.072535');
-      const data = await response.data;
-      return data;
+  async function firesData(page = 1) {
+      const response = await axios.get(`<%= Rails.env.production? ? 'https://api.orbitaldefence.tech' : 'http://localhost:5100'%>/api/v1/fires/?sw_bound_point=-58.231939, -179.651275&ne_bound_point=75.145290, 176.072535&page=${page}`);
+      const records = await response.data;
+      const headers = await response.headers;
+      return { records, headers };
 
   };
 
@@ -123,21 +124,27 @@
     return marker;
   };
 
-  const populateMarkers = () => {
-    firesData().then( fires => {
-      let markers = [];
+  async function populateMarkers() {
+    const { records, headers } = await firesData();
+    const pageItems = headers["page-items"];
+    const totalCount = headers["total-count"];
+    const totalPages = headers["total-pages"];
 
-      fires.map(function(fire, i) {
-          markers.push(marker(fire));
-      });
+    let markers = [];
 
-      new MarkerClusterer(map, markers,
-          {
-            imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m',
-            minimumClusterSize: 20
-          }
-      );
-    });
+    records.data.forEach(fire => markers.push(marker(fire)));
+
+    for(let i = 2; i <= totalPages; i++){
+      const { records, headers } = await firesData(i);
+      records.data.forEach(fire => markers.push(marker(fire)));
+    }
+
+    new MarkerClusterer(map, markers,
+        {
+          imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m',
+          minimumClusterSize: 20
+        }
+    );
   };
 
   const showWindArrows = () => {
@@ -279,7 +286,7 @@
       });
 
       populateMarkers();
-      windControls()
+      windControls();
       amplitude.getInstance().logEvent('Load: Map Fully Loadeds');
   }
 </script>

@@ -1,10 +1,11 @@
 class Api::V1::FiresController < ApplicationController
+  include Pagy::Backend
+  after_action { pagy_headers_merge(@pagy) if @pagy }
 
   def index
-    cached_fires = Rails.cache.read('fires-in_last_24_hours')
-    fires = cached_fires || Fire.in_last_24_hours
+    @pagy, @records = pagy(Fire.in_last_24_hours)
 
-    render json: fires, status: :ok, each_serializer: Api::V1::FireSerializer
+    render json: { data: @records }, status: :ok, each_serializer: Api::V1::FireSerializer
   end
 
   def search
