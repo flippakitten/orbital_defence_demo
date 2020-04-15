@@ -134,17 +134,17 @@
 
     records.data.forEach(fire => markers.push(marker(fire)));
 
+    let markerCluster = new MarkerClusterer(map, markers,
+      {
+        imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m',
+        minimumClusterSize: 20
+      }
+    );
+
     for(let i = 2; i <= totalPages; i++){
       const { records, headers } = await firesData(i);
-      records.data.forEach(fire => markers.push(marker(fire)));
+      records.data.forEach(fire => markerCluster.addMarker(marker(fire)));
     }
-
-    new MarkerClusterer(map, markers,
-        {
-          imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m',
-          minimumClusterSize: 20
-        }
-    );
   };
 
   const showWindArrows = () => {
