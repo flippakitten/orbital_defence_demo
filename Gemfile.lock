@@ -196,6 +196,10 @@ GEM
       rufus-scheduler (~> 3.2)
       sidekiq (>= 3)
       tilt (>= 1.4.0)
+    skylight (4.3.0)
+      skylight-core (= 4.3.0)
+    skylight-core (4.3.0)
+      activesupport (>= 4.2.0)
     spring (2.1.0)
     spring-watcher-listen (2.0.1)
       listen (>= 2.7, < 4.0)
@@ -247,6 +251,7 @@ DEPENDENCIES
   shoulda-matchers (~> 3.1)
   sidekiq (~> 5.2.3)
   sidekiq-scheduler (~> 3.0.0)
+  skylight (~> 4.3)
   spring
   spring-watcher-listen (~> 2.0.0)
   timecop (~> 0.9.1)
