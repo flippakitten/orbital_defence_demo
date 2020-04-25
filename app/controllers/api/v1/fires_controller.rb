@@ -3,7 +3,7 @@ class Api::V1::FiresController < ApplicationController
   after_action { pagy_headers_merge(@pagy) if @pagy }
 
   def index
-    @pagy, @records = pagy(Fire.in_last_24_hours, items: 500)
+    @pagy, @records = pagy(Fire.in_last_24_hours, items: 300)
 
     render json: { data: @records }, status: :ok, each_serializer: Api::V1::FireSerializer
   end
