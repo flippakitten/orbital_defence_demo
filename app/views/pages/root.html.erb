@@ -264,18 +264,22 @@
 
     }
 
+    var windButtonsVisable = false
     function windControls() {
       var showWindControlDiv = document.createElement('div');
+      showWindControlDiv.setAttribute("id", "showWind");
       var showWindControl = new ShowWindControl(showWindControlDiv, map);
 
       showWindControl.index = 1;
       map.controls[google.maps.ControlPosition.LEFT_BOTTOM].push(showWindControlDiv);
 
       var hideWindControlDiv = document.createElement('div');
+      hideWindControlDiv.setAttribute("id", "hideWind");
       var hideWindControl = new HideWindControl(hideWindControlDiv, map);
 
       hideWindControl.index = 2;
       map.controls[google.maps.ControlPosition.LEFT_BOTTOM].push(hideWindControlDiv);
+      windButtonsVisable = true
     }
 
     function initMap() {
@@ -286,7 +290,22 @@
       });
 
       populateMarkers();
-      windControls();
+      var zoomLevel = map.getZoom();
+      googleMaps.event.addDomListener(map, 'zoom_changed', function() {
+        zoomLevel = map.getZoom();
+
+        if (zoomLevel >= 5 && windButtonsVisable == false) {
+          windControls();
+        } else if (zoomLevel < 5 && windButtonsVisable == true){
+          showWindElement = document.getElementById('showWind');
+          if(showWindElement == null) return;
+          hideWindArrows();
+          showWindElement.parentNode.removeChild(showWindElement);
+          hideWindElement = document.getElementById('hideWind');
+          hideWindElement.parentNode.removeChild(hideWindElement);
+          windButtonsVisable = false
+        }
+      });
       amplitude.getInstance().logEvent('Load: Map Fully Loadeds');
   }
 </script>
