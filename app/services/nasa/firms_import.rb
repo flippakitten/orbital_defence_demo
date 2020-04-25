@@ -14,9 +14,9 @@ module Nasa
     }
 
     class << self
-      def all
+      def all(date = Date.today)
         FIRMS_DATA_URLS.each do |key, url|
-          csv_text = Nasa::FirmsClient.fetch(url)
+          csv_text = Nasa::FirmsClient.fetch(url, date)
 
           parse_and_create_fire(csv_text: csv_text, scan_type: key)
 

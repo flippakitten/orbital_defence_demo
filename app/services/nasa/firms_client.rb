@@ -5,11 +5,11 @@ module Nasa
 
   class FirmsClient
     class << self
-      def fetch(url, date: julian_date)
+      def fetch(url, date)
         Rails.logger.info('Nasa::FirmsClient#fetch - Started')
 
         response = firms_client.get do |req|
-          req.url "#{url}#{date}.txt"
+          req.url "#{url}#{julian_date(date)}.txt"
           req.headers['Authorization'] = "Bearer #{Rails.application.credentials[:nasa_api][:key]}"
         end
 
@@ -24,8 +24,8 @@ module Nasa
 
       private
 
-      def julian_date
-        @julian_date ||= "#{Date.today.year}#{"%.3d" % Date.today.yday}".to_i
+      def julian_date(date)
+        "#{date.year}#{"%.3d" % date.yday}".to_i
       end
 
       def firms_client
