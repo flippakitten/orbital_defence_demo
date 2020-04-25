@@ -8,7 +8,7 @@ gem 'active_model_serializers'
 gem 'puma', '~> 4.3', '>= 4.3.1'
 gem 'jbuilder', '~> 2.5'
 gem 'faraday', '~> 0.15.3'
-gem 'geokit-rails', git: 'https://github.com/flippakitten/geokit-rails.git', branch: 'add_cockroachdb_connection'
+gem 'geokit-rails'
 gem 'sidekiq', '~>5.2.3'
 gem 'sidekiq-scheduler', '~> 3.0.0'
 gem 'rack', '>= 2.0.6'
@@ -28,8 +28,7 @@ gem 'pagy', '~> 3.7', '>= 3.7.5'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
-gem 'pg', '>= 0.18', '< 2.0'
-gem 'activerecord-cockroachdb-adapter', '~> 0.2.3'
+gem 'pg'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
