@@ -17,7 +17,7 @@ module Nasa
           Rails.logger.info('Nasa::FirmsClient#fetch - Completed')
           response.body
         else
-          Rails.logger.error("Nasa::FirmsClient#fetch - Failed: #{response.status} #{response.body} - #{url}#{julian_date}")
+          Rails.logger.error("Nasa::FirmsClient#fetch - Failed: #{response.status} #{response.body} - #{url}#{julian_date(date)}")
           raise RemoteServerError
         end
       end
