@@ -45,7 +45,7 @@ class Fire < ApplicationRecord
 
       station, reading = FireWeatherData.new(fire).find_or_create_weather
       fire.update_attributes(weather_reading_id: reading.id, weather_station: station)
-      fire.save!
+      fire.save
     end
   end
 
